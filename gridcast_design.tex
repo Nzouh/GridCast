@@ -17,6 +17,7 @@
 
 \setlength{\parskip}{4pt}
 \setlength{\parindent}{12pt}
+\setlength{\emergencystretch}{2em}
 
 \newcommand{\gridcast}{\textsc{GridCast}\xspace}
 \newcommand{\graphcast}{\textsc{GraphCast}\xspace}
@@ -68,7 +69,7 @@ of demonstration runs are feasible within budget, but continuous inference is no
 \textbf{Demo resolution:} The live demonstration will use the
 \textbf{Open-Meteo Ensemble API} as the probabilistic weather source. Open-Meteo provides
 a 16-member GFS ensemble at no cost, no API key required, with a 10-day forecast horizon
-at hourly resolution — sufficient to drive the probabilistic pipeline. In the pitch and
+at hourly resolution --- sufficient to drive the probabilistic pipeline. In the pitch and
 accompanying materials, \gencast is presented as the production upgrade path with full
 narrative continuity.
 
@@ -77,8 +78,8 @@ narrative continuity.
 The original proposal describes a ``weather-to-grid-stress mapping'' without specifying
 the model architecture. This is the core ML contribution and requires a concrete choice.
 
-\textbf{Selected model:} A \textbf{Temporal Fusion Transformer} (\tft), implemented via
-the \texttt{pytorch-forecasting} library. The \tft was chosen for three reasons: it
+\textbf{Selected model:} A \textbf{Temporal Fusion Transformer} (\tft), implemented
+via the \texttt{pytorch\discretionary{-}{}{-}forecasting} library. The \tft was chosen for three reasons: it
 handles multi-horizon forecasting natively (up to 240 hours / 10 days), it accepts mixed
 tabular and temporal inputs matching the three-layer feature matrix, and it produces
 native output quantiles without post-hoc calibration. The quantile outputs directly
@@ -104,7 +105,7 @@ have looked like 10 days before each event occurred.
 
 \gridcast is designed in two tiers with distinct users.
 
-\paragraph{Tier 1 — Demo \& Investor View (hackathon target).}
+\paragraph{Tier 1 --- Demo \& Investor View (hackathon target).}
 The audience is investors, judges, and potential utility partners evaluating the concept.
 The interface is a public US map showing the transmission nodes under observation,
 colour-coded by current stress probability. A visitor clicks a node and immediately sees
@@ -112,7 +113,7 @@ a 10-day probabilistic forecast, the current recommended power allocation percen
 and a set of simulated data centre neighbours with their assigned draw percentages.
 This tier uses exclusively public data and requires no access agreement with any utility.
 
-\paragraph{Tier 2 — Operator-Facing Dashboard (production path).}
+\paragraph{Tier 2 --- Operator-Facing Dashboard (production path).}
 Once a utility or grid operator licenses the product and provides internal SCADA or
 settlement data, the interface shifts from the public map to an internal operations view
 showing the utility's own grid topology, real transmission node identifiers, live
@@ -121,7 +122,7 @@ reliability engineer or demand response manager who runs a 10-day forecast each 
 and uses it to decide which flexible contracts to trigger, how much capacity to commit to
 data centre tenants, and when to issue curtailment notices.
 
-\subsection{Core User Interaction — Tier 1}
+\subsection{Core User Interaction --- Tier 1}
 
 The canonical user action for the demo proceeds as follows:
 
@@ -141,7 +142,7 @@ The canonical user action for the demo proceeds as follows:
         the chart updates visibly.
   \item The user selects \textbf{``Replay: Texas Winter Storm 2021''} from a dropdown.
         The map transitions to a replay view showing the forecast as it would have
-        appeared on 1 February 2021 — 10 days before the storm peak. The fan chart
+        appeared on 1 February 2021 --- 10 days before the storm peak. The fan chart
         shows the growing uncertainty band as the horizon extends, illustrating exactly
         the utility of confidence bounds.
 \end{enumerate}
@@ -164,7 +165,7 @@ data sources.
 \midrule
 Dominion Hub   & PJM    & Virginia       & PJM  & Largest US data centre corridor;
                                                    \$38.70/MWh congestion case in
-                                                   proposal Appendix A \\
+                                                   proposal Appendix~A \\
 CAISO SP15     & CAISO  & California     & CISO & Southern California / LA area;
                                                    duck curve stress window
                                                    (15:00--18:00 solar ramp) \\
@@ -183,24 +184,24 @@ ERCOT Houston  & ERCOT  & Texas          & ERCO & Site of 2021 Winter Storm Uri;
 
 \subsection{Revised Three-Layer Pipeline}
 
-The three-layer structure from the original proposal is preserved. Layer 1 is amended
-to substitute Open-Meteo for live \gencast inference; the ML model in Layer 3 is now
+The three-layer structure from the original proposal is preserved. Layer~1 is amended
+to substitute Open-Meteo for live \gencast inference; the ML model in Layer~3 is now
 specified as a \tft.
 
 \begin{description}
-  \item[Layer 1 — Probabilistic Weather (Open-Meteo / \graphcast + \gencast).]
+  \item[Layer 1 --- Probabilistic Weather (Open-Meteo / \graphcast + \gencast).]
         During training, ERA5 reanalysis provides the ground-truth weather input.
         At inference time, the Open-Meteo Ensemble API provides a 16-member GFS ensemble
         for the 10-day horizon. In production, this layer is replaced by \gencast
         inference for higher resolution and accuracy.
 
-  \item[Layer 2 — Regional Grid Context (EIA API).]
+  \item[Layer 2 --- Regional Grid Context (EIA API).]
         Unchanged from the original proposal. Hourly demand, forecast demand, and
         generation by fuel type from EIA Form 930, keyed by Balancing Authority.
 
-  \item[Layer 3 — Node-Level Stress (Grid Status LMP + \tft).]
+  \item[Layer 3 --- Node-Level Stress (Grid Status LMP + \tft).]
         Historical nodal LMP (congestion component) trains the \tft alongside the
-        weather and EIA features. At inference time, the day-ahead LMP from Grid Status
+        weather and EIA features. At inference time, the day-ahead LMP from Grid~Status
         provides a near-term forward signal that anchors the encoder window.
 \end{description}
 
@@ -211,14 +212,14 @@ specified as a \tft.
 \caption{\tft model configuration.}
 \label{tab:tft}
 \renewcommand{\arraystretch}{1.25}
-\begin{tabular}{@{}ll@{}}
+\begin{tabular}{@{}lp{9cm}@{}}
 \toprule
 \textbf{Parameter} & \textbf{Value} \\
 \midrule
 Library             & \texttt{pytorch-forecasting} \\
-Encoder length      & 168 h (1 week of past context) \\
-Decoder length      & 240 h (10-day forecast horizon) \\
-Output quantiles    & 0.1, 0.25, 0.5, 0.75, 0.90 \\
+Encoder length      & 168\,h (1 week of past context) \\
+Decoder length      & 240\,h (10-day forecast horizon) \\
+Output quantiles    & 0.10,\ 0.25,\ 0.50,\ 0.75,\ 0.90 \\
 Target variable     & LMP congestion component (\$/MWh) \\
 Known future inputs & Hour, day-of-week, month (cyclically encoded);
                       Open-Meteo ensemble temperature and wind \\
@@ -292,35 +293,35 @@ Frontend
 \centering
 \begin{tikzpicture}[
   box/.style={rectangle, draw, rounded corners=3pt,
-              minimum width=2.6cm, minimum height=0.8cm,
+              minimum width=2.8cm, minimum height=0.85cm,
               font=\small, align=center},
   arr/.style={-{Stealth[length=5pt]}, thick},
-  node distance=1.0cm and 1.5cm
+  node distance=1.0cm and 1.8cm
 ]
-  % Data sources
-  \node[box, fill=gray!15]  (eia)      {EIA API\\(demand)};
-  \node[box, fill=gray!15, below=0.4cm of eia]  (om)  {Open-Meteo\\(ensemble)};
-  \node[box, fill=gray!15, below=0.4cm of om]   (gs)  {Grid Status\\(LMP)};
+  % Data sources (left column)
+  \node[box, fill=gray!15]                        (eia) {EIA API\\(demand)};
+  \node[box, fill=gray!15, below=0.45cm of eia]   (om)  {Open-Meteo\\(ensemble)};
+  \node[box, fill=gray!15, below=0.45cm of om]    (gs)  {Grid Status\\(LMP)};
 
-  % Backend
-  \node[box, fill=blue!12, right=1.8cm of om]   (api)  {FastAPI\\(Code Engine)};
+  % Backend (centre)
+  \node[box, fill=blue!12, right=2.0cm of om]     (api) {FastAPI\\(Code Engine)};
 
-  % Storage + model
-  \node[box, fill=orange!15, above right=0.2cm and 1.5cm of api] (cos) {IBM COS\\(model + data)};
-  \node[box, fill=orange!15, below right=0.2cm and 1.5cm of api] (wxa) {watsonx.ai\\(prod serving)};
+  % Storage + model (right of backend)
+  \node[box, fill=orange!15, above right=0.25cm and 1.6cm of api] (cos) {IBM COS\\(model + data)};
+  \node[box, fill=orange!15, below right=0.25cm and 1.6cm of api] (wxa) {watsonx.ai\\(prod serving)};
 
-  % Frontend
-  \node[box, fill=green!12, right=1.5cm of api, yshift=0cm] (fe) {React\\(Vercel)};
+  % Frontend (far right)
+  \node[box, fill=green!12, right=1.6cm of api]   (fe)  {React\\(Vercel)};
 
   % Arrows
   \draw[arr] (eia) -- (api);
   \draw[arr] (om)  -- (api);
   \draw[arr] (gs)  -- (api);
-  \draw[arr] (cos) -- (api) node[midway, above, font=\tiny] {weights};
-  \draw[arr] (api) -- (wxa) node[midway, right, font=\tiny] {inference\\(prod)};
-  \draw[arr] (api) -- (fe)  node[midway, above, font=\tiny] {JSON};
+  \draw[arr] (cos) -- (api) node[midway, above, font=\scriptsize] {weights};
+  \draw[arr] (api) -- (wxa) node[midway, right, font=\scriptsize] {inference (prod)};
+  \draw[arr] (api) -- (fe)  node[midway, above, font=\scriptsize] {JSON};
 \end{tikzpicture}
-\caption{GridCast system architecture. Solid arrows show data flow at inference time.}
+\caption{GridCast system architecture. Arrows show data flow at inference time.}
 \label{fig:arch}
 \end{figure}
 
@@ -352,8 +353,9 @@ GET  & \texttt{/replay/\{event\_id\}}        & Pre-computed backtest output for
 % ============================================================
 \section{Build Sequence}
 
-The build is organised into seven phases. Phases 1a and 6 can run in parallel once
-Phase 0 is complete. Phase 3 (training) is the longest serial step and blocks Phase 4.
+The build is organised into seven phases. Phases 1a--1d and Phase~6 can run in parallel
+once Phase~0 is complete. Phase~3 (training) is the longest serial step and blocks
+Phase~4.
 
 \begin{table}[H]
 \centering
@@ -370,49 +372,49 @@ Phase 0 is complete. Phase 3 (training) is the longest serial step and blocks Ph
   & Everything \\
 \midrule
 1a & ERA5 download
-   & \texttt{cdsapi}: 2m temp, 10m wind, solar radiation; bounding
+   & \texttt{cdsapi}: 2\,m temp, 10\,m wind, solar radiation; bounding
      boxes around 4 nodes; 2020--2024; upload to COS
-   & Phase 2 \\
+   & Phase~2 \\
 1b & EIA pipeline
    & \texttt{requests}: PJM / CISO / ERCO demand + fuel-type
      data 2020--2024; upload to COS
-   & Phase 2 \\
+   & Phase~2 \\
 1c & LMP pipeline
    & \texttt{gridstatus}: Dominion Hub, SP15, NP15, Houston Hub;
      real-time + day-ahead 2020--2024; upload to COS
-   & Phase 2 \\
+   & Phase~2 \\
 1d & Merge \& align
    & Resample all sources to hourly UTC; join on timestamp + node;
      output one Parquet per node to COS
-   & Phase 2 \\
+   & Phase~2 \\
 \midrule
 2 & Feature engineering
   & Demand deviation; renewable penetration; LMP z-score; solar
     ramp rate; demand/capacity ratio; cyclical time encoding
-  & Phase 3 \\
+  & Phase~3 \\
 \midrule
 3 & Model training
-  & \tft on Colab T4 GPU; encoder 168 h, decoder 240 h; quantiles
+  & \tft on Colab T4 GPU; encoder 168\,h, decoder 240\,h; quantiles
     [0.1, 0.25, 0.5, 0.75, 0.9]; validate on 3 stress events;
     serialise \texttt{.ckpt}; upload to COS
-  & Phase 4 \\
+  & Phase~4 \\
 \midrule
 4 & Backend API
   & FastAPI; loads weights from COS; calls EIA + Open-Meteo;
     runs \tft inference; 5 endpoints; Dockerfile
-  & Phase 5 \\
+  & Phase~5 \\
 \midrule
 5 & IBM deployment
   & Push image to IBM Container Registry; deploy Code Engine
     application; set env vars; register model in watsonx.ai
     deployment space
-  & Phase 7 \\
+  & Phase~7 \\
 \midrule
 6 & Frontend
   & React + Mapbox GL JS (map); Recharts (fan chart); node
     panel with allocation \%; data centre overlays; replay mode;
     deploy on Vercel
-  & Phase 7 \\
+  & Phase~7 \\
 \midrule
 7 & Integration
   & Wire frontend to Code Engine URL; test all 4 nodes end-to-end;
@@ -423,8 +425,8 @@ Phase 0 is complete. Phase 3 (training) is the longest serial step and blocks Ph
 \end{table}
 
 \paragraph{Critical path.}
-Phase 0 $\to$ \{1a, 1b, 1c\} in parallel $\to$ 1d $\to$ 2 $\to$ 3 $\to$ 4 $\to$ 5 $\to$ 7.
-Phase 6 (frontend) can be built with mocked JSON responses while Phases 3--5 are
+Phase~0 $\to$ \{1a, 1b, 1c\} in parallel $\to$ 1d $\to$ 2 $\to$ 3 $\to$ 4 $\to$ 5 $\to$ 7.
+Phase~6 (frontend) can be built with mocked JSON responses while Phases 3--5 are
 in progress.
 
 % ============================================================
@@ -439,26 +441,26 @@ in progress.
 \toprule
 \textbf{Layer} & \textbf{Technology} & \textbf{Notes} \\
 \midrule
-Weather (demo)    & Open-Meteo Ensemble API  & Free, no key, 16-member GFS ensemble \\
-Weather (prod)    & \gencast / \graphcast    & Google DeepMind open weights; requires GPU/TPU \\
-Grid demand       & EIA API v2               & Free, API key required \\
-Nodal LMP         & \texttt{gridstatus}      & Free tier for recent data \\
-Historical weather & ERA5 via \texttt{cdsapi} & Free, CDS account required \\
+Weather (demo)     & Open-Meteo Ensemble API   & Free, no key, 16-member GFS ensemble \\
+Weather (prod)     & \gencast / \graphcast     & Google DeepMind open weights; requires GPU/TPU \\
+Grid demand        & EIA API v2                & Free, API key required \\
+Nodal LMP          & \texttt{gridstatus}       & Free tier for recent data \\
+Historical weather & ERA5 via \texttt{cdsapi}  & Free, CDS account required \\
 \midrule
-ML model          & PyTorch Forecasting \tft & Quantile regression, multi-horizon \\
-Training          & Google Colab (T4 GPU)    & Free tier sufficient for 4-node dataset \\
+ML model           & PyTorch Forecasting \tft  & Quantile regression, multi-horizon \\
+Training           & Google Colab (T4 GPU)     & Free tier sufficient for 4-node dataset \\
 \midrule
-Backend           & FastAPI + Python 3.11    & Containerised via Docker \\
-Hosting           & IBM Cloud Code Engine    & Serverless; free trial \\
-Storage           & IBM Cloud Object Storage & Model artefacts + processed data \\
-Model serving     & watsonx.ai               & Production path; registered in demo pitch \\
-Container image   & IBM Container Registry   & Free tier \\
+Backend            & FastAPI + Python 3.11     & Containerised via Docker \\
+Hosting            & IBM Cloud Code Engine     & Serverless; free trial \\
+Storage            & IBM Cloud Object Storage  & Model artefacts + processed data \\
+Model serving      & watsonx.ai                & Production path; registered in demo pitch \\
+Container image    & IBM Container Registry    & Free tier \\
 \midrule
-Frontend          & React + Vite             & \\
-Map               & Mapbox GL JS             & Free tier: 50k loads/month \\
-Charts            & Recharts                 & Fan chart for quantile bands \\
-Styling           & Tailwind CSS             & \\
-Deploy            & Vercel                   & Free tier \\
+Frontend           & React + Vite              & \\
+Map                & Mapbox GL JS              & Free tier: 50k loads/month \\
+Charts             & Recharts                  & Fan chart for quantile bands \\
+Styling            & Tailwind CSS              & \\
+Deploy             & Vercel                    & Free tier \\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -471,8 +473,8 @@ Deploy            & Vercel                   & Free tier \\
 
 \textbf{Source:} \url{open-meteo.com}. Free, no API key required. Provides a
 16-member GFS ensemble (\texttt{gfs\_seamless} model) at hourly resolution up to
-16 days ahead. Variables used: \texttt{temperature\_2m}, \texttt{wind\_speed\_10m},
-\texttt{shortwave\_radiation}. The ensemble spread across 16 members provides the
+16~days ahead. Variables used: \texttt{temperature\_2m}, \texttt{wind\_speed\_10m},
+\texttt{shortwave\_radiation}. The ensemble spread across 16~members provides the
 uncertainty signal that propagates through the \tft as known future covariates.
 
 \begin{lstlisting}[language=bash,
@@ -486,7 +488,7 @@ GET https://ensemble-api.open-meteo.com/v1/ensemble
 
 \subsection{EIA, Grid Status, ERA5}
 
-Unchanged from the original proposal Appendix A. EIA API v2 remains the source for
+Unchanged from the original proposal Appendix~A. EIA API~v2 remains the source for
 regional demand and fuel-mix data. The \texttt{gridstatus} Python library remains the
 source for nodal LMP. ERA5 via \texttt{cdsapi} remains the historical weather ground
 truth for training.
