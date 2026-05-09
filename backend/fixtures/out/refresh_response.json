@@ -1,0 +1,7 @@
+{
+  "status": "ok",
+  "node_id": "dominion_hub",
+  "refreshed_at": "2026-05-09T14:00:00Z",
+  "source": "ibm_cos",
+  "next_available_refresh_at": "2026-05-09T14:05:00Z"
+}

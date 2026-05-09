@@ -1,0 +1,4965 @@
+{
+  "event_id": "texas_winter_2021",
+  "title": "Winter Storm Uri (February 2021)",
+  "description": "Multi-day arctic blast knocked ~50% of ERCOT generation offline. Houston load center demand spiked while gas wells froze.",
+  "hero_node": "ercot_houston",
+  "start": "2021-02-13T00:00:00Z",
+  "end": "2021-02-19T00:00:00Z",
+  "peak": "2021-02-15T08:00:00Z",
+  "predicted_at": "2021-02-12T08:00:00Z",
+  "pre_event_forecast": {
+    "node_id": "ercot_houston",
+    "generated_at": "2021-02-12T08:00:00Z",
+    "horizon_hours": 120,
+    "timestep_hours": 1,
+    "points": [
+      {
+        "timestamp": "2021-02-12T09:00:00Z",
+        "horizon_hours": 1,
+        "stress": {
+          "p10": 0.2536,
+          "p25": 0.289,
+          "p50": 0.3278,
+          "p75": 0.3667,
+          "p90": 0.4021
+        }
+      },
+      {
+        "timestamp": "2021-02-12T10:00:00Z",
+        "horizon_hours": 2,
+        "stress": {
+          "p10": 0.2694,
+          "p25": 0.3093,
+          "p50": 0.3532,
+          "p75": 0.397,
+          "p90": 0.4369
+        }
+      },
+      {
+        "timestamp": "2021-02-12T11:00:00Z",
+        "horizon_hours": 3,
+        "stress": {
+          "p10": 0.2607,
+          "p25": 0.3041,
+          "p50": 0.3518,
+          "p75": 0.3995,
+          "p90": 0.4429
+        }
+      },
+      {
+        "timestamp": "2021-02-12T12:00:00Z",
+        "horizon_hours": 4,
+        "stress": {
+          "p10": 0.2844,
+          "p25": 0.3308,
+          "p50": 0.3817,
+          "p75": 0.4326,
+          "p90": 0.479
+        }
+      },
+      {
+        "timestamp": "2021-02-12T13:00:00Z",
+        "horizon_hours": 5,
+        "stress": {
+          "p10": 0.3307,
+          "p25": 0.3796,
+          "p50": 0.4334,
+          "p75": 0.4872,
+          "p90": 0.5361
+        }
+      },
+      {
+        "timestamp": "2021-02-12T14:00:00Z",
+        "horizon_hours": 6,
+        "stress": {
+          "p10": 0.4166,
+          "p25": 0.4679,
+          "p50": 0.5243,
+          "p75": 0.5806,
+          "p90": 0.6319
+        }
+      },
+      {
+        "timestamp": "2021-02-12T15:00:00Z",
+        "horizon_hours": 7,
+        "stress": {
+          "p10": 0.4397,
+          "p25": 0.4932,
+          "p50": 0.5519,
+          "p75": 0.6106,
+          "p90": 0.664
+        }
+      },
+      {
+        "timestamp": "2021-02-12T16:00:00Z",
+        "horizon_hours": 8,
+        "stress": {
+          "p10": 0.5281,
+          "p25": 0.5836,
+          "p50": 0.6445,
+          "p75": 0.7054,
+          "p90": 0.7609
+        }
+      },
+      {
+        "timestamp": "2021-02-12T17:00:00Z",
+        "horizon_hours": 9,
+        "stress": {
+          "p10": 0.5223,
+          "p25": 0.5796,
+          "p50": 0.6426,
+          "p75": 0.7056,
+          "p90": 0.7629
+        }
+      },
+      {
+        "timestamp": "2021-02-12T18:00:00Z",
+        "horizon_hours": 10,
+        "stress": {
+          "p10": 0.5507,
+          "p25": 0.6098,
+          "p50": 0.6748,
+          "p75": 0.7397,
+          "p90": 0.7988
+        }
+      },
+      {
+        "timestamp": "2021-02-12T19:00:00Z",
+        "horizon_hours": 11,
+        "stress": {
+          "p10": 0.6161,
+          "p25": 0.6769,
+          "p50": 0.7437,
+          "p75": 0.8105,
+          "p90": 0.8713
+        }
+      },
+      {
+        "timestamp": "2021-02-12T20:00:00Z",
+        "horizon_hours": 12,
+        "stress": {
+          "p10": 0.6219,
+          "p25": 0.6843,
+          "p50": 0.7529,
+          "p75": 0.8215,
+          "p90": 0.8839
+        }
+      },
+      {
+        "timestamp": "2021-02-12T21:00:00Z",
+        "horizon_hours": 13,
+        "stress": {
+          "p10": 0.6027,
+          "p25": 0.6667,
+          "p50": 0.737,
+          "p75": 0.8072,
+          "p90": 0.8712
+        }
+      },
+      {
+        "timestamp": "2021-02-12T22:00:00Z",
+        "horizon_hours": 14,
+        "stress": {
+          "p10": 0.6281,
+          "p25": 0.6936,
+          "p50": 0.7655,
+          "p75": 0.8375,
+          "p90": 0.903
+        }
+      },
+      {
+        "timestamp": "2021-02-12T23:00:00Z",
+        "horizon_hours": 15,
+        "stress": {
+          "p10": 0.6043,
+          "p25": 0.6712,
+          "p50": 0.7447,
+          "p75": 0.8182,
+          "p90": 0.8851
+        }
+      },
+      {
+        "timestamp": "2021-02-13T00:00:00Z",
+        "horizon_hours": 16,
+        "stress": {
+          "p10": 0.4923,
+          "p25": 0.5606,
+          "p50": 0.6357,
+          "p75": 0.7107,
+          "p90": 0.779
+        }
+      },
+      {
+        "timestamp": "2021-02-13T01:00:00Z",
+        "horizon_hours": 17,
+        "stress": {
+          "p10": 0.4299,
+          "p25": 0.4996,
+          "p50": 0.5761,
+          "p75": 0.6526,
+          "p90": 0.7223
+        }
+      },
+      {
+        "timestamp": "2021-02-13T02:00:00Z",
+        "horizon_hours": 18,
+        "stress": {
+          "p10": 0.328,
+          "p25": 0.399,
+          "p50": 0.477,
+          "p75": 0.555,
+          "p90": 0.6259
+        }
+      },
+      {
+        "timestamp": "2021-02-13T03:00:00Z",
+        "horizon_hours": 19,
+        "stress": {
+          "p10": 0.321,
+          "p25": 0.3933,
+          "p50": 0.4726,
+          "p75": 0.552,
+          "p90": 0.6243
+        }
+      },
+      {
+        "timestamp": "2021-02-13T04:00:00Z",
+        "horizon_hours": 20,
+        "stress": {
+          "p10": 0.3406,
+          "p25": 0.4141,
+          "p50": 0.4949,
+          "p75": 0.5756,
+          "p90": 0.6491
+        }
+      },
+      {
+        "timestamp": "2021-02-13T05:00:00Z",
+        "horizon_hours": 21,
+        "stress": {
+          "p10": 0.2726,
+          "p25": 0.3473,
+          "p50": 0.4294,
+          "p75": 0.5114,
+          "p90": 0.5862
+        }
+      },
+      {
+        "timestamp": "2021-02-13T06:00:00Z",
+        "horizon_hours": 22,
+        "stress": {
+          "p10": 0.241,
+          "p25": 0.3169,
+          "p50": 0.4003,
+          "p75": 0.4836,
+          "p90": 0.5595
+        }
+      },
+      {
+        "timestamp": "2021-02-13T07:00:00Z",
+        "horizon_hours": 23,
+        "stress": {
+          "p10": 0.2255,
+          "p25": 0.3026,
+          "p50": 0.3872,
+          "p75": 0.4718,
+          "p90": 0.5489
+        }
+      },
+      {
+        "timestamp": "2021-02-13T08:00:00Z",
+        "horizon_hours": 24,
+        "stress": {
+          "p10": 0.2115,
+          "p25": 0.2897,
+          "p50": 0.3755,
+          "p75": 0.4614,
+          "p90": 0.5396
+        }
+      },
+      {
+        "timestamp": "2021-02-13T09:00:00Z",
+        "horizon_hours": 25,
+        "stress": {
+          "p10": 0.1765,
+          "p25": 0.2558,
+          "p50": 0.3429,
+          "p75": 0.43,
+          "p90": 0.5093
+        }
+      },
+      {
+        "timestamp": "2021-02-13T10:00:00Z",
+        "horizon_hours": 26,
+        "stress": {
+          "p10": 0.1658,
+          "p25": 0.2462,
+          "p50": 0.3345,
+          "p75": 0.4228,
+          "p90": 0.5032
+        }
+      },
+      {
+        "timestamp": "2021-02-13T11:00:00Z",
+        "horizon_hours": 27,
+        "stress": {
+          "p10": 0.2136,
+          "p25": 0.2951,
+          "p50": 0.3845,
+          "p75": 0.474,
+          "p90": 0.5555
+        }
+      },
+      {
+        "timestamp": "2021-02-13T12:00:00Z",
+        "horizon_hours": 28,
+        "stress": {
+          "p10": 0.2683,
+          "p25": 0.3508,
+          "p50": 0.4414,
+          "p75": 0.532,
+          "p90": 0.6145
+        }
+      },
+      {
+        "timestamp": "2021-02-13T13:00:00Z",
+        "horizon_hours": 29,
+        "stress": {
+          "p10": 0.2684,
+          "p25": 0.3519,
+          "p50": 0.4436,
+          "p75": 0.5354,
+          "p90": 0.6189
+        }
+      },
+      {
+        "timestamp": "2021-02-13T14:00:00Z",
+        "horizon_hours": 30,
+        "stress": {
+          "p10": 0.3324,
+          "p25": 0.4169,
+          "p50": 0.5098,
+          "p75": 0.6026,
+          "p90": 0.6872
+        }
+      },
+      {
+        "timestamp": "2021-02-13T15:00:00Z",
+        "horizon_hours": 31,
+        "stress": {
+          "p10": 0.4086,
+          "p25": 0.4942,
+          "p50": 0.5881,
+          "p75": 0.6821,
+          "p90": 0.7676
+        }
+      },
+      {
+        "timestamp": "2021-02-13T16:00:00Z",
+        "horizon_hours": 32,
+        "stress": {
+          "p10": 0.4382,
+          "p25": 0.5247,
+          "p50": 0.6197,
+          "p75": 0.7148,
+          "p90": 0.8013
+        }
+      },
+      {
+        "timestamp": "2021-02-13T17:00:00Z",
+        "horizon_hours": 33,
+        "stress": {
+          "p10": 0.4967,
+          "p25": 0.5841,
+          "p50": 0.6802,
+          "p75": 0.7763,
+          "p90": 0.8638
+        }
+      },
+      {
+        "timestamp": "2021-02-13T18:00:00Z",
+        "horizon_hours": 34,
+        "stress": {
+          "p10": 0.5563,
+          "p25": 0.6447,
+          "p50": 0.7419,
+          "p75": 0.839,
+          "p90": 0.9274
+        }
+      },
+      {
+        "timestamp": "2021-02-13T19:00:00Z",
+        "horizon_hours": 35,
+        "stress": {
+          "p10": 0.5495,
+          "p25": 0.6388,
+          "p50": 0.737,
+          "p75": 0.8351,
+          "p90": 0.9245
+        }
+      },
+      {
+        "timestamp": "2021-02-13T20:00:00Z",
+        "horizon_hours": 36,
+        "stress": {
+          "p10": 0.6157,
+          "p25": 0.706,
+          "p50": 0.8051,
+          "p75": 0.9043,
+          "p90": 0.9946
+        }
+      },
+      {
+        "timestamp": "2021-02-13T21:00:00Z",
+        "horizon_hours": 37,
+        "stress": {
+          "p10": 0.6,
+          "p25": 0.6912,
+          "p50": 0.7914,
+          "p75": 0.8915,
+          "p90": 0.9827
+        }
+      },
+      {
+        "timestamp": "2021-02-13T22:00:00Z",
+        "horizon_hours": 38,
+        "stress": {
+          "p10": 0.6013,
+          "p25": 0.6934,
+          "p50": 0.7946,
+          "p75": 0.8957,
+          "p90": 0.9878
+        }
+      },
+      {
+        "timestamp": "2021-02-13T23:00:00Z",
+        "horizon_hours": 39,
+        "stress": {
+          "p10": 0.6016,
+          "p25": 0.6946,
+          "p50": 0.7967,
+          "p75": 0.8988,
+          "p90": 0.9918
+        }
+      },
+      {
+        "timestamp": "2021-02-14T00:00:00Z",
+        "horizon_hours": 40,
+        "stress": {
+          "p10": 0.5555,
+          "p25": 0.6494,
+          "p50": 0.7524,
+          "p75": 0.8555,
+          "p90": 0.9494
+        }
+      },
+      {
+        "timestamp": "2021-02-14T01:00:00Z",
+        "horizon_hours": 41,
+        "stress": {
+          "p10": 0.5447,
+          "p25": 0.6394,
+          "p50": 0.7434,
+          "p75": 0.8474,
+          "p90": 0.9421
+        }
+      },
+      {
+        "timestamp": "2021-02-14T02:00:00Z",
+        "horizon_hours": 42,
+        "stress": {
+          "p10": 0.5247,
+          "p25": 0.6203,
+          "p50": 0.7252,
+          "p75": 0.8302,
+          "p90": 0.9257
+        }
+      },
+      {
+        "timestamp": "2021-02-14T03:00:00Z",
+        "horizon_hours": 43,
+        "stress": {
+          "p10": 0.4611,
+          "p25": 0.5575,
+          "p50": 0.6634,
+          "p75": 0.7693,
+          "p90": 0.8657
+        }
+      },
+      {
+        "timestamp": "2021-02-14T04:00:00Z",
+        "horizon_hours": 44,
+        "stress": {
+          "p10": 0.4303,
+          "p25": 0.5275,
+          "p50": 0.6343,
+          "p75": 0.7411,
+          "p90": 0.8384
+        }
+      },
+      {
+        "timestamp": "2021-02-14T05:00:00Z",
+        "horizon_hours": 45,
+        "stress": {
+          "p10": 0.3768,
+          "p25": 0.4748,
+          "p50": 0.5825,
+          "p75": 0.6902,
+          "p90": 0.7883
+        }
+      },
+      {
+        "timestamp": "2021-02-14T06:00:00Z",
+        "horizon_hours": 46,
+        "stress": {
+          "p10": 0.349,
+          "p25": 0.4479,
+          "p50": 0.5565,
+          "p75": 0.6651,
+          "p90": 0.7639
+        }
+      },
+      {
+        "timestamp": "2021-02-14T07:00:00Z",
+        "horizon_hours": 47,
+        "stress": {
+          "p10": 0.3484,
+          "p25": 0.448,
+          "p50": 0.5575,
+          "p75": 0.667,
+          "p90": 0.7667
+        }
+      },
+      {
+        "timestamp": "2021-02-14T08:00:00Z",
+        "horizon_hours": 48,
+        "stress": {
+          "p10": 0.3435,
+          "p25": 0.444,
+          "p50": 0.5544,
+          "p75": 0.6647,
+          "p90": 0.7652
+        }
+      },
+      {
+        "timestamp": "2021-02-14T09:00:00Z",
+        "horizon_hours": 49,
+        "stress": {
+          "p10": 0.3113,
+          "p25": 0.4126,
+          "p50": 0.5238,
+          "p75": 0.635,
+          "p90": 0.7363
+        }
+      },
+      {
+        "timestamp": "2021-02-14T10:00:00Z",
+        "horizon_hours": 50,
+        "stress": {
+          "p10": 0.3289,
+          "p25": 0.431,
+          "p50": 0.543,
+          "p75": 0.6551,
+          "p90": 0.7571
+        }
+      },
+      {
+        "timestamp": "2021-02-14T11:00:00Z",
+        "horizon_hours": 51,
+        "stress": {
+          "p10": 0.3629,
+          "p25": 0.4657,
+          "p50": 0.5786,
+          "p75": 0.6915,
+          "p90": 0.7944
+        }
+      },
+      {
+        "timestamp": "2021-02-14T12:00:00Z",
+        "horizon_hours": 52,
+        "stress": {
+          "p10": 0.3975,
+          "p25": 0.5011,
+          "p50": 0.6149,
+          "p75": 0.7286,
+          "p90": 0.8322
+        }
+      },
+      {
+        "timestamp": "2021-02-14T13:00:00Z",
+        "horizon_hours": 53,
+        "stress": {
+          "p10": 0.4615,
+          "p25": 0.5658,
+          "p50": 0.6804,
+          "p75": 0.795,
+          "p90": 0.8994
+        }
+      },
+      {
+        "timestamp": "2021-02-14T14:00:00Z",
+        "horizon_hours": 54,
+        "stress": {
+          "p10": 0.4837,
+          "p25": 0.5888,
+          "p50": 0.7042,
+          "p75": 0.8196,
+          "p90": 0.9247
+        }
+      },
+      {
+        "timestamp": "2021-02-14T15:00:00Z",
+        "horizon_hours": 55,
+        "stress": {
+          "p10": 0.4887,
+          "p25": 0.5945,
+          "p50": 0.7107,
+          "p75": 0.827,
+          "p90": 0.9328
+        }
+      },
+      {
+        "timestamp": "2021-02-14T16:00:00Z",
+        "horizon_hours": 56,
+        "stress": {
+          "p10": 0.5601,
+          "p25": 0.6667,
+          "p50": 0.7837,
+          "p75": 0.9008,
+          "p90": 1.0
+        }
+      },
+      {
+        "timestamp": "2021-02-14T17:00:00Z",
+        "horizon_hours": 57,
+        "stress": {
+          "p10": 0.631,
+          "p25": 0.7383,
+          "p50": 0.8562,
+          "p75": 0.974,
+          "p90": 1.0
+        }
+      },
+      {
+        "timestamp": "2021-02-14T18:00:00Z",
+        "horizon_hours": 58,
+        "stress": {
+          "p10": 0.6875,
+          "p25": 0.7955,
+          "p50": 0.9142,
+          "p75": 1.0,
+          "p90": 1.0
+        }
+      },
+      {
+        "timestamp": "2021-02-14T19:00:00Z",
+        "horizon_hours": 59,
+        "stress": {
+          "p10": 0.6893,
+          "p25": 0.7981,
+          "p50": 0.9175,
+          "p75": 1.0,
+          "p90": 1.0
+        }
+      },
+      {
+        "timestamp": "2021-02-14T20:00:00Z",
+        "horizon_hours": 60,
+        "stress": {
+          "p10": 0.6943,
+          "p25": 0.8038,
+          "p50": 0.924,
+          "p75": 1.0,
+          "p90": 1.0
+        }
+      },
+      {
+        "timestamp": "2021-02-14T21:00:00Z",
+        "horizon_hours": 61,
+        "stress": {
+          "p10": 0.6853,
+          "p25": 0.7955,
+          "p50": 0.9165,
+          "p75": 1.0,
+          "p90": 1.0
+        }
+      },
+      {
+        "timestamp": "2021-02-14T22:00:00Z",
+        "horizon_hours": 62,
+        "stress": {
+          "p10": 0.7331,
+          "p25": 0.844,
+          "p50": 0.9657,
+          "p75": 1.0,
+          "p90": 1.0
+        }
+      },
+      {
+        "timestamp": "2021-02-14T23:00:00Z",
+        "horizon_hours": 63,
+        "stress": {
+          "p10": 0.7045,
+          "p25": 0.8161,
+          "p50": 0.9386,
+          "p75": 1.0,
+          "p90": 1.0
+        }
+      },
+      {
+        "timestamp": "2021-02-15T00:00:00Z",
+        "horizon_hours": 64,
+        "stress": {
+          "p10": 0.7645,
+          "p25": 0.8767,
+          "p50": 1.0,
+          "p75": 1.0,
+          "p90": 1.0
+        }
+      },
+      {
+        "timestamp": "2021-02-15T01:00:00Z",
+        "horizon_hours": 65,
+        "stress": {
+          "p10": 0.7514,
+          "p25": 0.8643,
+          "p50": 0.9884,
+          "p75": 1.0,
+          "p90": 1.0
+        }
+      },
+      {
+        "timestamp": "2021-02-15T02:00:00Z",
+        "horizon_hours": 66,
+        "stress": {
+          "p10": 0.6999,
+          "p25": 0.8135,
+          "p50": 0.9382,
+          "p75": 1.0,
+          "p90": 1.0
+        }
+      },
+      {
+        "timestamp": "2021-02-15T03:00:00Z",
+        "horizon_hours": 67,
+        "stress": {
+          "p10": 0.6317,
+          "p25": 0.746,
+          "p50": 0.8715,
+          "p75": 0.997,
+          "p90": 1.0
+        }
+      },
+      {
+        "timestamp": "2021-02-15T04:00:00Z",
+        "horizon_hours": 68,
+        "stress": {
+          "p10": 0.6602,
+          "p25": 0.7752,
+          "p50": 0.9014,
+          "p75": 1.0,
+          "p90": 1.0
+        }
+      },
+      {
+        "timestamp": "2021-02-15T05:00:00Z",
+        "horizon_hours": 69,
+        "stress": {
+          "p10": 0.5519,
+          "p25": 0.6675,
+          "p50": 0.7945,
+          "p75": 0.9215,
+          "p90": 1.0
+        }
+      },
+      {
+        "timestamp": "2021-02-15T06:00:00Z",
+        "horizon_hours": 70,
+        "stress": {
+          "p10": 0.581,
+          "p25": 0.6973,
+          "p50": 0.825,
+          "p75": 0.9527,
+          "p90": 1.0
+        }
+      },
+      {
+        "timestamp": "2021-02-15T07:00:00Z",
+        "horizon_hours": 71,
+        "stress": {
+          "p10": 0.531,
+          "p25": 0.6479,
+          "p50": 0.7763,
+          "p75": 0.9048,
+          "p90": 1.0
+        }
+      },
+      {
+        "timestamp": "2021-02-15T08:00:00Z",
+        "horizon_hours": 72,
+        "stress": {
+          "p10": 0.5212,
+          "p25": 0.6388,
+          "p50": 0.7679,
+          "p75": 0.8971,
+          "p90": 1.0
+        }
+      },
+      {
+        "timestamp": "2021-02-15T09:00:00Z",
+        "horizon_hours": 73,
+        "stress": {
+          "p10": 0.4799,
+          "p25": 0.5981,
+          "p50": 0.728,
+          "p75": 0.8578,
+          "p90": 0.976
+        }
+      },
+      {
+        "timestamp": "2021-02-15T10:00:00Z",
+        "horizon_hours": 74,
+        "stress": {
+          "p10": 0.4734,
+          "p25": 0.5923,
+          "p50": 0.7228,
+          "p75": 0.8534,
+          "p90": 0.9722
+        }
+      },
+      {
+        "timestamp": "2021-02-15T11:00:00Z",
+        "horizon_hours": 75,
+        "stress": {
+          "p10": 0.4833,
+          "p25": 0.6028,
+          "p50": 0.7341,
+          "p75": 0.8653,
+          "p90": 0.9848
+        }
+      },
+      {
+        "timestamp": "2021-02-15T12:00:00Z",
+        "horizon_hours": 76,
+        "stress": {
+          "p10": 0.5439,
+          "p25": 0.664,
+          "p50": 0.796,
+          "p75": 0.9279,
+          "p90": 1.0
+        }
+      },
+      {
+        "timestamp": "2021-02-15T13:00:00Z",
+        "horizon_hours": 77,
+        "stress": {
+          "p10": 0.624,
+          "p25": 0.7448,
+          "p50": 0.8774,
+          "p75": 1.0,
+          "p90": 1.0
+        }
+      },
+      {
+        "timestamp": "2021-02-15T14:00:00Z",
+        "horizon_hours": 78,
+        "stress": {
+          "p10": 0.6221,
+          "p25": 0.7435,
+          "p50": 0.8768,
+          "p75": 1.0,
+          "p90": 1.0
+        }
+      },
+      {
+        "timestamp": "2021-02-15T15:00:00Z",
+        "horizon_hours": 79,
+        "stress": {
+          "p10": 0.6206,
+          "p25": 0.7426,
+          "p50": 0.8766,
+          "p75": 1.0,
+          "p90": 1.0
+        }
+      },
+      {
+        "timestamp": "2021-02-15T16:00:00Z",
+        "horizon_hours": 80,
+        "stress": {
+          "p10": 0.6967,
+          "p25": 0.8193,
+          "p50": 0.954,
+          "p75": 1.0,
+          "p90": 1.0
+        }
+      },
+      {
+        "timestamp": "2021-02-15T17:00:00Z",
+        "horizon_hours": 81,
+        "stress": {
+          "p10": 0.7114,
+          "p25": 0.8346,
+          "p50": 0.9699,
+          "p75": 1.0,
+          "p90": 1.0
+        }
+      },
+      {
+        "timestamp": "2021-02-15T18:00:00Z",
+        "horizon_hours": 82,
+        "stress": {
+          "p10": 0.7402,
+          "p25": 0.864,
+          "p50": 1.0,
+          "p75": 1.0,
+          "p90": 1.0
+        }
+      },
+      {
+        "timestamp": "2021-02-15T19:00:00Z",
+        "horizon_hours": 83,
+        "stress": {
+          "p10": 0.7389,
+          "p25": 0.8633,
+          "p50": 1.0,
+          "p75": 1.0,
+          "p90": 1.0
+        }
+      },
+      {
+        "timestamp": "2021-02-15T20:00:00Z",
+        "horizon_hours": 84,
+        "stress": {
+          "p10": 0.7376,
+          "p25": 0.8627,
+          "p50": 1.0,
+          "p75": 1.0,
+          "p90": 1.0
+        }
+      },
+      {
+        "timestamp": "2021-02-15T21:00:00Z",
+        "horizon_hours": 85,
+        "stress": {
+          "p10": 0.7364,
+          "p25": 0.862,
+          "p50": 1.0,
+          "p75": 1.0,
+          "p90": 1.0
+        }
+      },
+      {
+        "timestamp": "2021-02-15T22:00:00Z",
+        "horizon_hours": 86,
+        "stress": {
+          "p10": 0.7351,
+          "p25": 0.8614,
+          "p50": 1.0,
+          "p75": 1.0,
+          "p90": 1.0
+        }
+      },
+      {
+        "timestamp": "2021-02-15T23:00:00Z",
+        "horizon_hours": 87,
+        "stress": {
+          "p10": 0.7339,
+          "p25": 0.8607,
+          "p50": 1.0,
+          "p75": 1.0,
+          "p90": 1.0
+        }
+      },
+      {
+        "timestamp": "2021-02-16T00:00:00Z",
+        "horizon_hours": 88,
+        "stress": {
+          "p10": 0.7327,
+          "p25": 0.8601,
+          "p50": 1.0,
+          "p75": 1.0,
+          "p90": 1.0
+        }
+      },
+      {
+        "timestamp": "2021-02-16T01:00:00Z",
+        "horizon_hours": 89,
+        "stress": {
+          "p10": 0.6988,
+          "p25": 0.8268,
+          "p50": 0.9673,
+          "p75": 1.0,
+          "p90": 1.0
+        }
+      },
+      {
+        "timestamp": "2021-02-16T02:00:00Z",
+        "horizon_hours": 90,
+        "stress": {
+          "p10": 0.649,
+          "p25": 0.7775,
+          "p50": 0.9187,
+          "p75": 1.0,
+          "p90": 1.0
+        }
+      },
+      {
+        "timestamp": "2021-02-16T03:00:00Z",
+        "horizon_hours": 91,
+        "stress": {
+          "p10": 0.5483,
+          "p25": 0.6774,
+          "p50": 0.8193,
+          "p75": 0.9611,
+          "p90": 1.0
+        }
+      },
+      {
+        "timestamp": "2021-02-16T04:00:00Z",
+        "horizon_hours": 92,
+        "stress": {
+          "p10": 0.5317,
+          "p25": 0.6614,
+          "p50": 0.8039,
+          "p75": 0.9464,
+          "p90": 1.0
+        }
+      },
+      {
+        "timestamp": "2021-02-16T05:00:00Z",
+        "horizon_hours": 93,
+        "stress": {
+          "p10": 0.4925,
+          "p25": 0.6228,
+          "p50": 0.7659,
+          "p75": 0.909,
+          "p90": 1.0
+        }
+      },
+      {
+        "timestamp": "2021-02-16T06:00:00Z",
+        "horizon_hours": 94,
+        "stress": {
+          "p10": 0.4085,
+          "p25": 0.5393,
+          "p50": 0.6831,
+          "p75": 0.8268,
+          "p90": 0.9576
+        }
+      },
+      {
+        "timestamp": "2021-02-16T07:00:00Z",
+        "horizon_hours": 95,
+        "stress": {
+          "p10": 0.4259,
+          "p25": 0.5573,
+          "p50": 0.7016,
+          "p75": 0.846,
+          "p90": 0.9774
+        }
+      },
+      {
+        "timestamp": "2021-02-16T08:00:00Z",
+        "horizon_hours": 96,
+        "stress": {
+          "p10": 0.3582,
+          "p25": 0.4902,
+          "p50": 0.6352,
+          "p75": 0.7802,
+          "p90": 0.9121
+        }
+      },
+      {
+        "timestamp": "2021-02-16T09:00:00Z",
+        "horizon_hours": 97,
+        "stress": {
+          "p10": 0.3796,
+          "p25": 0.5122,
+          "p50": 0.6578,
+          "p75": 0.8033,
+          "p90": 0.9359
+        }
+      },
+      {
+        "timestamp": "2021-02-16T10:00:00Z",
+        "horizon_hours": 98,
+        "stress": {
+          "p10": 0.3326,
+          "p25": 0.4657,
+          "p50": 0.6119,
+          "p75": 0.7581,
+          "p90": 0.8912
+        }
+      },
+      {
+        "timestamp": "2021-02-16T11:00:00Z",
+        "horizon_hours": 99,
+        "stress": {
+          "p10": 0.3749,
+          "p25": 0.5086,
+          "p50": 0.6554,
+          "p75": 0.8022,
+          "p90": 0.9358
+        }
+      },
+      {
+        "timestamp": "2021-02-16T12:00:00Z",
+        "horizon_hours": 100,
+        "stress": {
+          "p10": 0.4339,
+          "p25": 0.5681,
+          "p50": 0.7155,
+          "p75": 0.8629,
+          "p90": 0.9971
+        }
+      },
+      {
+        "timestamp": "2021-02-16T13:00:00Z",
+        "horizon_hours": 101,
+        "stress": {
+          "p10": 0.4219,
+          "p25": 0.5567,
+          "p50": 0.7047,
+          "p75": 0.8527,
+          "p90": 0.9874
+        }
+      },
+      {
+        "timestamp": "2021-02-16T14:00:00Z",
+        "horizon_hours": 102,
+        "stress": {
+          "p10": 0.4384,
+          "p25": 0.5737,
+          "p50": 0.7223,
+          "p75": 0.8709,
+          "p90": 1.0
+        }
+      },
+      {
+        "timestamp": "2021-02-16T15:00:00Z",
+        "horizon_hours": 103,
+        "stress": {
+          "p10": 0.4889,
+          "p25": 0.6247,
+          "p50": 0.7739,
+          "p75": 0.9231,
+          "p90": 1.0
+        }
+      },
+      {
+        "timestamp": "2021-02-16T16:00:00Z",
+        "horizon_hours": 104,
+        "stress": {
+          "p10": 0.5485,
+          "p25": 0.6849,
+          "p50": 0.8347,
+          "p75": 0.9845,
+          "p90": 1.0
+        }
+      },
+      {
+        "timestamp": "2021-02-16T17:00:00Z",
+        "horizon_hours": 105,
+        "stress": {
+          "p10": 0.5582,
+          "p25": 0.6951,
+          "p50": 0.8455,
+          "p75": 0.9958,
+          "p90": 1.0
+        }
+      },
+      {
+        "timestamp": "2021-02-16T18:00:00Z",
+        "horizon_hours": 106,
+        "stress": {
+          "p10": 0.5882,
+          "p25": 0.7257,
+          "p50": 0.8766,
+          "p75": 1.0,
+          "p90": 1.0
+        }
+      },
+      {
+        "timestamp": "2021-02-16T19:00:00Z",
+        "horizon_hours": 107,
+        "stress": {
+          "p10": 0.6318,
+          "p25": 0.7697,
+          "p50": 0.9213,
+          "p75": 1.0,
+          "p90": 1.0
+        }
+      },
+      {
+        "timestamp": "2021-02-16T20:00:00Z",
+        "horizon_hours": 108,
+        "stress": {
+          "p10": 0.6265,
+          "p25": 0.765,
+          "p50": 0.9171,
+          "p75": 1.0,
+          "p90": 1.0
+        }
+      },
+      {
+        "timestamp": "2021-02-16T21:00:00Z",
+        "horizon_hours": 109,
+        "stress": {
+          "p10": 0.6326,
+          "p25": 0.7716,
+          "p50": 0.9243,
+          "p75": 1.0,
+          "p90": 1.0
+        }
+      },
+      {
+        "timestamp": "2021-02-16T22:00:00Z",
+        "horizon_hours": 110,
+        "stress": {
+          "p10": 0.6274,
+          "p25": 0.7669,
+          "p50": 0.9202,
+          "p75": 1.0,
+          "p90": 1.0
+        }
+      },
+      {
+        "timestamp": "2021-02-16T23:00:00Z",
+        "horizon_hours": 111,
+        "stress": {
+          "p10": 0.5751,
+          "p25": 0.7152,
+          "p50": 0.869,
+          "p75": 1.0,
+          "p90": 1.0
+        }
+      },
+      {
+        "timestamp": "2021-02-17T00:00:00Z",
+        "horizon_hours": 112,
+        "stress": {
+          "p10": 0.5442,
+          "p25": 0.6848,
+          "p50": 0.8393,
+          "p75": 0.9937,
+          "p90": 1.0
+        }
+      },
+      {
+        "timestamp": "2021-02-17T01:00:00Z",
+        "horizon_hours": 113,
+        "stress": {
+          "p10": 0.4704,
+          "p25": 0.6115,
+          "p50": 0.7665,
+          "p75": 0.9215,
+          "p90": 1.0
+        }
+      },
+      {
+        "timestamp": "2021-02-17T02:00:00Z",
+        "horizon_hours": 114,
+        "stress": {
+          "p10": 0.4425,
+          "p25": 0.5842,
+          "p50": 0.7397,
+          "p75": 0.8953,
+          "p90": 1.0
+        }
+      },
+      {
+        "timestamp": "2021-02-17T03:00:00Z",
+        "horizon_hours": 115,
+        "stress": {
+          "p10": 0.3817,
+          "p25": 0.5238,
+          "p50": 0.68,
+          "p75": 0.8361,
+          "p90": 0.9782
+        }
+      },
+      {
+        "timestamp": "2021-02-17T04:00:00Z",
+        "horizon_hours": 116,
+        "stress": {
+          "p10": 0.3124,
+          "p25": 0.455,
+          "p50": 0.6117,
+          "p75": 0.7684,
+          "p90": 0.9111
+        }
+      },
+      {
+        "timestamp": "2021-02-17T05:00:00Z",
+        "horizon_hours": 117,
+        "stress": {
+          "p10": 0.3145,
+          "p25": 0.4577,
+          "p50": 0.6149,
+          "p75": 0.7722,
+          "p90": 0.9153
+        }
+      },
+      {
+        "timestamp": "2021-02-17T06:00:00Z",
+        "horizon_hours": 118,
+        "stress": {
+          "p10": 0.2189,
+          "p25": 0.3626,
+          "p50": 0.5204,
+          "p75": 0.6782,
+          "p90": 0.8218
+        }
+      },
+      {
+        "timestamp": "2021-02-17T07:00:00Z",
+        "horizon_hours": 119,
+        "stress": {
+          "p10": 0.1738,
+          "p25": 0.318,
+          "p50": 0.4764,
+          "p75": 0.6347,
+          "p90": 0.7789
+        }
+      },
+      {
+        "timestamp": "2021-02-17T08:00:00Z",
+        "horizon_hours": 120,
+        "stress": {
+          "p10": 0.1656,
+          "p25": 0.3103,
+          "p50": 0.4692,
+          "p75": 0.6281,
+          "p90": 0.7728
+        }
+      }
+    ]
+  },
+  "actual_timeline": [
+    {
+      "timestamp": "2021-02-13T00:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.2903,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.402,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.2192,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.5829,
+          "stress_level": "yellow"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-13T01:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.2902,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.3958,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.2031,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.5416,
+          "stress_level": "yellow"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-13T02:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.2616,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.5044,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.2588,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.537,
+          "stress_level": "yellow"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-13T03:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.2678,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.4972,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.209,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.4841,
+          "stress_level": "yellow"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-13T04:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.3117,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.4982,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.2815,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.4612,
+          "stress_level": "yellow"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-13T05:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.2602,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.4514,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.2454,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.4331,
+          "stress_level": "yellow"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-13T06:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.2793,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.4602,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.2613,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.3599,
+          "stress_level": "green"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-13T07:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.3007,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.4223,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.2444,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.3721,
+          "stress_level": "green"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-13T08:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.2852,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.408,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.2116,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.396,
+          "stress_level": "green"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-13T09:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.2839,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.3769,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.1796,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.3429,
+          "stress_level": "green"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-13T10:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.3317,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.3421,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.1539,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.3728,
+          "stress_level": "green"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-13T11:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.3224,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.2866,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.1022,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.3698,
+          "stress_level": "green"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-13T12:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.3385,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.2423,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.0613,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.421,
+          "stress_level": "yellow"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-13T13:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.3197,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.24,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.0378,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.4651,
+          "stress_level": "yellow"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-13T14:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.3015,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.1896,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.0,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.5121,
+          "stress_level": "yellow"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-13T15:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.3326,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.2066,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.0,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.5702,
+          "stress_level": "yellow"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-13T16:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.3086,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.1875,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.0,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.6148,
+          "stress_level": "yellow"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-13T17:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.2915,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.188,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.0,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.6648,
+          "stress_level": "yellow"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-13T18:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.3127,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.1719,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.0111,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.7318,
+          "stress_level": "red"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-13T19:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.3125,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.1956,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.0,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.7972,
+          "stress_level": "red"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-13T20:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.3146,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.2154,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.0304,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.8082,
+          "stress_level": "red"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-13T21:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.3289,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.2756,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.0995,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.8042,
+          "stress_level": "red"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-13T22:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.3075,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.353,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.1489,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.7871,
+          "stress_level": "red"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-13T23:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.3653,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.3367,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.1767,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.7934,
+          "stress_level": "red"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-14T00:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.2965,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.4049,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.1854,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.7892,
+          "stress_level": "red"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-14T01:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.3257,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.4313,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.2318,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.723,
+          "stress_level": "red"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-14T02:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.3469,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.4576,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.2604,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.6844,
+          "stress_level": "yellow"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-14T03:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.3177,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.4724,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.3022,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.6336,
+          "stress_level": "yellow"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-14T04:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.3192,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.4554,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.305,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.6191,
+          "stress_level": "yellow"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-14T05:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.3045,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.4722,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.2963,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.5914,
+          "stress_level": "yellow"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-14T06:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.3409,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.4697,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.3171,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.5323,
+          "stress_level": "yellow"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-14T07:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.2959,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.4347,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.2703,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.5446,
+          "stress_level": "yellow"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-14T08:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.3364,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.4626,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.2311,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.5034,
+          "stress_level": "yellow"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-14T09:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.2995,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.4498,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.2361,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.5244,
+          "stress_level": "yellow"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-14T10:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.3633,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.3818,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.1671,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.5514,
+          "stress_level": "yellow"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-14T11:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.3386,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.3316,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.1156,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.5427,
+          "stress_level": "yellow"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-14T12:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.3081,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.3389,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.0709,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.5861,
+          "stress_level": "yellow"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-14T13:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.3533,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.2683,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.0624,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.6734,
+          "stress_level": "yellow"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-14T14:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.3063,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.2364,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.0358,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.6927,
+          "stress_level": "yellow"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-14T15:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.3501,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.2316,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.0277,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.7612,
+          "stress_level": "red"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-14T16:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.3379,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.1985,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.0,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.8344,
+          "stress_level": "red"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-14T17:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.2752,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.2047,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.0,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.8191,
+          "stress_level": "red"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-14T18:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.3344,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.1913,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.0315,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.9016,
+          "stress_level": "red"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-14T19:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.358,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.2295,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.0862,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.9186,
+          "stress_level": "red"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-14T20:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.2973,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.2551,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.0662,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.9136,
+          "stress_level": "red"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-14T21:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.3351,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.2955,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.0929,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.9764,
+          "stress_level": "red"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-14T22:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.3401,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.3419,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.1081,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 1.0,
+          "stress_level": "red"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-14T23:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.3524,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.4033,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.2155,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.9404,
+          "stress_level": "red"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-15T00:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.4711,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.531,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.3951,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 1.0,
+          "stress_level": "red"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-15T01:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.486,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.592,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.3858,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.9573,
+          "stress_level": "red"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-15T02:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.4152,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.5908,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.4361,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.9389,
+          "stress_level": "red"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-15T03:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.4798,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.6049,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.4199,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.9135,
+          "stress_level": "red"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-15T04:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.4364,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.6601,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.4282,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.9159,
+          "stress_level": "red"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-15T05:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.4226,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.6272,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.4356,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.7901,
+          "stress_level": "red"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-15T06:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.4762,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.5973,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.411,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.8011,
+          "stress_level": "red"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-15T07:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.4465,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.5894,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.4259,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.7767,
+          "stress_level": "red"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-15T08:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.4164,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.5811,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.369,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.748,
+          "stress_level": "red"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-15T09:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.446,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.5206,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.3098,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.7505,
+          "stress_level": "red"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-15T10:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.4324,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.4648,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.2966,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.752,
+          "stress_level": "red"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-15T11:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.4732,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.4098,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.2773,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.7574,
+          "stress_level": "red"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-15T12:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.4924,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.4226,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.2152,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.8169,
+          "stress_level": "red"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-15T13:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.466,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.3482,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.1851,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.8098,
+          "stress_level": "red"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-15T14:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.4819,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.3634,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.1295,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.8456,
+          "stress_level": "red"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-15T15:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.464,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.3051,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.1379,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.9075,
+          "stress_level": "red"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-15T16:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.4268,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.3337,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.1308,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.9398,
+          "stress_level": "red"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-15T17:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.4418,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.3447,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.1204,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.9729,
+          "stress_level": "red"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-15T18:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.4688,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.3463,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.1445,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 1.0,
+          "stress_level": "red"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-15T19:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.4987,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.3616,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.1226,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 1.0,
+          "stress_level": "red"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-15T20:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.4874,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.4174,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.177,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 1.0,
+          "stress_level": "red"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-15T21:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.4256,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.3992,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.1987,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 1.0,
+          "stress_level": "red"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-15T22:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.4738,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.4273,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.2405,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 1.0,
+          "stress_level": "red"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-15T23:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.4935,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.5084,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.3007,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.9786,
+          "stress_level": "red"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-16T00:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.4695,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.5236,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.3149,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 1.0,
+          "stress_level": "red"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-16T01:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.4563,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.5383,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.3687,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.946,
+          "stress_level": "red"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-16T02:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.4607,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.6016,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.4183,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.897,
+          "stress_level": "red"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-16T03:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.4402,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.6117,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.4273,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.872,
+          "stress_level": "red"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-16T04:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.4291,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.588,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.4267,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.797,
+          "stress_level": "red"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-16T05:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.469,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.6068,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.4432,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.7643,
+          "stress_level": "red"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-16T06:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.4805,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.6456,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.4122,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.7131,
+          "stress_level": "red"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-16T07:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.4361,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.5535,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.3924,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.6775,
+          "stress_level": "yellow"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-16T08:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.459,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.5269,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.344,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.6399,
+          "stress_level": "yellow"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-16T09:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.4606,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.523,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.3135,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.6249,
+          "stress_level": "yellow"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-16T10:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.4671,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.495,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.269,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.6475,
+          "stress_level": "yellow"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-16T11:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.4114,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.4646,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.2677,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.6558,
+          "stress_level": "yellow"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-16T12:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.4125,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.4191,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.1899,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.6346,
+          "stress_level": "yellow"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-16T13:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.4448,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.3572,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.1747,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.7131,
+          "stress_level": "red"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-16T14:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.4417,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.3334,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.1545,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.7026,
+          "stress_level": "red"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-16T15:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.4349,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.2971,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.079,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.7488,
+          "stress_level": "red"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-16T16:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.4672,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.3102,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.1481,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.8357,
+          "stress_level": "red"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-16T17:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.4448,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.3027,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.1248,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.8308,
+          "stress_level": "red"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-16T18:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.4772,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.3449,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.1516,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.8838,
+          "stress_level": "red"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-16T19:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.4518,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.3635,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.1052,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.9049,
+          "stress_level": "red"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-16T20:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.4332,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.365,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.1376,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.8729,
+          "stress_level": "red"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-16T21:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.4393,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.396,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.1947,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.8962,
+          "stress_level": "red"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-16T22:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.4419,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.4595,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.2369,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.8536,
+          "stress_level": "red"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-16T23:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.4327,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.4924,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.2821,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.8727,
+          "stress_level": "red"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-17T00:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.4479,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.5164,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.3057,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.8577,
+          "stress_level": "red"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-17T01:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.4067,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.5319,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.3535,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.797,
+          "stress_level": "red"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-17T02:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.4075,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.5467,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.4039,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.7262,
+          "stress_level": "red"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-17T03:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.4078,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.6402,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.3647,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.6718,
+          "stress_level": "yellow"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-17T04:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.4507,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.6226,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.3867,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.62,
+          "stress_level": "yellow"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-17T05:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.4345,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.6104,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.4081,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.6073,
+          "stress_level": "yellow"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-17T06:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.4365,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.5712,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.4059,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.5436,
+          "stress_level": "yellow"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-17T07:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.3959,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.5791,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.3609,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.5313,
+          "stress_level": "yellow"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-17T08:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.4182,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.5525,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.3303,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.4841,
+          "stress_level": "yellow"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-17T09:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.4207,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.5238,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.2917,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.4749,
+          "stress_level": "yellow"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-17T10:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.4137,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.4486,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.2825,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.4762,
+          "stress_level": "yellow"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-17T11:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.4511,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.4146,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.2343,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.4586,
+          "stress_level": "yellow"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-17T12:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.399,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.4208,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.1837,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.5161,
+          "stress_level": "yellow"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-17T13:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.3996,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.3505,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.1354,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.4996,
+          "stress_level": "yellow"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-17T14:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.4322,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.3253,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.0942,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.5703,
+          "stress_level": "yellow"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-17T15:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.4298,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.278,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.0843,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.5641,
+          "stress_level": "yellow"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-17T16:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.4122,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.2698,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.0644,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.6641,
+          "stress_level": "yellow"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-17T17:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.4261,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.2712,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.071,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.7018,
+          "stress_level": "red"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-17T18:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.4173,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.2905,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.0922,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.7132,
+          "stress_level": "red"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-17T19:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.4339,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.3504,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.1265,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.7329,
+          "stress_level": "red"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-17T20:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.3959,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.3343,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.1374,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.7881,
+          "stress_level": "red"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-17T21:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.4106,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.3972,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.2068,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.778,
+          "stress_level": "red"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-17T22:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.405,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.4266,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.2287,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.746,
+          "stress_level": "red"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-17T23:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.4209,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.4721,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.278,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.7258,
+          "stress_level": "red"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-18T00:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.41,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.4874,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.3175,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.7163,
+          "stress_level": "red"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-18T01:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.4167,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.512,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.3272,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.6491,
+          "stress_level": "yellow"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-18T02:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.3968,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.5348,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.3221,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.5667,
+          "stress_level": "yellow"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-18T03:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.4324,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.5666,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.412,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.5542,
+          "stress_level": "yellow"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-18T04:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.3984,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.5607,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.3808,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.4743,
+          "stress_level": "yellow"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-18T05:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.4157,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.5781,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.348,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.4398,
+          "stress_level": "yellow"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-18T06:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.4401,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.5475,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.3288,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.4495,
+          "stress_level": "yellow"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-18T07:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.3983,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.532,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.3617,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.3986,
+          "stress_level": "green"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-18T08:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.3993,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.5069,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.2776,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.338,
+          "stress_level": "green"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-18T09:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.4345,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.4926,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.2685,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.379,
+          "stress_level": "green"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-18T10:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.4003,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.4288,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.2255,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.3326,
+          "stress_level": "green"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-18T11:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.3581,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.4105,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.1865,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.3787,
+          "stress_level": "green"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-18T12:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.4155,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.3543,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.1679,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.4335,
+          "stress_level": "yellow"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-18T13:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.4121,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.3373,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.1408,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.4126,
+          "stress_level": "yellow"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-18T14:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.4285,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.3099,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.0931,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.469,
+          "stress_level": "yellow"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-18T15:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.4056,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.2581,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.0507,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.4773,
+          "stress_level": "yellow"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-18T16:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.3992,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.3188,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.0807,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.531,
+          "stress_level": "yellow"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-18T17:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.4071,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.2787,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.078,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.5726,
+          "stress_level": "yellow"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-18T18:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.4027,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.2938,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.1012,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.6279,
+          "stress_level": "yellow"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-18T19:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.4028,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.3157,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.1336,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.6477,
+          "stress_level": "yellow"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-18T20:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.3913,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.3585,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.1352,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.6293,
+          "stress_level": "yellow"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-18T21:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.3949,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.3329,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.1327,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.6451,
+          "stress_level": "yellow"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-18T22:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.3758,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.4207,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.2188,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.644,
+          "stress_level": "yellow"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-18T23:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.4135,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.4141,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.2479,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.639,
+          "stress_level": "yellow"
+        }
+      ]
+    },
+    {
+      "timestamp": "2021-02-19T00:00:00Z",
+      "node_states": [
+        {
+          "node_id": "dominion_hub",
+          "stress": 0.3609,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "caiso_sp15",
+          "stress": 0.5289,
+          "stress_level": "yellow"
+        },
+        {
+          "node_id": "caiso_np15",
+          "stress": 0.3073,
+          "stress_level": "green"
+        },
+        {
+          "node_id": "ercot_houston",
+          "stress": 0.5924,
+          "stress_level": "yellow"
+        }
+      ]
+    }
+  ]
+}

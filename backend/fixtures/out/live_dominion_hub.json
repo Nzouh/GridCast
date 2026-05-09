@@ -1,0 +1,859 @@
+{
+  "node_id": "dominion_hub",
+  "timestamp": "2026-05-09T14:00:00Z",
+  "demand_mw": 19626.6,
+  "lmp_usd_per_mwh": 64.39,
+  "fuel_mix": {
+    "natural_gas": 0.42,
+    "nuclear": 0.28,
+    "coal": 0.1,
+    "wind": 0.08,
+    "solar": 0.07,
+    "hydro": 0.03,
+    "other": 0.02
+  },
+  "current_stress": 0.4132,
+  "stress_level": "yellow",
+  "last_7_days": [
+    {
+      "timestamp": "2026-05-02T14:00:00Z",
+      "actual_demand_mw": 19426.1,
+      "forecast_demand_mw": 20041.3
+    },
+    {
+      "timestamp": "2026-05-02T15:00:00Z",
+      "actual_demand_mw": 19274.4,
+      "forecast_demand_mw": 17985.6
+    },
+    {
+      "timestamp": "2026-05-02T16:00:00Z",
+      "actual_demand_mw": 19641.0,
+      "forecast_demand_mw": 19375.5
+    },
+    {
+      "timestamp": "2026-05-02T17:00:00Z",
+      "actual_demand_mw": 18972.8,
+      "forecast_demand_mw": 18810.9
+    },
+    {
+      "timestamp": "2026-05-02T18:00:00Z",
+      "actual_demand_mw": 19304.6,
+      "forecast_demand_mw": 18684.6
+    },
+    {
+      "timestamp": "2026-05-02T19:00:00Z",
+      "actual_demand_mw": 19531.9,
+      "forecast_demand_mw": 19639.4
+    },
+    {
+      "timestamp": "2026-05-02T20:00:00Z",
+      "actual_demand_mw": 19533.6,
+      "forecast_demand_mw": 19555.8
+    },
+    {
+      "timestamp": "2026-05-02T21:00:00Z",
+      "actual_demand_mw": 19496.6,
+      "forecast_demand_mw": 17984.9
+    },
+    {
+      "timestamp": "2026-05-02T22:00:00Z",
+      "actual_demand_mw": 19450.0,
+      "forecast_demand_mw": 18817.6
+    },
+    {
+      "timestamp": "2026-05-02T23:00:00Z",
+      "actual_demand_mw": 19839.1,
+      "forecast_demand_mw": 19422.5
+    },
+    {
+      "timestamp": "2026-05-03T00:00:00Z",
+      "actual_demand_mw": 19948.6,
+      "forecast_demand_mw": 19458.6
+    },
+    {
+      "timestamp": "2026-05-03T01:00:00Z",
+      "actual_demand_mw": 19604.6,
+      "forecast_demand_mw": 19483.6
+    },
+    {
+      "timestamp": "2026-05-03T02:00:00Z",
+      "actual_demand_mw": 19433.9,
+      "forecast_demand_mw": 19272.9
+    },
+    {
+      "timestamp": "2026-05-03T03:00:00Z",
+      "actual_demand_mw": 19480.6,
+      "forecast_demand_mw": 19082.6
+    },
+    {
+      "timestamp": "2026-05-03T04:00:00Z",
+      "actual_demand_mw": 19420.0,
+      "forecast_demand_mw": 19882.9
+    },
+    {
+      "timestamp": "2026-05-03T05:00:00Z",
+      "actual_demand_mw": 19182.9,
+      "forecast_demand_mw": 19193.0
+    },
+    {
+      "timestamp": "2026-05-03T06:00:00Z",
+      "actual_demand_mw": 19056.3,
+      "forecast_demand_mw": 19195.7
+    },
+    {
+      "timestamp": "2026-05-03T07:00:00Z",
+      "actual_demand_mw": 19409.3,
+      "forecast_demand_mw": 19097.2
+    },
+    {
+      "timestamp": "2026-05-03T08:00:00Z",
+      "actual_demand_mw": 19239.5,
+      "forecast_demand_mw": 20022.4
+    },
+    {
+      "timestamp": "2026-05-03T09:00:00Z",
+      "actual_demand_mw": 19553.1,
+      "forecast_demand_mw": 19657.6
+    },
+    {
+      "timestamp": "2026-05-03T10:00:00Z",
+      "actual_demand_mw": 19226.3,
+      "forecast_demand_mw": 19100.9
+    },
+    {
+      "timestamp": "2026-05-03T11:00:00Z",
+      "actual_demand_mw": 19170.3,
+      "forecast_demand_mw": 19154.5
+    },
+    {
+      "timestamp": "2026-05-03T12:00:00Z",
+      "actual_demand_mw": 19739.3,
+      "forecast_demand_mw": 20015.4
+    },
+    {
+      "timestamp": "2026-05-03T13:00:00Z",
+      "actual_demand_mw": 19392.0,
+      "forecast_demand_mw": 19092.3
+    },
+    {
+      "timestamp": "2026-05-03T14:00:00Z",
+      "actual_demand_mw": 19099.2,
+      "forecast_demand_mw": 19938.0
+    },
+    {
+      "timestamp": "2026-05-03T15:00:00Z",
+      "actual_demand_mw": 19619.4,
+      "forecast_demand_mw": 19069.6
+    },
+    {
+      "timestamp": "2026-05-03T16:00:00Z",
+      "actual_demand_mw": 19256.7,
+      "forecast_demand_mw": 19310.6
+    },
+    {
+      "timestamp": "2026-05-03T17:00:00Z",
+      "actual_demand_mw": 19463.9,
+      "forecast_demand_mw": 19630.9
+    },
+    {
+      "timestamp": "2026-05-03T18:00:00Z",
+      "actual_demand_mw": 19704.2,
+      "forecast_demand_mw": 19804.9
+    },
+    {
+      "timestamp": "2026-05-03T19:00:00Z",
+      "actual_demand_mw": 19794.5,
+      "forecast_demand_mw": 19275.6
+    },
+    {
+      "timestamp": "2026-05-03T20:00:00Z",
+      "actual_demand_mw": 19547.3,
+      "forecast_demand_mw": 19077.0
+    },
+    {
+      "timestamp": "2026-05-03T21:00:00Z",
+      "actual_demand_mw": 19387.6,
+      "forecast_demand_mw": 20475.5
+    },
+    {
+      "timestamp": "2026-05-03T22:00:00Z",
+      "actual_demand_mw": 19230.9,
+      "forecast_demand_mw": 18864.9
+    },
+    {
+      "timestamp": "2026-05-03T23:00:00Z",
+      "actual_demand_mw": 19412.2,
+      "forecast_demand_mw": 19060.8
+    },
+    {
+      "timestamp": "2026-05-04T00:00:00Z",
+      "actual_demand_mw": 20170.8,
+      "forecast_demand_mw": 20475.7
+    },
+    {
+      "timestamp": "2026-05-04T01:00:00Z",
+      "actual_demand_mw": 19792.0,
+      "forecast_demand_mw": 19801.2
+    },
+    {
+      "timestamp": "2026-05-04T02:00:00Z",
+      "actual_demand_mw": 20032.2,
+      "forecast_demand_mw": 19489.4
+    },
+    {
+      "timestamp": "2026-05-04T03:00:00Z",
+      "actual_demand_mw": 19596.5,
+      "forecast_demand_mw": 20245.0
+    },
+    {
+      "timestamp": "2026-05-04T04:00:00Z",
+      "actual_demand_mw": 20102.4,
+      "forecast_demand_mw": 20340.8
+    },
+    {
+      "timestamp": "2026-05-04T05:00:00Z",
+      "actual_demand_mw": 20040.7,
+      "forecast_demand_mw": 19712.0
+    },
+    {
+      "timestamp": "2026-05-04T06:00:00Z",
+      "actual_demand_mw": 19852.9,
+      "forecast_demand_mw": 19830.1
+    },
+    {
+      "timestamp": "2026-05-04T07:00:00Z",
+      "actual_demand_mw": 19733.6,
+      "forecast_demand_mw": 19550.9
+    },
+    {
+      "timestamp": "2026-05-04T08:00:00Z",
+      "actual_demand_mw": 19919.3,
+      "forecast_demand_mw": 20360.9
+    },
+    {
+      "timestamp": "2026-05-04T09:00:00Z",
+      "actual_demand_mw": 19736.0,
+      "forecast_demand_mw": 19979.8
+    },
+    {
+      "timestamp": "2026-05-04T10:00:00Z",
+      "actual_demand_mw": 19783.9,
+      "forecast_demand_mw": 19692.8
+    },
+    {
+      "timestamp": "2026-05-04T11:00:00Z",
+      "actual_demand_mw": 20137.5,
+      "forecast_demand_mw": 19582.7
+    },
+    {
+      "timestamp": "2026-05-04T12:00:00Z",
+      "actual_demand_mw": 20311.6,
+      "forecast_demand_mw": 20113.0
+    },
+    {
+      "timestamp": "2026-05-04T13:00:00Z",
+      "actual_demand_mw": 19955.8,
+      "forecast_demand_mw": 19918.0
+    },
+    {
+      "timestamp": "2026-05-04T14:00:00Z",
+      "actual_demand_mw": 20255.0,
+      "forecast_demand_mw": 20076.2
+    },
+    {
+      "timestamp": "2026-05-04T15:00:00Z",
+      "actual_demand_mw": 20143.8,
+      "forecast_demand_mw": 19411.2
+    },
+    {
+      "timestamp": "2026-05-04T16:00:00Z",
+      "actual_demand_mw": 20301.6,
+      "forecast_demand_mw": 20628.4
+    },
+    {
+      "timestamp": "2026-05-04T17:00:00Z",
+      "actual_demand_mw": 20269.5,
+      "forecast_demand_mw": 20641.9
+    },
+    {
+      "timestamp": "2026-05-04T18:00:00Z",
+      "actual_demand_mw": 19689.0,
+      "forecast_demand_mw": 18500.4
+    },
+    {
+      "timestamp": "2026-05-04T19:00:00Z",
+      "actual_demand_mw": 19915.8,
+      "forecast_demand_mw": 19261.0
+    },
+    {
+      "timestamp": "2026-05-04T20:00:00Z",
+      "actual_demand_mw": 19925.1,
+      "forecast_demand_mw": 19884.7
+    },
+    {
+      "timestamp": "2026-05-04T21:00:00Z",
+      "actual_demand_mw": 19854.4,
+      "forecast_demand_mw": 19323.5
+    },
+    {
+      "timestamp": "2026-05-04T22:00:00Z",
+      "actual_demand_mw": 20046.0,
+      "forecast_demand_mw": 19192.3
+    },
+    {
+      "timestamp": "2026-05-04T23:00:00Z",
+      "actual_demand_mw": 19872.1,
+      "forecast_demand_mw": 19866.0
+    },
+    {
+      "timestamp": "2026-05-05T00:00:00Z",
+      "actual_demand_mw": 19688.2,
+      "forecast_demand_mw": 19323.5
+    },
+    {
+      "timestamp": "2026-05-05T01:00:00Z",
+      "actual_demand_mw": 19817.7,
+      "forecast_demand_mw": 20346.7
+    },
+    {
+      "timestamp": "2026-05-05T02:00:00Z",
+      "actual_demand_mw": 19963.3,
+      "forecast_demand_mw": 20265.2
+    },
+    {
+      "timestamp": "2026-05-05T03:00:00Z",
+      "actual_demand_mw": 20111.1,
+      "forecast_demand_mw": 19676.1
+    },
+    {
+      "timestamp": "2026-05-05T04:00:00Z",
+      "actual_demand_mw": 19800.6,
+      "forecast_demand_mw": 19300.6
+    },
+    {
+      "timestamp": "2026-05-05T05:00:00Z",
+      "actual_demand_mw": 20125.7,
+      "forecast_demand_mw": 20225.9
+    },
+    {
+      "timestamp": "2026-05-05T06:00:00Z",
+      "actual_demand_mw": 19789.9,
+      "forecast_demand_mw": 19755.2
+    },
+    {
+      "timestamp": "2026-05-05T07:00:00Z",
+      "actual_demand_mw": 20072.1,
+      "forecast_demand_mw": 19708.8
+    },
+    {
+      "timestamp": "2026-05-05T08:00:00Z",
+      "actual_demand_mw": 19960.0,
+      "forecast_demand_mw": 20112.2
+    },
+    {
+      "timestamp": "2026-05-05T09:00:00Z",
+      "actual_demand_mw": 19935.2,
+      "forecast_demand_mw": 20831.3
+    },
+    {
+      "timestamp": "2026-05-05T10:00:00Z",
+      "actual_demand_mw": 20050.1,
+      "forecast_demand_mw": 21298.3
+    },
+    {
+      "timestamp": "2026-05-05T11:00:00Z",
+      "actual_demand_mw": 20063.4,
+      "forecast_demand_mw": 19422.9
+    },
+    {
+      "timestamp": "2026-05-05T12:00:00Z",
+      "actual_demand_mw": 20188.2,
+      "forecast_demand_mw": 19589.2
+    },
+    {
+      "timestamp": "2026-05-05T13:00:00Z",
+      "actual_demand_mw": 20279.0,
+      "forecast_demand_mw": 20889.1
+    },
+    {
+      "timestamp": "2026-05-05T14:00:00Z",
+      "actual_demand_mw": 19915.1,
+      "forecast_demand_mw": 19343.3
+    },
+    {
+      "timestamp": "2026-05-05T15:00:00Z",
+      "actual_demand_mw": 19886.1,
+      "forecast_demand_mw": 19691.3
+    },
+    {
+      "timestamp": "2026-05-05T16:00:00Z",
+      "actual_demand_mw": 20404.9,
+      "forecast_demand_mw": 20785.8
+    },
+    {
+      "timestamp": "2026-05-05T17:00:00Z",
+      "actual_demand_mw": 19698.8,
+      "forecast_demand_mw": 20055.2
+    },
+    {
+      "timestamp": "2026-05-05T18:00:00Z",
+      "actual_demand_mw": 19807.2,
+      "forecast_demand_mw": 20964.9
+    },
+    {
+      "timestamp": "2026-05-05T19:00:00Z",
+      "actual_demand_mw": 19880.2,
+      "forecast_demand_mw": 19988.1
+    },
+    {
+      "timestamp": "2026-05-05T20:00:00Z",
+      "actual_demand_mw": 20027.5,
+      "forecast_demand_mw": 20720.3
+    },
+    {
+      "timestamp": "2026-05-05T21:00:00Z",
+      "actual_demand_mw": 20122.6,
+      "forecast_demand_mw": 20583.1
+    },
+    {
+      "timestamp": "2026-05-05T22:00:00Z",
+      "actual_demand_mw": 20009.7,
+      "forecast_demand_mw": 19035.9
+    },
+    {
+      "timestamp": "2026-05-05T23:00:00Z",
+      "actual_demand_mw": 19298.8,
+      "forecast_demand_mw": 19489.4
+    },
+    {
+      "timestamp": "2026-05-06T00:00:00Z",
+      "actual_demand_mw": 19890.4,
+      "forecast_demand_mw": 20459.5
+    },
+    {
+      "timestamp": "2026-05-06T01:00:00Z",
+      "actual_demand_mw": 20289.2,
+      "forecast_demand_mw": 20527.1
+    },
+    {
+      "timestamp": "2026-05-06T02:00:00Z",
+      "actual_demand_mw": 20373.0,
+      "forecast_demand_mw": 20447.0
+    },
+    {
+      "timestamp": "2026-05-06T03:00:00Z",
+      "actual_demand_mw": 20105.0,
+      "forecast_demand_mw": 19836.4
+    },
+    {
+      "timestamp": "2026-05-06T04:00:00Z",
+      "actual_demand_mw": 20207.3,
+      "forecast_demand_mw": 20230.3
+    },
+    {
+      "timestamp": "2026-05-06T05:00:00Z",
+      "actual_demand_mw": 20152.2,
+      "forecast_demand_mw": 20404.9
+    },
+    {
+      "timestamp": "2026-05-06T06:00:00Z",
+      "actual_demand_mw": 20271.3,
+      "forecast_demand_mw": 20033.6
+    },
+    {
+      "timestamp": "2026-05-06T07:00:00Z",
+      "actual_demand_mw": 20271.5,
+      "forecast_demand_mw": 19938.6
+    },
+    {
+      "timestamp": "2026-05-06T08:00:00Z",
+      "actual_demand_mw": 20143.0,
+      "forecast_demand_mw": 20821.2
+    },
+    {
+      "timestamp": "2026-05-06T09:00:00Z",
+      "actual_demand_mw": 20222.7,
+      "forecast_demand_mw": 19360.1
+    },
+    {
+      "timestamp": "2026-05-06T10:00:00Z",
+      "actual_demand_mw": 20110.6,
+      "forecast_demand_mw": 20418.0
+    },
+    {
+      "timestamp": "2026-05-06T11:00:00Z",
+      "actual_demand_mw": 19958.0,
+      "forecast_demand_mw": 19858.4
+    },
+    {
+      "timestamp": "2026-05-06T12:00:00Z",
+      "actual_demand_mw": 20088.1,
+      "forecast_demand_mw": 19953.1
+    },
+    {
+      "timestamp": "2026-05-06T13:00:00Z",
+      "actual_demand_mw": 20128.4,
+      "forecast_demand_mw": 20423.5
+    },
+    {
+      "timestamp": "2026-05-06T14:00:00Z",
+      "actual_demand_mw": 19983.2,
+      "forecast_demand_mw": 19931.4
+    },
+    {
+      "timestamp": "2026-05-06T15:00:00Z",
+      "actual_demand_mw": 20164.4,
+      "forecast_demand_mw": 19197.2
+    },
+    {
+      "timestamp": "2026-05-06T16:00:00Z",
+      "actual_demand_mw": 20019.5,
+      "forecast_demand_mw": 19558.3
+    },
+    {
+      "timestamp": "2026-05-06T17:00:00Z",
+      "actual_demand_mw": 20212.8,
+      "forecast_demand_mw": 19507.1
+    },
+    {
+      "timestamp": "2026-05-06T18:00:00Z",
+      "actual_demand_mw": 19695.4,
+      "forecast_demand_mw": 20373.7
+    },
+    {
+      "timestamp": "2026-05-06T19:00:00Z",
+      "actual_demand_mw": 20451.6,
+      "forecast_demand_mw": 20584.2
+    },
+    {
+      "timestamp": "2026-05-06T20:00:00Z",
+      "actual_demand_mw": 19667.7,
+      "forecast_demand_mw": 18820.0
+    },
+    {
+      "timestamp": "2026-05-06T21:00:00Z",
+      "actual_demand_mw": 20245.6,
+      "forecast_demand_mw": 20607.3
+    },
+    {
+      "timestamp": "2026-05-06T22:00:00Z",
+      "actual_demand_mw": 20342.7,
+      "forecast_demand_mw": 20156.7
+    },
+    {
+      "timestamp": "2026-05-06T23:00:00Z",
+      "actual_demand_mw": 19855.5,
+      "forecast_demand_mw": 19279.4
+    },
+    {
+      "timestamp": "2026-05-07T00:00:00Z",
+      "actual_demand_mw": 20400.4,
+      "forecast_demand_mw": 20081.0
+    },
+    {
+      "timestamp": "2026-05-07T01:00:00Z",
+      "actual_demand_mw": 20271.5,
+      "forecast_demand_mw": 19852.4
+    },
+    {
+      "timestamp": "2026-05-07T02:00:00Z",
+      "actual_demand_mw": 20535.8,
+      "forecast_demand_mw": 21710.9
+    },
+    {
+      "timestamp": "2026-05-07T03:00:00Z",
+      "actual_demand_mw": 20327.6,
+      "forecast_demand_mw": 20102.2
+    },
+    {
+      "timestamp": "2026-05-07T04:00:00Z",
+      "actual_demand_mw": 20190.2,
+      "forecast_demand_mw": 20505.5
+    },
+    {
+      "timestamp": "2026-05-07T05:00:00Z",
+      "actual_demand_mw": 20211.6,
+      "forecast_demand_mw": 20181.0
+    },
+    {
+      "timestamp": "2026-05-07T06:00:00Z",
+      "actual_demand_mw": 19639.7,
+      "forecast_demand_mw": 19353.1
+    },
+    {
+      "timestamp": "2026-05-07T07:00:00Z",
+      "actual_demand_mw": 20092.8,
+      "forecast_demand_mw": 19861.6
+    },
+    {
+      "timestamp": "2026-05-07T08:00:00Z",
+      "actual_demand_mw": 20200.6,
+      "forecast_demand_mw": 20385.2
+    },
+    {
+      "timestamp": "2026-05-07T09:00:00Z",
+      "actual_demand_mw": 19944.7,
+      "forecast_demand_mw": 21003.5
+    },
+    {
+      "timestamp": "2026-05-07T10:00:00Z",
+      "actual_demand_mw": 19835.8,
+      "forecast_demand_mw": 19776.5
+    },
+    {
+      "timestamp": "2026-05-07T11:00:00Z",
+      "actual_demand_mw": 20075.8,
+      "forecast_demand_mw": 20324.5
+    },
+    {
+      "timestamp": "2026-05-07T12:00:00Z",
+      "actual_demand_mw": 19944.8,
+      "forecast_demand_mw": 20465.5
+    },
+    {
+      "timestamp": "2026-05-07T13:00:00Z",
+      "actual_demand_mw": 19793.2,
+      "forecast_demand_mw": 19984.4
+    },
+    {
+      "timestamp": "2026-05-07T14:00:00Z",
+      "actual_demand_mw": 20376.5,
+      "forecast_demand_mw": 21015.4
+    },
+    {
+      "timestamp": "2026-05-07T15:00:00Z",
+      "actual_demand_mw": 20125.9,
+      "forecast_demand_mw": 20864.2
+    },
+    {
+      "timestamp": "2026-05-07T16:00:00Z",
+      "actual_demand_mw": 20139.0,
+      "forecast_demand_mw": 20223.8
+    },
+    {
+      "timestamp": "2026-05-07T17:00:00Z",
+      "actual_demand_mw": 19626.3,
+      "forecast_demand_mw": 19331.4
+    },
+    {
+      "timestamp": "2026-05-07T18:00:00Z",
+      "actual_demand_mw": 19989.0,
+      "forecast_demand_mw": 19339.7
+    },
+    {
+      "timestamp": "2026-05-07T19:00:00Z",
+      "actual_demand_mw": 20220.8,
+      "forecast_demand_mw": 20154.6
+    },
+    {
+      "timestamp": "2026-05-07T20:00:00Z",
+      "actual_demand_mw": 20064.6,
+      "forecast_demand_mw": 20637.7
+    },
+    {
+      "timestamp": "2026-05-07T21:00:00Z",
+      "actual_demand_mw": 20000.8,
+      "forecast_demand_mw": 19781.4
+    },
+    {
+      "timestamp": "2026-05-07T22:00:00Z",
+      "actual_demand_mw": 20045.8,
+      "forecast_demand_mw": 19964.3
+    },
+    {
+      "timestamp": "2026-05-07T23:00:00Z",
+      "actual_demand_mw": 19545.2,
+      "forecast_demand_mw": 19462.4
+    },
+    {
+      "timestamp": "2026-05-08T00:00:00Z",
+      "actual_demand_mw": 20464.6,
+      "forecast_demand_mw": 21037.6
+    },
+    {
+      "timestamp": "2026-05-08T01:00:00Z",
+      "actual_demand_mw": 19693.4,
+      "forecast_demand_mw": 19053.2
+    },
+    {
+      "timestamp": "2026-05-08T02:00:00Z",
+      "actual_demand_mw": 19995.1,
+      "forecast_demand_mw": 19719.0
+    },
+    {
+      "timestamp": "2026-05-08T03:00:00Z",
+      "actual_demand_mw": 19809.3,
+      "forecast_demand_mw": 20354.2
+    },
+    {
+      "timestamp": "2026-05-08T04:00:00Z",
+      "actual_demand_mw": 20144.4,
+      "forecast_demand_mw": 20127.1
+    },
+    {
+      "timestamp": "2026-05-08T05:00:00Z",
+      "actual_demand_mw": 19792.9,
+      "forecast_demand_mw": 20149.4
+    },
+    {
+      "timestamp": "2026-05-08T06:00:00Z",
+      "actual_demand_mw": 19800.5,
+      "forecast_demand_mw": 20631.8
+    },
+    {
+      "timestamp": "2026-05-08T07:00:00Z",
+      "actual_demand_mw": 20289.9,
+      "forecast_demand_mw": 19888.7
+    },
+    {
+      "timestamp": "2026-05-08T08:00:00Z",
+      "actual_demand_mw": 20431.2,
+      "forecast_demand_mw": 20324.8
+    },
+    {
+      "timestamp": "2026-05-08T09:00:00Z",
+      "actual_demand_mw": 19933.7,
+      "forecast_demand_mw": 20717.4
+    },
+    {
+      "timestamp": "2026-05-08T10:00:00Z",
+      "actual_demand_mw": 19877.9,
+      "forecast_demand_mw": 20871.5
+    },
+    {
+      "timestamp": "2026-05-08T11:00:00Z",
+      "actual_demand_mw": 19987.6,
+      "forecast_demand_mw": 19640.6
+    },
+    {
+      "timestamp": "2026-05-08T12:00:00Z",
+      "actual_demand_mw": 19907.5,
+      "forecast_demand_mw": 20594.4
+    },
+    {
+      "timestamp": "2026-05-08T13:00:00Z",
+      "actual_demand_mw": 20368.5,
+      "forecast_demand_mw": 20259.3
+    },
+    {
+      "timestamp": "2026-05-08T14:00:00Z",
+      "actual_demand_mw": 20205.0,
+      "forecast_demand_mw": 19924.6
+    },
+    {
+      "timestamp": "2026-05-08T15:00:00Z",
+      "actual_demand_mw": 19511.7,
+      "forecast_demand_mw": 18869.9
+    },
+    {
+      "timestamp": "2026-05-08T16:00:00Z",
+      "actual_demand_mw": 20288.5,
+      "forecast_demand_mw": 20545.5
+    },
+    {
+      "timestamp": "2026-05-08T17:00:00Z",
+      "actual_demand_mw": 19746.0,
+      "forecast_demand_mw": 19614.1
+    },
+    {
+      "timestamp": "2026-05-08T18:00:00Z",
+      "actual_demand_mw": 20380.4,
+      "forecast_demand_mw": 19740.4
+    },
+    {
+      "timestamp": "2026-05-08T19:00:00Z",
+      "actual_demand_mw": 20148.1,
+      "forecast_demand_mw": 20243.3
+    },
+    {
+      "timestamp": "2026-05-08T20:00:00Z",
+      "actual_demand_mw": 20066.7,
+      "forecast_demand_mw": 20181.6
+    },
+    {
+      "timestamp": "2026-05-08T21:00:00Z",
+      "actual_demand_mw": 20178.5,
+      "forecast_demand_mw": 19514.7
+    },
+    {
+      "timestamp": "2026-05-08T22:00:00Z",
+      "actual_demand_mw": 20036.0,
+      "forecast_demand_mw": 19671.8
+    },
+    {
+      "timestamp": "2026-05-08T23:00:00Z",
+      "actual_demand_mw": 20119.3,
+      "forecast_demand_mw": 20741.5
+    },
+    {
+      "timestamp": "2026-05-09T00:00:00Z",
+      "actual_demand_mw": 19422.4,
+      "forecast_demand_mw": 18975.0
+    },
+    {
+      "timestamp": "2026-05-09T01:00:00Z",
+      "actual_demand_mw": 19624.8,
+      "forecast_demand_mw": 19788.3
+    },
+    {
+      "timestamp": "2026-05-09T02:00:00Z",
+      "actual_demand_mw": 19255.1,
+      "forecast_demand_mw": 19291.8
+    },
+    {
+      "timestamp": "2026-05-09T03:00:00Z",
+      "actual_demand_mw": 19423.3,
+      "forecast_demand_mw": 19093.7
+    },
+    {
+      "timestamp": "2026-05-09T04:00:00Z",
+      "actual_demand_mw": 19534.8,
+      "forecast_demand_mw": 19626.5
+    },
+    {
+      "timestamp": "2026-05-09T05:00:00Z",
+      "actual_demand_mw": 19674.4,
+      "forecast_demand_mw": 19450.6
+    },
+    {
+      "timestamp": "2026-05-09T06:00:00Z",
+      "actual_demand_mw": 19716.3,
+      "forecast_demand_mw": 19766.9
+    },
+    {
+      "timestamp": "2026-05-09T07:00:00Z",
+      "actual_demand_mw": 19250.5,
+      "forecast_demand_mw": 19526.1
+    },
+    {
+      "timestamp": "2026-05-09T08:00:00Z",
+      "actual_demand_mw": 19759.2,
+      "forecast_demand_mw": 20151.4
+    },
+    {
+      "timestamp": "2026-05-09T09:00:00Z",
+      "actual_demand_mw": 20077.6,
+      "forecast_demand_mw": 19679.3
+    },
+    {
+      "timestamp": "2026-05-09T10:00:00Z",
+      "actual_demand_mw": 19580.5,
+      "forecast_demand_mw": 20329.9
+    },
+    {
+      "timestamp": "2026-05-09T11:00:00Z",
+      "actual_demand_mw": 19729.9,
+      "forecast_demand_mw": 19576.6
+    },
+    {
+      "timestamp": "2026-05-09T12:00:00Z",
+      "actual_demand_mw": 19677.2,
+      "forecast_demand_mw": 19181.1
+    },
+    {
+      "timestamp": "2026-05-09T13:00:00Z",
+      "actual_demand_mw": 19482.6,
+      "forecast_demand_mw": 19166.8
+    }
+  ]
+}

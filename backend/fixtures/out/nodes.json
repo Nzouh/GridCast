@@ -1,0 +1,73 @@
+{
+  "generated_at": "2026-05-09T14:00:00Z",
+  "nodes": [
+    {
+      "id": "dominion_hub",
+      "name": "Dominion Hub",
+      "balancing_authority": "PJM",
+      "region": "Northern Virginia",
+      "description": "Largest data center corridor in the world",
+      "lat": 38.95,
+      "lon": -77.45,
+      "current_stress": 0.3953,
+      "stress_level": "green",
+      "allocation": {
+        "percent": 52,
+        "confidence": 0.84,
+        "horizon_days": 10
+      },
+      "updated_at": "2026-05-09T14:00:00Z"
+    },
+    {
+      "id": "caiso_sp15",
+      "name": "CAISO SP15",
+      "balancing_authority": "CAISO",
+      "region": "Southern California (LA basin)",
+      "description": "Duck curve poster child; solar surplus midday, steep evening ramp",
+      "lat": 34.05,
+      "lon": -118.24,
+      "current_stress": 0.2887,
+      "stress_level": "green",
+      "allocation": {
+        "percent": 60,
+        "confidence": 0.86,
+        "horizon_days": 10
+      },
+      "updated_at": "2026-05-09T14:00:00Z"
+    },
+    {
+      "id": "caiso_np15",
+      "name": "CAISO NP15",
+      "balancing_authority": "CAISO",
+      "region": "Northern California (Bay Area)",
+      "description": "Bay Area tech hub load; mild climate, lower baseline stress",
+      "lat": 37.77,
+      "lon": -122.42,
+      "current_stress": 0.0899,
+      "stress_level": "green",
+      "allocation": {
+        "percent": 74,
+        "confidence": 0.9,
+        "horizon_days": 10
+      },
+      "updated_at": "2026-05-09T14:00:00Z"
+    },
+    {
+      "id": "ercot_houston",
+      "name": "ERCOT Houston Hub",
+      "balancing_authority": "ERCOT",
+      "region": "Houston, Texas",
+      "description": "Gulf Coast load center; AC-driven summer peak, exposed to winter cold snaps",
+      "lat": 29.76,
+      "lon": -95.37,
+      "current_stress": 0.4356,
+      "stress_level": "yellow",
+      "allocation": {
+        "percent": 50,
+        "confidence": 0.83,
+        "horizon_days": 10
+      },
+      "updated_at": "2026-05-09T14:00:00Z"
+    }
+  ]
+}
