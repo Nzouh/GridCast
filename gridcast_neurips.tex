@@ -1,0 +1,316 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage{neurips_2024}
+
+% Extra packages used in this paper
+\usepackage{xspace}
+\usepackage{url}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{makecell}
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage{parskip}
+\usepackage{float}
+
+\setlength{\parskip}{4pt}
+\setlength{\parindent}{12pt}
+
+% Convenience macros
+\newcommand{\gridcast}{\textsc{GridCast}\xspace}
+\newcommand{\graphcast}{\textsc{GraphCast}\xspace}
+\newcommand{\gencast}{\textsc{GenCast}\xspace}
+\newcommand{\eg}{\textit{e.g.,}\xspace}
+\newcommand{\ie}{\textit{i.e.,}\xspace}
+
+% ============================================================
+\title{GridCast: Probabilistic Grid Stress Forecasting\\
+       for Dynamic Data Center Power Allocation}
+
+\subtitle{Project Proposal $\vert$ Draft for Review}
+
+\author{%
+  \textit{[Author names omitted for review]}
+}
+
+\date{}
+
+% ============================================================
+\begin{document}
+
+\maketitle
+
+% ============================================================
+\begin{abstract}
+Data centers increasingly strain power grid infrastructure, yet flexible power contracts remain
+underutilised because utilities cannot forecast grid stress with enough confidence to underwrite
+contractual commitments. \gridcast is a probabilistic deep-learning pipeline that combines
+\graphcast and \gencast (Google DeepMind's deterministic and ensemble weather models) with
+regional grid context from the EIA API and node-level stress signals from Grid~Status
+locational marginal price (LMP) data. Together, these three layers produce
+confidence-bounded grid stress estimates at the transmission-node level, giving utilities the
+uncertainty-aware signal needed to offer dynamic power contracts. A key advantage is
+\graphcast's trainability: unlike physics-locked NWP models, it can be fine-tuned on recent
+observational data to adapt to shifting climate trends.
+\end{abstract}
+
+% ============================================================
+\section{Introduction and Problem Statement}
+
+The power grid is overbuilt by design, and most excess capacity sits idle nearly every day.
+Under flexible power contracts, data centers would commit to drawing less during grid stress
+events---compensating through workload shifting or graceful degradation---in exchange for
+access to that idle capacity at preferential rates.
+
+The bottleneck is not a lack of forecasting. Utilities already use meteorological inputs for
+demand forecasting. The problem is the \emph{absence of forecasting confident enough to
+underwrite contractual commitments}. Grid stress emerges from compounding tail-risk
+scenarios: a heatwave extending longer than forecast, a cold snap of unexpected severity,
+or high demand coinciding with renewable underperformance. Deterministic point forecasts
+cannot communicate the probability of such scenarios. Without uncertainty bounds, no utility
+can confidently offer a tiered contract, and no data center can reliably plan around one.
+
+\gridcast addresses this by producing confidence-bounded, node-level stress estimates over
+a 10-day horizon.
+
+% ============================================================
+\section{Why AI Weather Forecasting}
+
+\graphcast operates at $0.25$-degree global resolution and can be queried over precise
+coordinates, enabling node-level reasoning rather than regional averaging. As a learned model
+trained on the ERA5 reanalysis archive, it can be fine-tuned on recent data to adapt to
+shifting climate patterns, which physics-locked NWP systems cannot do. It also produces
+10-day global forecasts in under one minute, enabling near-real-time updates for hourly
+contract triggers.
+
+\gencast extends \graphcast by generating an \emph{ensemble} of plausible futures rather
+than a single deterministic trajectory. A utility does not need to know a heatwave \emph{will}
+occur; it needs to know the probability and severity range. This ensemble output is what makes
+the downstream stress signal actionable for contract design.
+
+% ============================================================
+\section{Proposed Approach}
+
+\subsection{Three-Layer Pipeline}
+
+\paragraph{Layer~1: Probabilistic Weather Forecasting (\graphcast + \gencast).}
+\graphcast forecasts key atmospheric variables at 6-hour intervals over a 10-day horizon.
+ERA5 reanalysis serves as the training ground truth; at inference time, \graphcast forecasts
+replace ERA5. \gencast wraps \graphcast's output with a diffusion-based ensemble,
+producing a distribution over plausible futures with explicit confidence intervals that
+propagate through the downstream layers.
+
+\paragraph{Layer~2: Regional Grid Context (EIA API).}
+EIA hourly demand and fuel-mix data from Form EIA-930 (\texttt{/v2/electricity/rto/}) are
+used to train the weather-to-load relationship for each Balancing Authority. EIA data also
+captures supply-side context: renewable penetration, available headroom, and the
+forecast-versus-actual demand delta. These variables are essential for identifying compounding
+scenarios where demand spikes coincide with renewable underperformance.
+
+\paragraph{Layer~3: Node-Level Stress Signal (Grid Status LMP).}
+Locational Marginal Price at a target node is the wholesale market's real-time expression of
+congestion and supply tightness at that specific location, providing the node-level resolution
+that EIA cannot supply. Historical nodal LMP from the open-source \texttt{gridstatus} Python
+library is used to train a mapping from regional stress to node-level price behaviour; day-ahead
+LMP serves as a forward signal at inference time.
+
+% ------------------------------------------------------------
+\subsection{Key Input Variables}
+
+Table~\ref{tab:inputs} summarises the input features, their sources, and their roles in the
+pipeline.
+
+\begin{table}[H]
+\centering
+\caption{Key input variables, data sources, and pipeline roles.}
+\label{tab:inputs}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{}lllX@{}}
+\toprule
+\textbf{Category} & \textbf{Variable} & \textbf{Source} & \textbf{Role} \\
+\midrule
+Weather & 2\,m Temperature & \graphcast / ERA5 & Primary demand driver \\
+Weather & 10\,m Wind Speed & \graphcast / ERA5 & Renewable generation proxy \\
+Weather & Ensemble Spread & \gencast & Uncertainty quantification \\
+\midrule
+Grid (EIA) & Hourly Actual Demand & EIA \texttt{/rto/region-data} & Training target variable \\
+Grid (EIA) & Generation by Fuel Type & EIA \texttt{/rto/fuel-type} & Renewable underperformance \\
+\midrule
+Grid (LMP) & Real-Time Nodal LMP & Grid Status & Node-level stress signal \\
+Grid (LMP) & LMP Congestion Component & Grid Status & Transmission constraint \\
+\midrule
+Engineered & Hour / Day / Month & Derived & Demand periodicity \\
+Engineered & Demand / Capacity Ratio & Derived from EIA & Interpretable stress metric \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+% ------------------------------------------------------------
+\subsection{Training and Output}
+
+The weather-to-grid-stress mapping is trained on ERA5 paired with EIA historical data from
+2018 to present, the period over which both are available at compatible resolution. Training on
+reanalysis rather than forecast outputs is essential: forecasts carry errors that would otherwise
+propagate into the learned mapping.
+
+At inference time, \graphcast and \gencast replace ERA5, and the pipeline produces a
+confidence-bounded probability distribution over grid stress at a target node over the 10-day
+horizon. This is operationalised as a \emph{recommended power allocation percentage}: the
+share of excess capacity at a given node that can safely be committed to a data center
+operator, conditioned on forecast confidence.
+
+% ============================================================
+\section{Validation}
+
+The pipeline is validated against historical EIA load data and nodal LMP during documented
+stress events. Three well-documented cases are used, covering distinct failure modes and
+grid topologies:
+
+\begin{itemize}
+  \item \textbf{2021 Texas Winter Storm.} Cold-driven demand surge; extreme exceedance of
+        forecast demand in ERCOT territory.
+  \item \textbf{2022 Pacific Northwest Heat Dome.} Sustained multi-day heat event testing
+        the model's ability to maintain calibration over a prolonged horizon.
+  \item \textbf{2023 PJM Summer Stress Events.} Compounding of high load with renewable
+        underperformance across a large, highly interconnected grid topology.
+\end{itemize}
+
+% ============================================================
+\section{Value Proposition}
+
+This project demonstrates that a probabilistic, node-level forecasting layer for dynamic power
+contracts is technically viable today using existing open-source tools and public data.
+
+\begin{itemize}
+  \item \textbf{Utility Providers.} Node-level probabilistic forecasts let utilities offer tiered
+        contracts with confidence, converting idle excess capacity into revenue.
+  \item \textbf{Grid Operators (PJM, CAISO, MISO).} Better advance forecasting reduces
+        costly last-minute interventions and improves visibility into renewable supply
+        fluctuations.
+  \item \textbf{Data Centers.} Forecast-driven contracts unlock excess grid capacity, reducing
+        operational costs and enabling more sustainable scaling of AI compute.
+  \item \textbf{Hardware Providers (\eg NVIDIA).} Power availability is a primary bottleneck
+        to data center expansion. Unlocking excess grid capacity has clear strategic value for
+        businesses whose growth depends on compute scaling.
+\end{itemize}
+
+% ============================================================
+\appendix
+\section{Data Sources}
+\label{app:data}
+
+\subsection{EIA API v2: Hourly Electric Grid Monitor}
+
+\textbf{Source:} U.S.\ Energy Information Administration, Form EIA-930. Free public API at
+\url{api.eia.gov/v2/electricity/rto/} (free key registration at \url{eia.gov/opendata}). Data
+are organised by Balancing Authority at hourly resolution, with historical depth from July 2015
+for demand and generation totals and July 2018 for generation by fuel type.
+
+\begin{lstlisting}[language=bash, caption={Example EIA API query for PJM hourly demand.}, label={lst:eia}]
+GET https://api.eia.gov/v2/electricity/rto/region-data/data/
+  ?frequency=hourly
+  &data[]=value
+  &facets[respondent][]=PJM
+  &facets[type][]=D
+  &sort[0][column]=period
+  &api_key=YOUR_KEY
+\end{lstlisting}
+
+\begin{table}[H]
+\centering
+\caption{EIA \texttt{/rto/region-data} sample --- PJM, 27 July 2023.}
+\label{tab:eia-demand}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{}llllrr@{}}
+\toprule
+\textbf{Period} & \textbf{Resp.} & \textbf{Type} & \textbf{Type Name} & \textbf{Value} & \textbf{Units} \\
+\midrule
+2023-07-27T17 & PJM & D  & Demand           & 152,340 & MWh \\
+2023-07-27T17 & PJM & DF & Forecast Demand  & 148,900 & MWh \\
+2023-07-27T17 & PJM & NG & Net Generation   & 149,820 & MWh \\
+2023-07-27T17 & PJM & TI & Total Interchange& $-$2,520 & MWh \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The forecast-versus-actual delta (152,340 vs.\ 148,900\,MWh) on a peak summer afternoon
+illustrates the surprise stress deviation the pipeline is designed to anticipate \emph{before}
+it occurs.
+
+\begin{table}[H]
+\centering
+\caption{EIA \texttt{/rto/fuel-type-data} sample --- CAISO, 27 July 2023.}
+\label{tab:eia-fuel}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{}lllllrr@{}}
+\toprule
+\textbf{Period} & \textbf{Resp.} & \textbf{Fuel} & \textbf{Fuel Name} & \textbf{Value} & \textbf{Units} \\
+\midrule
+2023-07-27T15 & CISO & SUN & Solar       &  9,842 & MWh \\
+2023-07-27T15 & CISO & NG  & Natural Gas & 14,560 & MWh \\
+2023-07-27T18 & CISO & SUN & Solar       &  3,410 & MWh \\
+2023-07-27T18 & CISO & NG  & Natural Gas & 18,940 & MWh \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The drop in solar and corresponding rise in gas dispatch between 15:00 and 18:00 illustrates
+the afternoon duck curve---a daily structural stress window in CAISO territory.
+
+% ------------------------------------------------------------
+\subsection{Grid Status: Nodal LMP Data}
+
+\textbf{Source:} \url{gridstatus.io}. Open-source Python library (\texttt{pip install
+gridstatus}) for recent data; commercial API tier for full historical depth. Covers PJM, CAISO,
+MISO, ERCOT, ISO-NE, NYISO, and SPP at 5-minute real-time and hourly day-ahead resolution.
+LMP decomposes into energy, congestion, and loss components. The congestion component
+isolates transmission bottlenecks and is the primary node-level stress signal used in
+\gridcast.
+
+\begin{lstlisting}[language=Python, caption={Fetching PJM real-time LMP via \texttt{gridstatus}.}, label={lst:gridstatus}]
+import gridstatus
+
+pjm = gridstatus.PJM()
+df  = pjm.get_lmp(
+    date="2023-07-27",
+    market="REAL_TIME_5_MIN",
+    locations="ALL"
+)
+\end{lstlisting}
+
+\begin{table}[H]
+\centering
+\caption{Grid Status real-time LMP --- PJM, 27 July 2023 (peak hour). All prices in \$/MWh.}
+\label{tab:lmp}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{}llrrrr@{}}
+\toprule
+\textbf{Time} & \textbf{Location} & \textbf{LMP} & \textbf{Energy} & \textbf{Congestion} & \textbf{Loss} \\
+\midrule
+2023-07-27 17:00 & Dominion Hub      & 142.30 & 98.40 & \textbf{38.70} & 5.20 \\
+2023-07-27 17:00 & AEP-Dayton Hub    & 101.15 & 98.40 & 1.40  & 1.35 \\
+2023-07-27 17:00 & Western Hub       &  99.80 & 98.40 & 0.20  & 1.20 \\
+2023-07-27 17:00 & N.\ Illinois Hub  & 103.60 & 98.40 & 3.70  & 1.50 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Dominion Hub (Northern Virginia, a major data center corridor) shows a congestion component
+of \$38.70/MWh---nearly 40\% of total LMP---while other hubs show near-zero congestion at the
+same system-wide energy price. This spatial divergence is the node-level signal \gridcast is
+designed to forecast before the stress event occurs.
+
+% ------------------------------------------------------------
+\subsection{ERA5 and Data Integration}
+\label{app:era5}
+
+ERA5 (ECMWF global reanalysis, available at \url{cds.climate.copernicus.eu} via the
+\texttt{cdsapi} Python library) provides the ground-truth weather input for training at
+$0.25$-degree hourly resolution from 1940 to near-present. All three sources are aligned to
+UTC before training. Grid Status LMP timestamps vary by ISO and must be converted.
+Geographic alignment maps EIA Balancing Authority regions to ERA5 grid cells, and Grid
+Status node coordinates (annotated for approximately 20,000 pricing points) to the nearest
+ERA5 grid point.
+
+\end{document}
