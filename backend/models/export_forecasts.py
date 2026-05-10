@@ -246,6 +246,77 @@ def build_prediction_frame(processed: pd.DataFrame) -> tuple[pd.DataFrame, dict[
     return prediction_df, context
 
 
+def _force_module_to_cpu(module: Any, torch_mod: Any) -> None:
+    """Move a module's tensor state to CPU without going through nn.Module._apply.
+
+    Saved torchmetrics modules in pytorch-forecasting checkpoint hyperparameters
+    can carry cuda-bound buffers and a cached _device attribute. Calling .to('cpu')
+    or .cpu() on them triggers Metric._apply, which evaluates self.device and
+    allocates torch.zeros(1, device=self.device) — that crashes on CPU-only torch
+    when self.device is cuda. We fix this by mutating _parameters / _buffers
+    dicts and any cached device attributes directly, then recursing into children.
+    """
+    Tensor = torch_mod.Tensor
+    Parameter = torch_mod.nn.Parameter
+    cpu = torch_mod.device("cpu")
+
+    for name in list(module._parameters):
+        param = module._parameters[name]
+        if param is not None and param.device.type != "cpu":
+            module._parameters[name] = Parameter(
+                param.data.to(cpu), requires_grad=param.requires_grad
+            )
+
+    for name in list(module._buffers):
+        buf = module._buffers[name]
+        if buf is not None and buf.device.type != "cpu":
+            module._buffers[name] = buf.to(cpu)
+
+    for key, value in list(module.__dict__.items()):
+        if isinstance(value, torch_mod.device) and value.type != "cpu":
+            module.__dict__[key] = cpu
+        elif isinstance(value, str) and "cuda" in value:
+            module.__dict__[key] = "cpu"
+        elif isinstance(value, Tensor) and value.device.type != "cpu":
+            module.__dict__[key] = value.to(cpu)
+        elif isinstance(value, list):
+            module.__dict__[key] = [
+                v.to(cpu) if isinstance(v, Tensor) and v.device.type != "cpu" else v
+                for v in value
+            ]
+
+    for child in module.children():
+        _force_module_to_cpu(child, torch_mod)
+
+
+def _walk_force_cpu(obj: Any, torch_mod: Any) -> None:
+    if isinstance(obj, torch_mod.nn.Module):
+        _force_module_to_cpu(obj, torch_mod)
+    elif isinstance(obj, dict):
+        for value in obj.values():
+            _walk_force_cpu(value, torch_mod)
+    elif isinstance(obj, (list, tuple)):
+        for value in obj:
+            _walk_force_cpu(value, torch_mod)
+
+
+def _make_cpu_safe_checkpoint(checkpoint: Path, torch_mod: Any) -> Path:
+    """Surgically rewrite a GPU-trained checkpoint so it loads cleanly on CPU-only torch.
+
+    Returns a path to a parallel '.cpu.ckpt' file with all cuda tensors and
+    cached device attributes flipped to CPU. Idempotent: if the .cpu.ckpt is
+    newer than the source, returns the cached one.
+    """
+    cleaned = checkpoint.with_suffix(".cpu.ckpt")
+    if cleaned.exists() and cleaned.stat().st_mtime >= checkpoint.stat().st_mtime:
+        return cleaned
+
+    raw = torch_mod.load(str(checkpoint), map_location="cpu", weights_only=False)
+    _walk_force_cpu(raw, torch_mod)
+    torch_mod.save(raw, str(cleaned))
+    return cleaned
+
+
 def horizon_bucket(lead_hour: int) -> str:
     if lead_hour <= 24:
         return "001-024h"
@@ -473,6 +544,8 @@ def main() -> None:
     prediction_loader = prediction_dataset.to_dataloader(train=False, batch_size=args.batch_size, num_workers=args.num_workers)
 
     map_location = "cuda" if torch.cuda.is_available() else "cpu"
+    if not torch.cuda.is_available():
+        checkpoint = _make_cpu_safe_checkpoint(checkpoint, torch)
     model = TemporalFusionTransformer.load_from_checkpoint(str(checkpoint), map_location=map_location)
     prediction = model.predict(
         prediction_loader,
