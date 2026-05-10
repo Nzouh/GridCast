@@ -19,9 +19,35 @@ import {
   UpstreamError,
 } from './errors';
 
-export const VALID_NODE_IDS = ['dominion-hub', 'caiso-sp15', 'caiso-np15', 'ercot-houston'] as const;
+export const VALID_LIVE_NODE_IDS = [
+  'dominion-hub',
+  'caiso-sp15',
+  'caiso-np15',
+  'ercot-houston',
+] as const;
+export const VALID_SYNTHETIC_NODE_IDS = [
+  'miso-indiana-hub',
+  'miso-illinois-hub',
+  'spp-north-hub',
+  'spp-south-hub',
+  'nyiso-zone-j',
+  'nyiso-zone-a',
+  'iso-ne-mass-hub',
+  'pjm-western-hub',
+  'pjm-aep-dayton',
+  'ercot-north',
+  'ercot-west',
+  'caiso-zp26',
+  'bpa-pnw',
+  'duke-carolinas',
+  'tva-tennessee',
+  'fpl-florida',
+] as const;
+export const VALID_NODE_IDS = [...VALID_LIVE_NODE_IDS, ...VALID_SYNTHETIC_NODE_IDS] as const;
 export const VALID_REPLAY_IDS = ['texas-2021', 'pjm-2023'] as const;
 
+export type LiveNodeId = (typeof VALID_LIVE_NODE_IDS)[number];
+export type SyntheticNodeId = (typeof VALID_SYNTHETIC_NODE_IDS)[number];
 export type NodeId = (typeof VALID_NODE_IDS)[number];
 export type ReplayId = (typeof VALID_REPLAY_IDS)[number];
 export type DataSourceResult<T> = { data: T; fallbackUsed: boolean; stale: boolean };

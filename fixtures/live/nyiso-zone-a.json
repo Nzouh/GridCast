@@ -1,0 +1,16 @@
+{
+  "node_id": "nyiso-zone-a",
+  "schema_version": 1,
+  "fetched_at": "2026-05-09T14:00:00Z",
+  "source": "fixtures",
+  "eia": {
+    "demand_mw": 5400,
+    "demand_forecast_mw": 5500,
+    "demand_deviation_pct": -1.8
+  },
+  "weather": {
+    "temperature_2m_c": 12.1,
+    "wind_speed_10m_ms": 4.6,
+    "ensemble_member_count": 16
+  }
+}

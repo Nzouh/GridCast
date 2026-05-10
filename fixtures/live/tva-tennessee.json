@@ -1,0 +1,16 @@
+{
+  "node_id": "tva-tennessee",
+  "schema_version": 1,
+  "fetched_at": "2026-05-09T14:00:00Z",
+  "source": "fixtures",
+  "eia": {
+    "demand_mw": 22600,
+    "demand_forecast_mw": 21800,
+    "demand_deviation_pct": 3.7
+  },
+  "weather": {
+    "temperature_2m_c": 20.6,
+    "wind_speed_10m_ms": 3.2,
+    "ensemble_member_count": 16
+  }
+}

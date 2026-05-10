@@ -1,0 +1,16 @@
+{
+  "node_id": "ercot-north",
+  "schema_version": 1,
+  "fetched_at": "2026-05-09T14:00:00Z",
+  "source": "fixtures",
+  "eia": {
+    "demand_mw": 28600,
+    "demand_forecast_mw": 27200,
+    "demand_deviation_pct": 5.1
+  },
+  "weather": {
+    "temperature_2m_c": 26.4,
+    "wind_speed_10m_ms": 3.7,
+    "ensemble_member_count": 16
+  }
+}

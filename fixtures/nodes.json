@@ -13,7 +13,8 @@
       "lat": 38.9,
       "lon": -77.0,
       "stress_probability": 0.245,
-      "allocation_pct": 60
+      "allocation_pct": 60,
+      "is_live": true
     },
     {
       "id": "caiso-sp15",
@@ -24,7 +25,8 @@
       "lat": 34.05,
       "lon": -118.25,
       "stress_probability": 0.254,
-      "allocation_pct": 70
+      "allocation_pct": 70,
+      "is_live": true
     },
     {
       "id": "caiso-np15",
@@ -35,7 +37,8 @@
       "lat": 37.77,
       "lon": -122.42,
       "stress_probability": 0.17,
-      "allocation_pct": 81
+      "allocation_pct": 81,
+      "is_live": true
     },
     {
       "id": "ercot-houston",
@@ -46,7 +49,200 @@
       "lat": 29.76,
       "lon": -95.37,
       "stress_probability": 0.355,
-      "allocation_pct": 50
+      "allocation_pct": 50,
+      "is_live": true
+    },
+    {
+      "id": "miso-indiana-hub",
+      "name": "MISO Indiana Hub",
+      "iso": "MISO",
+      "state": "IN",
+      "ba_code": "MISO",
+      "lat": 39.77,
+      "lon": -86.16,
+      "stress_probability": 0.146,
+      "allocation_pct": 85,
+      "is_live": false
+    },
+    {
+      "id": "miso-illinois-hub",
+      "name": "MISO Illinois Hub",
+      "iso": "MISO",
+      "state": "IL",
+      "ba_code": "MISO",
+      "lat": 41.88,
+      "lon": -87.63,
+      "stress_probability": 0.128,
+      "allocation_pct": 89,
+      "is_live": false
+    },
+    {
+      "id": "spp-north-hub",
+      "name": "SPP North Hub",
+      "iso": "SPP",
+      "state": "KS",
+      "ba_code": "SPP",
+      "lat": 39.1,
+      "lon": -94.58,
+      "stress_probability": 0.163,
+      "allocation_pct": 81,
+      "is_live": false
+    },
+    {
+      "id": "spp-south-hub",
+      "name": "SPP South Hub",
+      "iso": "SPP",
+      "state": "OK",
+      "ba_code": "SPP",
+      "lat": 35.47,
+      "lon": -97.52,
+      "stress_probability": 0.114,
+      "allocation_pct": 90,
+      "is_live": false
+    },
+    {
+      "id": "nyiso-zone-j",
+      "name": "NYISO Zone J",
+      "iso": "NYISO",
+      "state": "NY",
+      "ba_code": "NYIS",
+      "lat": 40.71,
+      "lon": -74.01,
+      "stress_probability": 0.085,
+      "allocation_pct": 93,
+      "is_live": false
+    },
+    {
+      "id": "nyiso-zone-a",
+      "name": "NYISO Zone A",
+      "iso": "NYISO",
+      "state": "NY",
+      "ba_code": "NYIS",
+      "lat": 42.89,
+      "lon": -78.88,
+      "stress_probability": 0.187,
+      "allocation_pct": 73,
+      "is_live": false
+    },
+    {
+      "id": "iso-ne-mass-hub",
+      "name": "ISO-NE Mass Hub",
+      "iso": "ISO-NE",
+      "state": "MA",
+      "ba_code": "ISNE",
+      "lat": 42.36,
+      "lon": -71.06,
+      "stress_probability": 0.088,
+      "allocation_pct": 92,
+      "is_live": false
+    },
+    {
+      "id": "pjm-western-hub",
+      "name": "PJM Western Hub",
+      "iso": "PJM",
+      "state": "PA",
+      "ba_code": "PJM",
+      "lat": 40.27,
+      "lon": -76.88,
+      "stress_probability": 0.125,
+      "allocation_pct": 89,
+      "is_live": false
+    },
+    {
+      "id": "pjm-aep-dayton",
+      "name": "PJM AEP-Dayton",
+      "iso": "PJM",
+      "state": "OH",
+      "ba_code": "PJM",
+      "lat": 39.76,
+      "lon": -84.19,
+      "stress_probability": 0.133,
+      "allocation_pct": 88,
+      "is_live": false
+    },
+    {
+      "id": "ercot-north",
+      "name": "ERCOT North",
+      "iso": "ERCOT",
+      "state": "TX",
+      "ba_code": "ERCO",
+      "lat": 32.78,
+      "lon": -96.8,
+      "stress_probability": 0.053,
+      "allocation_pct": 98,
+      "is_live": false
+    },
+    {
+      "id": "ercot-west",
+      "name": "ERCOT West",
+      "iso": "ERCOT",
+      "state": "TX",
+      "ba_code": "ERCO",
+      "lat": 31.85,
+      "lon": -102.37,
+      "stress_probability": 0.053,
+      "allocation_pct": 98,
+      "is_live": false
+    },
+    {
+      "id": "caiso-zp26",
+      "name": "CAISO ZP26",
+      "iso": "CAISO",
+      "state": "CA",
+      "ba_code": "CISO",
+      "lat": 35.37,
+      "lon": -119.02,
+      "stress_probability": 0.111,
+      "allocation_pct": 90,
+      "is_live": false
+    },
+    {
+      "id": "bpa-pnw",
+      "name": "BPA Pacific Northwest",
+      "iso": "BPA",
+      "state": "OR",
+      "ba_code": "BPAT",
+      "lat": 45.52,
+      "lon": -122.68,
+      "stress_probability": 0.3,
+      "allocation_pct": 46,
+      "is_live": false
+    },
+    {
+      "id": "duke-carolinas",
+      "name": "Duke Carolinas",
+      "iso": "DUKE",
+      "state": "NC",
+      "ba_code": "DUK",
+      "lat": 35.23,
+      "lon": -80.84,
+      "stress_probability": 0.139,
+      "allocation_pct": 86,
+      "is_live": false
+    },
+    {
+      "id": "tva-tennessee",
+      "name": "TVA Tennessee Valley",
+      "iso": "TVA",
+      "state": "TN",
+      "ba_code": "TVA",
+      "lat": 36.16,
+      "lon": -86.78,
+      "stress_probability": 0.147,
+      "allocation_pct": 85,
+      "is_live": false
+    },
+    {
+      "id": "fpl-florida",
+      "name": "FPL Florida",
+      "iso": "FPL",
+      "state": "FL",
+      "ba_code": "FPL",
+      "lat": 25.76,
+      "lon": -80.19,
+      "stress_probability": 0.092,
+      "allocation_pct": 92,
+      "is_live": false
     }
   ]
 }

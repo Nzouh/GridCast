@@ -1,0 +1,16 @@
+{
+  "node_id": "miso-indiana-hub",
+  "schema_version": 1,
+  "fetched_at": "2026-05-09T14:00:00Z",
+  "source": "fixtures",
+  "eia": {
+    "demand_mw": 18200,
+    "demand_forecast_mw": 17600,
+    "demand_deviation_pct": 3.4
+  },
+  "weather": {
+    "temperature_2m_c": 19.5,
+    "wind_speed_10m_ms": 4.4,
+    "ensemble_member_count": 16
+  }
+}

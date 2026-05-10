@@ -27,15 +27,16 @@ Single-page app. Selected node and replay mode live in the URL.
 
 | Route | Purpose |
 |---|---|
-| `/` | Landing — full US map, 4 stress-coloured markers, no panel. |
-| `/?node=dominion-hub` | Map + node side panel. Valid ids: `dominion-hub`, `caiso-sp15`, `caiso-np15`, `ercot-houston`. |
-| `/?replay=texas-2021` | Replay mode. Auto-focuses ERCOT Houston. |
-| `/?replay=pjm-2023` | Replay mode. Auto-focuses Dominion Hub. |
+| `/` | Landing — full US map, 4 live stress-coloured markers (filter defaults to `target`), no panel. |
+| `/?filter=all` | Map shows all 20 nodes (4 live + 16 synthetic demo nodes). |
+| `/?node=dominion-hub` | Map + node side panel. Valid ids: any `VALID_NODE_IDS` entry (live or synthetic). |
+| `/?replay=texas-2021` | Replay mode. Auto-focuses ERCOT Houston. Filter UI hidden; map shows live nodes only. |
+| `/?replay=pjm-2023` | Replay mode. Auto-focuses Dominion Hub. Filter UI hidden; map shows live nodes only. |
 | `/?node=...&replay=...` | `replay` wins; `?node` is ignored. If they conflict, redirect to `/?replay=...`. |
 | `/api/nodes` | Node list endpoint. |
-| `/api/nodes/[id]/forecast` | Per-node forecast. |
-| `/api/nodes/[id]/live` | Per-node EIA + weather snapshot. |
-| `/api/replay/[event_id]` | Pre-baked backtest. |
+| `/api/nodes/[id]/forecast` | Per-node forecast. Accepts any id in `VALID_NODE_IDS`. |
+| `/api/nodes/[id]/live` | Per-node EIA + weather snapshot. Accepts any id in `VALID_NODE_IDS`. |
+| `/api/replay/[event_id]` | Pre-baked backtest. Accepts only ids in `VALID_REPLAY_IDS`. |
 
 **No `POST /api/nodes/[id]/refresh`** — refresh button removed.
 `export const dynamic = 'force-dynamic'` on `app/page.tsx`.
@@ -65,7 +66,8 @@ History arrays length 168. Numeric fields SI unless suffixed.
       "lat": 38.9,
       "lon": -77.0,
       "stress_probability": 0.34,
-      "allocation_pct": 66
+      "allocation_pct": 66,
+      "is_live": true
     }
   ]
 }
@@ -73,6 +75,13 @@ History arrays length 168. Numeric fields SI unless suffixed.
 
 `stress_level` is computed UI-side from `stress_probability` via
 `lib/formulas.ts` — it is NOT present in the fixture.
+
+`is_live` is `true` for the 4 production nodes the model actively
+forecasts and `false` for the 16 synthetic demo nodes shipped to make
+the map look credible. Both kinds use identical payload shapes and
+identical visual treatment in the UI; the distinction is exposed only
+through the **Target Grids** filter in the header (default on → live
+only, off → all nodes).
 
 ### `GET /api/nodes/[id]/forecast`
 
@@ -201,12 +210,27 @@ All 4xx/5xx responses:
 
 ### ID Allowlists
 
-Validated in `lib/dataSource.ts` **before** any path construction:
+Validated in `lib/dataSource.ts` **before** any path construction.
+Live and synthetic ids are kept in disjoint tuples and unioned for the
+public allowlist:
 
 ```ts
-const VALID_NODE_IDS   = ['dominion-hub','caiso-sp15','caiso-np15','ercot-houston'] as const;
+const VALID_LIVE_NODE_IDS = [
+  'dominion-hub','caiso-sp15','caiso-np15','ercot-houston',
+] as const;
+const VALID_SYNTHETIC_NODE_IDS = [
+  'miso-indiana-hub','miso-illinois-hub','spp-north-hub','spp-south-hub',
+  'nyiso-zone-j','nyiso-zone-a','iso-ne-mass-hub','pjm-western-hub',
+  'pjm-aep-dayton','ercot-north','ercot-west','caiso-zp26',
+  'bpa-pnw','duke-carolinas','tva-tennessee','fpl-florida',
+] as const;
+const VALID_NODE_IDS   = [...VALID_LIVE_NODE_IDS, ...VALID_SYNTHETIC_NODE_IDS] as const;
 const VALID_REPLAY_IDS = ['texas-2021','pjm-2023'] as const;
 ```
+
+`/api/nodes/[id]/{forecast,live}` accept any id in `VALID_NODE_IDS`.
+`/api/replay/[event_id]` accepts only `VALID_REPLAY_IDS`. Replay focus
+nodes are guaranteed to be in `VALID_LIVE_NODE_IDS`.
 
 ---
 

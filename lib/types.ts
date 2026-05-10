@@ -1,6 +1,24 @@
 export type ISOTimeString = string;
 
-export type NodeId = 'dominion-hub' | 'caiso-sp15' | 'caiso-np15' | 'ercot-houston';
+export type LiveNodeId = 'dominion-hub' | 'caiso-sp15' | 'caiso-np15' | 'ercot-houston';
+export type SyntheticNodeId =
+  | 'miso-indiana-hub'
+  | 'miso-illinois-hub'
+  | 'spp-north-hub'
+  | 'spp-south-hub'
+  | 'nyiso-zone-j'
+  | 'nyiso-zone-a'
+  | 'iso-ne-mass-hub'
+  | 'pjm-western-hub'
+  | 'pjm-aep-dayton'
+  | 'ercot-north'
+  | 'ercot-west'
+  | 'caiso-zp26'
+  | 'bpa-pnw'
+  | 'duke-carolinas'
+  | 'tva-tennessee'
+  | 'fpl-florida';
+export type NodeId = LiveNodeId | SyntheticNodeId;
 export type ReplayId = 'texas-2021' | 'pjm-2023';
 export type StressLevel = 'green' | 'amber' | 'red';
 export type DataSource = 'fixtures' | 'cos';
@@ -16,6 +34,7 @@ export type Node = {
   lon: number;
   stress_probability: number;
   allocation_pct: number;
+  is_live: boolean;
 };
 
 export type NodesResponse = {

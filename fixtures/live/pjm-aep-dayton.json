@@ -1,0 +1,16 @@
+{
+  "node_id": "pjm-aep-dayton",
+  "schema_version": 1,
+  "fetched_at": "2026-05-09T14:00:00Z",
+  "source": "fixtures",
+  "eia": {
+    "demand_mw": 16800,
+    "demand_forecast_mw": 16100,
+    "demand_deviation_pct": 4.3
+  },
+  "weather": {
+    "temperature_2m_c": 18.3,
+    "wind_speed_10m_ms": 4.2,
+    "ensemble_member_count": 16
+  }
+}

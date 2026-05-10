@@ -1,0 +1,16 @@
+{
+  "node_id": "fpl-florida",
+  "schema_version": 1,
+  "fetched_at": "2026-05-09T14:00:00Z",
+  "source": "fixtures",
+  "eia": {
+    "demand_mw": 28400,
+    "demand_forecast_mw": 27600,
+    "demand_deviation_pct": 2.9
+  },
+  "weather": {
+    "temperature_2m_c": 27.2,
+    "wind_speed_10m_ms": 4.4,
+    "ensemble_member_count": 16
+  }
+}

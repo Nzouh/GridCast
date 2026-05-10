@@ -1,0 +1,16 @@
+{
+  "node_id": "pjm-western-hub",
+  "schema_version": 1,
+  "fetched_at": "2026-05-09T14:00:00Z",
+  "source": "fixtures",
+  "eia": {
+    "demand_mw": 32400,
+    "demand_forecast_mw": 31200,
+    "demand_deviation_pct": 3.8
+  },
+  "weather": {
+    "temperature_2m_c": 17.6,
+    "wind_speed_10m_ms": 4.0,
+    "ensemble_member_count": 16
+  }
+}

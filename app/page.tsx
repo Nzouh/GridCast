@@ -14,6 +14,7 @@ import { ReplayBanner } from '@/components/shell/ReplayBanner';
 import { MapShell } from '@/components/map/MapShell';
 import { NodePanel } from '@/components/panel/NodePanel';
 import { LegendKey } from '@/components/controls/LegendKey';
+import type { GridFilter } from '@/components/controls/GridFilterToggle';
 import type { ReplayId, NodeId } from '@/lib/dataSource';
 
 export const dynamic = 'force-dynamic';
@@ -23,7 +24,7 @@ const REPLAY_FOCUS: Record<ReplayId, NodeId> = {
   'pjm-2023': 'dominion-hub',
 };
 
-type SearchParams = { node?: string; replay?: string };
+type SearchParams = { node?: string; replay?: string; filter?: string };
 
 function isReplayId(v: string | undefined): v is ReplayId {
   return !!v && (VALID_REPLAY_IDS as readonly string[]).includes(v);
@@ -31,6 +32,10 @@ function isReplayId(v: string | undefined): v is ReplayId {
 
 function isNodeId(v: string | undefined): v is NodeId {
   return !!v && (VALID_NODE_IDS as readonly string[]).includes(v);
+}
+
+function parseFilter(v: string | undefined): GridFilter {
+  return v === 'all' ? 'all' : 'target';
 }
 
 export default async function Page({
@@ -41,6 +46,7 @@ export default async function Page({
   const params = await searchParams;
   const replayParam = params.replay;
   const nodeParam = params.node;
+  const filter: GridFilter = parseFilter(params.filter);
 
   if (replayParam && nodeParam) {
     redirect(`/?replay=${replayParam}`);
@@ -98,11 +104,16 @@ export default async function Page({
     selectedNodeId !== null ? nodes.find((n) => n.id === selectedNodeId) ?? null : null;
   const closeHref = replayId ? `/?replay=${replayId}` : '/';
 
+  // Replay forces target-only display (filter UI is hidden during replay).
+  const effectiveFilter: GridFilter = replayId ? 'target' : filter;
+  const visibleNodes =
+    effectiveFilter === 'target' ? nodes.filter((n) => n.is_live) : nodes;
+
   return (
     <>
       <DesktopOnlyNotice />
       <div className="hidden lg:flex flex-col h-screen bg-white text-text-primary">
-        <SiteHeader replayId={replayId} />
+        <SiteHeader replayId={replayId} filter={filter} />
         {replayId && replay ? (
           <ReplayBanner eventName={replay.event_name} issuedAt={replay.issued_at} />
         ) : null}
@@ -119,7 +130,7 @@ export default async function Page({
           ) : (
             <>
               <MapShell
-                nodes={nodes}
+                nodes={visibleNodes}
                 selectedId={selectedNodeId}
                 panelOpen={selectedNode !== null}
               />

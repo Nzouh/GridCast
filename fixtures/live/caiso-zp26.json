@@ -1,0 +1,16 @@
+{
+  "node_id": "caiso-zp26",
+  "schema_version": 1,
+  "fetched_at": "2026-05-09T14:00:00Z",
+  "source": "fixtures",
+  "eia": {
+    "demand_mw": 8200,
+    "demand_forecast_mw": 7900,
+    "demand_deviation_pct": 3.8
+  },
+  "weather": {
+    "temperature_2m_c": 22.6,
+    "wind_speed_10m_ms": 3.4,
+    "ensemble_member_count": 16
+  }
+}

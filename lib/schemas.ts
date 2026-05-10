@@ -14,7 +14,28 @@ const isoTimestamp = z
   .datetime({ offset: true })
   .refine((value) => value.endsWith('Z'), { message: 'timestamp must be UTC with Z suffix' });
 const source = z.enum(['fixtures', 'cos']);
-const nodeId = z.enum(['dominion-hub', 'caiso-sp15', 'caiso-np15', 'ercot-houston']);
+const nodeId = z.enum([
+  'dominion-hub',
+  'caiso-sp15',
+  'caiso-np15',
+  'ercot-houston',
+  'miso-indiana-hub',
+  'miso-illinois-hub',
+  'spp-north-hub',
+  'spp-south-hub',
+  'nyiso-zone-j',
+  'nyiso-zone-a',
+  'iso-ne-mass-hub',
+  'pjm-western-hub',
+  'pjm-aep-dayton',
+  'ercot-north',
+  'ercot-west',
+  'caiso-zp26',
+  'bpa-pnw',
+  'duke-carolinas',
+  'tva-tennessee',
+  'fpl-florida',
+]);
 const replayId = z.enum(['texas-2021', 'pjm-2023']);
 
 function timestampsAreSortedWithNoWideGaps(timestamps: string[]): boolean {
@@ -132,6 +153,7 @@ export const NodeSchema = z.object({
   lon: finiteNumber,
   stress_probability: probability,
   allocation_pct: pct,
+  is_live: z.boolean(),
 });
 
 export const NodesResponseSchema = z.object({
@@ -139,7 +161,7 @@ export const NodesResponseSchema = z.object({
   issued_at: isoTimestamp,
   published_at: isoTimestamp,
   source,
-  nodes: z.array(NodeSchema).length(4),
+  nodes: z.array(NodeSchema).min(4),
 });
 
 const forecastBaseObjectSchema = z.object({

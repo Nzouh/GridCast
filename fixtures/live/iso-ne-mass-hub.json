@@ -1,0 +1,16 @@
+{
+  "node_id": "iso-ne-mass-hub",
+  "schema_version": 1,
+  "fetched_at": "2026-05-09T14:00:00Z",
+  "source": "fixtures",
+  "eia": {
+    "demand_mw": 13600,
+    "demand_forecast_mw": 13200,
+    "demand_deviation_pct": 3.0
+  },
+  "weather": {
+    "temperature_2m_c": 13.8,
+    "wind_speed_10m_ms": 3.9,
+    "ensemble_member_count": 16
+  }
+}

@@ -19,6 +19,8 @@ HISTORY = 168
 MEMBERS = 16
 
 
+LIVE_NODE_IDS = ("dominion-hub", "caiso-sp15", "caiso-np15", "ercot-houston")
+
 NODES = {
     "dominion-hub": {
         "name": "Dominion Hub",
@@ -68,6 +70,201 @@ NODES = {
         "amp": 9.5,
         "temp": 30.0,
     },
+    # Synthetic demo nodes (is_live=False). Real US grid hubs across ISOs
+    # not represented by the 4 live nodes. Geometrically distributed for a
+    # credible map. Threshold/base/amp/temp tuned to plausible regional norms.
+    "miso-indiana-hub": {
+        "name": "MISO Indiana Hub",
+        "iso": "MISO",
+        "state": "IN",
+        "ba_code": "MISO",
+        "lat": 39.77,
+        "lon": -86.16,
+        "threshold": 48.0,
+        "base": 28.0,
+        "amp": 6.5,
+        "temp": 19.0,
+    },
+    "miso-illinois-hub": {
+        "name": "MISO Illinois Hub",
+        "iso": "MISO",
+        "state": "IL",
+        "ba_code": "MISO",
+        "lat": 41.88,
+        "lon": -87.63,
+        "threshold": 50.0,
+        "base": 29.0,
+        "amp": 6.8,
+        "temp": 17.0,
+    },
+    "spp-north-hub": {
+        "name": "SPP North Hub",
+        "iso": "SPP",
+        "state": "KS",
+        "ba_code": "SPP",
+        "lat": 39.10,
+        "lon": -94.58,
+        "threshold": 46.0,
+        "base": 27.0,
+        "amp": 6.0,
+        "temp": 18.0,
+    },
+    "spp-south-hub": {
+        "name": "SPP South Hub",
+        "iso": "SPP",
+        "state": "OK",
+        "ba_code": "SPP",
+        "lat": 35.47,
+        "lon": -97.52,
+        "threshold": 52.0,
+        "base": 30.0,
+        "amp": 7.2,
+        "temp": 22.0,
+    },
+    "nyiso-zone-j": {
+        "name": "NYISO Zone J",
+        "iso": "NYISO",
+        "state": "NY",
+        "ba_code": "NYIS",
+        "lat": 40.71,
+        "lon": -74.01,
+        "threshold": 58.0,
+        "base": 34.0,
+        "amp": 7.5,
+        "temp": 15.0,
+    },
+    "nyiso-zone-a": {
+        "name": "NYISO Zone A",
+        "iso": "NYISO",
+        "state": "NY",
+        "ba_code": "NYIS",
+        "lat": 42.89,
+        "lon": -78.88,
+        "threshold": 44.0,
+        "base": 26.0,
+        "amp": 5.8,
+        "temp": 12.0,
+    },
+    "iso-ne-mass-hub": {
+        "name": "ISO-NE Mass Hub",
+        "iso": "ISO-NE",
+        "state": "MA",
+        "ba_code": "ISNE",
+        "lat": 42.36,
+        "lon": -71.06,
+        "threshold": 54.0,
+        "base": 31.0,
+        "amp": 6.4,
+        "temp": 13.0,
+    },
+    "pjm-western-hub": {
+        "name": "PJM Western Hub",
+        "iso": "PJM",
+        "state": "PA",
+        "ba_code": "PJM",
+        "lat": 40.27,
+        "lon": -76.88,
+        "threshold": 50.0,
+        "base": 29.0,
+        "amp": 6.6,
+        "temp": 17.0,
+    },
+    "pjm-aep-dayton": {
+        "name": "PJM AEP-Dayton",
+        "iso": "PJM",
+        "state": "OH",
+        "ba_code": "PJM",
+        "lat": 39.76,
+        "lon": -84.19,
+        "threshold": 49.0,
+        "base": 28.5,
+        "amp": 6.4,
+        "temp": 18.0,
+    },
+    "ercot-north": {
+        "name": "ERCOT North",
+        "iso": "ERCOT",
+        "state": "TX",
+        "ba_code": "ERCO",
+        "lat": 32.78,
+        "lon": -96.80,
+        "threshold": 60.0,
+        "base": 32.0,
+        "amp": 8.8,
+        "temp": 26.0,
+    },
+    "ercot-west": {
+        "name": "ERCOT West",
+        "iso": "ERCOT",
+        "state": "TX",
+        "ba_code": "ERCO",
+        "lat": 31.85,
+        "lon": -102.37,
+        "threshold": 58.0,
+        "base": 30.5,
+        "amp": 8.2,
+        "temp": 24.0,
+    },
+    "caiso-zp26": {
+        "name": "CAISO ZP26",
+        "iso": "CAISO",
+        "state": "CA",
+        "ba_code": "CISO",
+        "lat": 35.37,
+        "lon": -119.02,
+        "threshold": 49.0,
+        "base": 27.5,
+        "amp": 6.2,
+        "temp": 22.0,
+    },
+    "bpa-pnw": {
+        "name": "BPA Pacific Northwest",
+        "iso": "BPA",
+        "state": "OR",
+        "ba_code": "BPAT",
+        "lat": 45.52,
+        "lon": -122.68,
+        "threshold": 36.0,
+        "base": 22.0,
+        "amp": 4.6,
+        "temp": 12.0,
+    },
+    "duke-carolinas": {
+        "name": "Duke Carolinas",
+        "iso": "DUKE",
+        "state": "NC",
+        "ba_code": "DUK",
+        "lat": 35.23,
+        "lon": -80.84,
+        "threshold": 47.0,
+        "base": 27.0,
+        "amp": 6.0,
+        "temp": 21.0,
+    },
+    "tva-tennessee": {
+        "name": "TVA Tennessee Valley",
+        "iso": "TVA",
+        "state": "TN",
+        "ba_code": "TVA",
+        "lat": 36.16,
+        "lon": -86.78,
+        "threshold": 46.0,
+        "base": 26.5,
+        "amp": 5.8,
+        "temp": 20.0,
+    },
+    "fpl-florida": {
+        "name": "FPL Florida",
+        "iso": "FPL",
+        "state": "FL",
+        "ba_code": "FPL",
+        "lat": 25.76,
+        "lon": -80.19,
+        "threshold": 53.0,
+        "base": 30.0,
+        "amp": 6.8,
+        "temp": 27.0,
+    },
 }
 
 
@@ -91,6 +288,86 @@ DATA_CENTERS = {
         ("azure-tx", "Microsoft Azure TX", "Microsoft", 700),
         ("aws-tx-east", "AWS TX-East", "AWS", 550),
         ("google-south-tx", "Google South-TX", "Google", 450),
+    ],
+    "miso-indiana-hub": [
+        ("meta-new-carlisle", "Meta New Carlisle", "Meta", 700),
+        ("aws-indianapolis", "AWS Indianapolis", "AWS", 320),
+        ("google-indiana", "Google Indiana", "Google", 260),
+    ],
+    "miso-illinois-hub": [
+        ("microsoft-chicago", "Microsoft Chicago Central", "Microsoft", 600),
+        ("qts-chicago", "QTS Chicago", "QTS", 450),
+        ("digital-realty-chi", "Digital Realty Chicago", "Digital Realty", 320),
+    ],
+    "spp-north-hub": [
+        ("meta-topeka", "Meta Topeka", "Meta", 500),
+        ("microsoft-kansas", "Microsoft Kansas", "Microsoft", 380),
+        ("google-kansas-city", "Google Kansas City", "Google", 240),
+    ],
+    "spp-south-hub": [
+        ("google-pryor", "Google Pryor", "Google", 600),
+        ("microsoft-okc", "Microsoft OKC", "Microsoft", 480),
+        ("digital-realty-okc", "Digital Realty OKC", "Digital Realty", 280),
+    ],
+    "nyiso-zone-j": [
+        ("equinix-ny5", "Equinix NY5", "Equinix", 220),
+        ("digital-realty-ny", "Digital Realty NY", "Digital Realty", 260),
+        ("databank-nyc", "DataBank NYC", "DataBank", 180),
+    ],
+    "nyiso-zone-a": [
+        ("microsoft-buffalo", "Microsoft Buffalo", "Microsoft", 320),
+        ("stack-ny-west", "STACK NY-West", "STACK", 280),
+        ("databank-buffalo", "DataBank Buffalo", "DataBank", 180),
+    ],
+    "iso-ne-mass-hub": [
+        ("microsoft-mass", "Microsoft Mass", "Microsoft", 420),
+        ("iron-mountain-ma", "Iron Mountain MA", "Iron Mountain", 300),
+        ("equinix-bo", "Equinix BO", "Equinix", 220),
+    ],
+    "pjm-western-hub": [
+        ("microsoft-pa", "Microsoft PA", "Microsoft", 560),
+        ("aws-pa", "AWS PA", "AWS", 460),
+        ("google-pa", "Google PA", "Google", 410),
+    ],
+    "pjm-aep-dayton": [
+        ("meta-new-albany", "Meta New Albany", "Meta", 1500),
+        ("aws-ohio", "AWS Ohio", "AWS", 900),
+        ("google-new-albany", "Google New Albany", "Google", 720),
+    ],
+    "ercot-north": [
+        ("meta-fort-worth", "Meta Fort Worth", "Meta", 1100),
+        ("microsoft-dallas", "Microsoft Dallas", "Microsoft", 850),
+        ("google-midlothian", "Google Midlothian", "Google", 700),
+    ],
+    "ercot-west": [
+        ("lancium-abilene", "Lancium Abilene", "Lancium", 1200),
+        ("riot-west-tx", "Riot West TX", "Riot", 700),
+        ("microsoft-west-tx", "Microsoft West TX", "Microsoft", 480),
+    ],
+    "caiso-zp26": [
+        ("meta-visalia", "Meta Visalia", "Meta", 420),
+        ("aws-bakersfield", "AWS Bakersfield", "AWS", 320),
+        ("google-central-ca", "Google Central CA", "Google", 260),
+    ],
+    "bpa-pnw": [
+        ("microsoft-quincy", "Microsoft Quincy", "Microsoft", 1500),
+        ("aws-boardman", "AWS Boardman", "AWS", 820),
+        ("google-the-dalles", "Google The Dalles", "Google", 700),
+    ],
+    "duke-carolinas": [
+        ("google-lenoir", "Google Lenoir", "Google", 600),
+        ("meta-forest-city", "Meta Forest City", "Meta", 500),
+        ("apple-maiden", "Apple Maiden", "Apple", 320),
+    ],
+    "tva-tennessee": [
+        ("google-clarksville", "Google Clarksville", "Google", 1000),
+        ("meta-gallatin", "Meta Gallatin", "Meta", 800),
+        ("oracle-nashville", "Oracle Nashville", "Oracle", 360),
+    ],
+    "fpl-florida": [
+        ("microsoft-miami", "Microsoft Miami", "Microsoft", 460),
+        ("equinix-miami", "Equinix Miami", "Equinix", 320),
+        ("digital-realty-miami", "Digital Realty Miami", "Digital Realty", 260),
     ],
 }
 
@@ -288,14 +565,33 @@ def build_forecast(node_id: str, issued_at: str, published_at: str, forecast_sta
     }
 
 
+LIVE_VALUES = {
+    "dominion-hub": (95000, 92000, 22.5, 4.2),
+    "caiso-sp15": (30800, 29500, 24.8, 3.6),
+    "caiso-np15": (24800, 25200, 18.4, 5.1),
+    "ercot-houston": (78200, 72400, 34.6, 3.1),
+    # Synthetic — order-of-magnitude plausible for each BA.
+    "miso-indiana-hub": (18200, 17600, 19.5, 4.4),
+    "miso-illinois-hub": (24600, 23800, 17.8, 5.0),
+    "spp-north-hub": (14800, 14200, 18.6, 6.1),
+    "spp-south-hub": (22400, 21500, 22.4, 5.8),
+    "nyiso-zone-j": (10800, 10300, 15.4, 3.2),
+    "nyiso-zone-a": (5400, 5500, 12.1, 4.6),
+    "iso-ne-mass-hub": (13600, 13200, 13.8, 3.9),
+    "pjm-western-hub": (32400, 31200, 17.6, 4.0),
+    "pjm-aep-dayton": (16800, 16100, 18.3, 4.2),
+    "ercot-north": (28600, 27200, 26.4, 3.7),
+    "ercot-west": (16400, 15700, 24.8, 6.2),
+    "caiso-zp26": (8200, 7900, 22.6, 3.4),
+    "bpa-pnw": (9800, 10100, 12.3, 3.1),
+    "duke-carolinas": (19200, 18600, 21.4, 3.0),
+    "tva-tennessee": (22600, 21800, 20.6, 3.2),
+    "fpl-florida": (28400, 27600, 27.2, 4.4),
+}
+
+
 def build_live(node_id: str) -> dict[str, object]:
-    live_values = {
-        "dominion-hub": (95000, 92000, 22.5, 4.2),
-        "caiso-sp15": (30800, 29500, 24.8, 3.6),
-        "caiso-np15": (24800, 25200, 18.4, 5.1),
-        "ercot-houston": (78200, 72400, 34.6, 3.1),
-    }
-    demand, demand_forecast, temp, wind = live_values[node_id]
+    demand, demand_forecast, temp, wind = LIVE_VALUES[node_id]
     deviation = round((demand - demand_forecast) / demand_forecast * 100, 1)
     return {
         "node_id": node_id,
@@ -335,6 +631,7 @@ def build_nodes(forecasts: dict[str, dict[str, object]]) -> dict[str, object]:
                 "lon": cfg["lon"],
                 "stress_probability": avg_stress,
                 "allocation_pct": allocation["pct"],
+                "is_live": node_id in LIVE_NODE_IDS,
             }
         )
     return {
