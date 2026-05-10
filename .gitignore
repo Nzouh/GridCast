@@ -223,3 +223,8 @@ next-env.d.ts
 
 # Streamlit
 .streamlit/secrets.toml
+
+# GridCast data outputs (raw pulls + intermediate features)
+backend/data/raw/
+backend/data/processed/
+notebooks/figures/
