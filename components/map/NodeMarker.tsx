@@ -11,6 +11,12 @@ const COLOR: Record<'green' | 'amber' | 'red', string> = {
   red: '#DC2626',
 };
 
+const PULSE: Record<'green' | 'amber' | 'red', string> = {
+  green: 'gc-pulse-green 3.2s ease-out infinite',
+  amber: 'gc-pulse-amber 2.4s ease-out infinite',
+  red: 'gc-pulse 1.8s ease-out infinite',
+};
+
 export function NodeMarker({
   node,
   isSelected,
@@ -40,25 +46,20 @@ export function NodeMarker({
         type="button"
         aria-label={`${node.name} — ${level} stress`}
         className="relative cursor-pointer flex items-center justify-center"
-        style={{ width: 16, height: 16, opacity }}
+        style={{ width: 24, height: 24, opacity }}
       >
-        {level === 'red' ? (
-          <span
-            className="absolute inset-0 rounded-full"
-            style={{
-              background: fill,
-              animation: 'gc-pulse 1.8s ease-out infinite',
-            }}
-          />
-        ) : null}
+        <span
+          className="absolute inset-0 rounded-full"
+          style={{ background: fill, animation: PULSE[level] }}
+        />
         <span
           className="relative inline-block rounded-full"
           style={{
-            width: 12,
-            height: 12,
+            width: 16,
+            height: 16,
             background: fill,
-            border: '2px solid white',
-            boxShadow: ring === 'none' ? '0 1px 2px rgba(0,0,0,0.18)' : ring,
+            border: '2.5px solid white',
+            boxShadow: ring === 'none' ? '0 1px 3px rgba(0,0,0,0.22)' : ring,
           }}
         />
       </button>
