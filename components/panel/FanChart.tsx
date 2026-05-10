@@ -1,12 +1,12 @@
 import type { ForecastResponse, ReplayResponse } from '@/lib/types';
-import { areaPath, formatMw, linePath, minMax, scaleLinear } from './chartUtils';
+import { formatMw, minMax, scaleLinear, smoothBand, smoothLine } from './chartUtils';
 
 type Payload = ForecastResponse | ReplayResponse;
 
 export function FanChart({ payload }: { payload: Payload }) {
   const width = 372;
-  const height = 250;
-  const pad = { top: 16, right: 12, bottom: 26, left: 42 };
+  const height = 210;
+  const pad = { top: 18, right: 12, bottom: 22, left: 44 };
   const innerW = width - pad.left - pad.right;
   const innerH = height - pad.top - pad.bottom;
   const history = payload.history.demand_mw;
@@ -23,10 +23,13 @@ export function FanChart({ payload }: { payload: Payload }) {
     ...('actuals_overlay' in payload ? payload.actuals_overlay.demand_mw : []),
   ];
   const [rawMin, rawMax] = minMax(allValues);
-  const padding = (rawMax - rawMin) * 0.08;
+  const padding = (rawMax - rawMin) * 0.12;
   const yDomain: [number, number] = [rawMin - padding, rawMax + padding];
   const xFor = (i: number) => pad.left + scaleLinear(i, [0, total - 1], [0, innerW]);
   const yFor = (v: number) => pad.top + scaleLinear(v, yDomain, [innerH, 0]);
+  const gradientSuffix = `${payload.node_id}-${'event_id' in payload ? payload.event_id : 'live'}`.replace(/[^a-z0-9-]/gi, '-');
+  const outerGradientId = `fanOuterGrad-${gradientSuffix}`;
+  const innerGradientId = `fanInnerGrad-${gradientSuffix}`;
 
   const historyLine = history.map((value, i) => [xFor(i), yFor(value)] as [number, number]);
   const offset = history.length;
@@ -41,26 +44,127 @@ export function FanChart({ payload }: { payload: Payload }) {
     'actuals_overlay' in payload
       ? payload.actuals_overlay.demand_mw.map((value, i) => [xFor(offset + i), yFor(value)] as [number, number])
       : [];
+  const ticks = [
+    { y: yFor(yDomain[1]), label: formatMw(yDomain[1]) },
+    { y: yFor(yDomain[0]), label: formatMw(yDomain[0]) },
+  ];
 
   return (
     <section>
-      <div className="flex items-end justify-between mb-2">
-        <div className="text-[10px] uppercase tracking-wider text-text-tertiary">Demand forecast</div>
-        <div className="text-[11px] text-text-tertiary">7d history + 10d TFT</div>
+      <div className="gc-section-head">
+        <span>Demand forecast</span>
+        <span>
+          7d history <span aria-hidden="true">&middot;</span> 10d TFT
+        </span>
       </div>
-      <svg viewBox={`0 0 ${width} ${height}`} className="w-full h-auto rounded-md bg-surface-panel border border-black/5">
-        <line x1={pad.left} x2={width - pad.right} y1={thresholdY} y2={thresholdY} stroke="#DC2626" strokeDasharray="4 4" strokeWidth="1" />
-        <text x={pad.left + 4} y={Math.max(12, thresholdY - 5)} fontSize="10" fill="#DC2626">threshold</text>
-        <path d={areaPath(p90, p10)} fill="rgb(15 61 86 / 0.12)" />
-        <path d={areaPath(p75, p25)} fill="rgb(15 61 86 / 0.28)" />
-        <path d={linePath(historyLine)} fill="none" stroke="#6B7280" strokeWidth="1.8" />
-        <path d={linePath(p50)} fill="none" stroke="#0F3D56" strokeWidth="2.3" />
-        {actualLine.length > 0 ? <path d={linePath(actualLine)} fill="none" stroke="#DC2626" strokeWidth="2" /> : null}
-        <line x1={nowX} x2={nowX} y1={pad.top} y2={height - pad.bottom} stroke="#0B0F19" strokeOpacity="0.18" />
-        <text x={nowX + 4} y={height - 10} fontSize="10" fill="#9CA3AF">now</text>
-        <text x="8" y={pad.top + 8} fontSize="10" fill="#9CA3AF">{formatMw(yDomain[1])}</text>
-        <text x="8" y={height - pad.bottom} fontSize="10" fill="#9CA3AF">{formatMw(yDomain[0])}</text>
-      </svg>
+      <div className="rounded-lg bg-surface-panel border border-border">
+        <svg viewBox={`0 0 ${width} ${height}`} className="w-full h-auto block">
+          <defs>
+            <linearGradient id={innerGradientId} x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stopColor="#0F3D56" stopOpacity="0.18" />
+              <stop offset="100%" stopColor="#0F3D56" stopOpacity="0.30" />
+            </linearGradient>
+            <linearGradient id={outerGradientId} x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stopColor="#0F3D56" stopOpacity="0.06" />
+              <stop offset="100%" stopColor="#0F3D56" stopOpacity="0.14" />
+            </linearGradient>
+          </defs>
+
+          {ticks.map((tick) => (
+            <line
+              key={tick.label}
+              x1={pad.left}
+              x2={width - pad.right}
+              y1={tick.y}
+              y2={tick.y}
+              stroke="#ECEEF2"
+              strokeWidth="1"
+            />
+          ))}
+
+          <path d={smoothBand(p10, p90)} fill={`url(#${outerGradientId})`} />
+          <path d={smoothBand(p25, p75)} fill={`url(#${innerGradientId})`} />
+          <path
+            d={smoothLine(historyLine)}
+            fill="none"
+            stroke="#3D4453"
+            strokeWidth="1.6"
+            strokeOpacity="0.85"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <path
+            d={smoothLine(p50)}
+            fill="none"
+            stroke="#0F3D56"
+            strokeWidth="2.4"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          {actualLine.length > 0 ? (
+            <path
+              d={smoothLine(actualLine)}
+              fill="none"
+              stroke="oklch(0.62 0.21 27)"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          ) : null}
+          <line
+            x1={pad.left}
+            x2={width - pad.right}
+            y1={thresholdY}
+            y2={thresholdY}
+            stroke="oklch(0.62 0.21 27)"
+            strokeOpacity="0.55"
+            strokeDasharray="3 4"
+            strokeWidth="1"
+          />
+          <text
+            x={pad.left + 6}
+            y={Math.max(pad.top + 9, thresholdY - 5)}
+            fontSize="9.5"
+            fontFamily="var(--font-jbmono), JetBrains Mono, ui-monospace, monospace"
+            fill="oklch(0.62 0.21 27)"
+            fillOpacity="0.85"
+          >
+            threshold
+          </text>
+          <line
+            x1={nowX}
+            x2={nowX}
+            y1={pad.top}
+            y2={height - pad.bottom}
+            stroke="#0B0F19"
+            strokeOpacity="0.18"
+            strokeWidth="1"
+          />
+          <text
+            x={nowX}
+            y={height - 6}
+            fontSize="9.5"
+            fontFamily="var(--font-jbmono), JetBrains Mono, ui-monospace, monospace"
+            fill="#9CA3AF"
+            textAnchor="middle"
+          >
+            now
+          </text>
+          {ticks.map((tick, index) => (
+            <text
+              key={`${tick.label}-${index}`}
+              x={pad.left - 6}
+              y={tick.y + (index === 0 ? 9 : 0)}
+              textAnchor="end"
+              fontSize="9.5"
+              fontFamily="var(--font-jbmono), JetBrains Mono, ui-monospace, monospace"
+              fill="#9CA3AF"
+            >
+              {tick.label}
+            </text>
+          ))}
+        </svg>
+      </div>
     </section>
   );
 }

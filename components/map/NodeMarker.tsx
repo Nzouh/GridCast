@@ -6,9 +6,9 @@ import { stressLevel } from '@/lib/formulas';
 import type { Node } from '@/lib/types';
 
 const COLOR: Record<'green' | 'amber' | 'red', string> = {
-  green: '#16A34A',
-  amber: '#F59E0B',
-  red: '#DC2626',
+  green: 'oklch(0.66 0.16 150)',
+  amber: 'oklch(0.78 0.16 78)',
+  red: 'oklch(0.62 0.21 27)',
 };
 
 const PULSE: Record<'green' | 'amber' | 'red', string> = {
@@ -29,8 +29,15 @@ export function NodeMarker({
   const router = useRouter();
   const level = stressLevel(node.stress_probability);
   const fill = COLOR[level];
-  const opacity = isDimmed ? 0.45 : 1;
-  const ring = isSelected ? `0 0 0 4px ${fill}33, 0 0 0 1px ${fill}` : 'none';
+  const opacity = isDimmed ? 0.4 : 1;
+  const size = 36;
+  const dot = 16;
+  const centered = (diameter: number) => ({
+    width: diameter,
+    height: diameter,
+    left: (size - diameter) / 2,
+    top: (size - diameter) / 2,
+  });
 
   return (
     <Marker
@@ -45,23 +52,71 @@ export function NodeMarker({
       <button
         type="button"
         aria-label={`${node.name} — ${level} stress`}
-        className="relative cursor-pointer flex items-center justify-center"
-        style={{ width: 24, height: 24, opacity }}
+        className="group relative cursor-pointer"
+        style={{
+          width: size,
+          height: size,
+          opacity,
+          transition: 'opacity 220ms ease',
+        }}
       >
         <span
-          className="absolute inset-0 rounded-full"
-          style={{ background: fill, animation: PULSE[level] }}
-        />
-        <span
-          className="relative inline-block rounded-full"
+          className="absolute rounded-full"
           style={{
-            width: 16,
-            height: 16,
+            ...centered(dot),
             background: fill,
-            border: '2.5px solid white',
-            boxShadow: ring === 'none' ? '0 1px 3px rgba(0,0,0,0.22)' : ring,
+            animation: PULSE[level],
+            transformOrigin: 'center',
           }}
         />
+        <span
+          className="absolute rounded-full"
+          style={{ ...centered(dot + 6), background: fill, opacity: 0.18 }}
+        />
+        {isSelected ? (
+          <>
+            <span
+              className="absolute rounded-full"
+              style={{
+                ...centered(dot + 16),
+                border: `1.5px solid ${fill}`,
+                opacity: 0.55,
+              }}
+            />
+            <span
+              className="absolute rounded-full"
+              style={{
+                ...centered(dot + 8),
+                border: `1px solid ${fill}`,
+                opacity: 0.85,
+              }}
+            />
+          </>
+        ) : (
+          <span
+            className="absolute hidden rounded-full group-hover:block"
+            style={{
+              ...centered(dot + 10),
+              border: `1px solid ${fill}`,
+              opacity: 0.45,
+            }}
+          />
+        )}
+        <span
+          className="absolute rounded-full"
+          style={{
+            ...centered(dot),
+            background: isSelected ? '#ffffff' : fill,
+            border: `${isSelected ? 2.2 : 2}px solid ${isSelected ? fill : '#ffffff'}`,
+            boxShadow: '0 1px 3px rgba(0,0,0,0.22)',
+          }}
+        />
+        {isSelected ? (
+          <span
+            className="absolute rounded-full"
+            style={{ ...centered(dot * 0.45), background: fill }}
+          />
+        ) : null}
       </button>
     </Marker>
   );

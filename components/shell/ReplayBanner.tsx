@@ -22,7 +22,7 @@ export function ReplayBanner({
   issuedAt: string;
 }) {
   return (
-    <div className="flex items-center justify-between px-6 py-2 bg-brand/[0.04] border-b border-brand/10 text-[12px]">
+    <div className="flex items-center justify-between px-6 py-2 bg-brand/[0.04] border-b border-brand/[0.12] text-[12.5px]">
       <span className="text-text-primary">
         <span className="font-medium text-brand">Replay mode</span>
         <span className="text-text-tertiary mx-2">·</span>

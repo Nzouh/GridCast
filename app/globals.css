@@ -15,6 +15,7 @@ body {
   background: #ffffff;
   color: #0b0f19;
   font-family: var(--font-inter), Inter, ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
 @keyframes gc-pulse-green {
@@ -33,6 +34,51 @@ body {
 }
 
 @keyframes gc-slide-in {
-  from { transform: translateX(24px); opacity: 0; }
+  from { transform: translateX(20px); opacity: 0; }
   to { transform: translateX(0); opacity: 1; }
+}
+
+.gc-label {
+  font-family: var(--font-jbmono), "JetBrains Mono", ui-monospace, monospace;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #9ca3af;
+}
+
+.gc-section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.gc-section-head > :first-child {
+  font-family: var(--font-jbmono), "JetBrains Mono", ui-monospace, monospace;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #9ca3af;
+}
+
+.gc-section-head > :last-child {
+  font-family: var(--font-jbmono), "JetBrains Mono", ui-monospace, monospace;
+  font-size: 11px;
+  color: #9ca3af;
+  font-variant-numeric: tabular-nums;
+}
+
+aside::-webkit-scrollbar {
+  width: 6px;
+}
+
+aside::-webkit-scrollbar-thumb {
+  background: rgb(11 15 25 / 10%);
+  border-radius: 999px;
+}
+
+aside::-webkit-scrollbar-track {
+  background: transparent;
 }

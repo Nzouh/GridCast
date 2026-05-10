@@ -9,9 +9,9 @@ import type { Node } from '@/lib/types';
 import { stressLevel } from '@/lib/formulas';
 
 const T = {
-  green: '#16A34A',
-  amber: '#F59E0B',
-  red: '#DC2626',
+  green: 'oklch(0.66 0.16 150)',
+  amber: 'oklch(0.78 0.16 78)',
+  red: 'oklch(0.62 0.21 27)',
   text: '#0B0F19',
   secondary: '#6B7280',
   tertiary: '#9CA3AF',

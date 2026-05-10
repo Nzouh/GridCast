@@ -3,9 +3,9 @@ import { stressLevel } from '@/lib/formulas';
 import type { Node } from '@/lib/types';
 
 const CHIP: Record<'green' | 'amber' | 'red', { bg: string; text: string; label: string }> = {
-  green: { bg: 'bg-stress-green/10', text: 'text-stress-green', label: 'stable' },
-  amber: { bg: 'bg-stress-amber/10', text: 'text-stress-amber', label: 'elevated' },
-  red: { bg: 'bg-stress-red/10', text: 'text-stress-red', label: 'stressed' },
+  green: { bg: 'rgba(22,163,74,0.10)', text: 'oklch(0.50 0.15 150)', label: 'stable' },
+  amber: { bg: 'rgba(245,158,11,0.12)', text: 'oklch(0.55 0.15 78)', label: 'elevated' },
+  red: { bg: 'rgba(220,38,38,0.10)', text: 'oklch(0.50 0.20 27)', label: 'stressed' },
 };
 
 function formatIssued(iso: string): string {
@@ -42,19 +42,20 @@ export function NodePanelHeader({
   const chip = CHIP[level];
 
   return (
-    <div className="px-6 pt-6 pb-4 border-b border-black/5">
+    <div className="px-6 pt-[22px] pb-4 border-b border-border">
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0">
-          <h1 className="text-[26px] font-semibold tracking-tight text-text-primary leading-tight">
+          <h1 className="text-[24px] font-semibold tracking-[-0.02em] text-text-primary leading-[1.15]">
             {node.name}
           </h1>
-          <div className="mt-1 text-[13px] text-text-secondary">
+          <div className="mt-1 font-mono text-[12.5px] text-text-secondary">
             {node.iso} · {node.state} · BA: {node.ba_code}
           </div>
         </div>
         <div className="flex items-center gap-2 shrink-0">
           <span
-            className={`inline-flex items-center gap-1.5 px-2 py-1 rounded text-[11px] font-medium uppercase tracking-wider ${chip.bg} ${chip.text}`}
+            className="inline-flex items-center gap-1.5 rounded px-2 py-1 font-mono text-[10.5px] font-semibold uppercase tracking-[0.08em]"
+            style={{ background: chip.bg, color: chip.text }}
           >
             <span className="inline-block w-1.5 h-1.5 rounded-full bg-current" />
             {chip.label}
@@ -69,7 +70,7 @@ export function NodePanelHeader({
         </div>
       </div>
       {issuedAt ? (
-        <div className="mt-3 text-[11px] text-text-tertiary">
+        <div className="mt-3 font-mono text-[11px] text-text-tertiary tabular-nums">
           Forecast issued {formatIssued(issuedAt)}
         </div>
       ) : null}
