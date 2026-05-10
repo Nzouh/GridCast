@@ -226,4 +226,5 @@ tsconfig.tsbuildinfo
 # GridCast data outputs (raw pulls + intermediate features)
 backend/data/raw/
 backend/data/processed/
+backend/models/out/
 notebooks/figures/
