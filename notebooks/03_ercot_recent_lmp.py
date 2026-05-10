@@ -1,9 +1,9 @@
-"""GridCast — ERCOT recent LMP analysis (last ~40 days available).
+"""GridCast - ERCOT recent LMP analysis (last ~40 days available).
 
 Uses what's actually on disk: ERCOT DAM + RTM prices, EIA demand and
 day-ahead forecast, Houston weather. Joins on hourly UTC and produces 4
 charts that tell the imbalance-cost story during normal-ish operations
-(no Winter Storm here — that needs deeper historical pulls).
+(no Winter Storm here - that needs deeper historical pulls).
 
 Run:
     python notebooks/03_ercot_recent_lmp.py
@@ -83,7 +83,7 @@ def load_joined() -> pd.DataFrame:
 def print_stats(df: pd.DataFrame) -> None:
     bar = "=" * 72
     print(bar)
-    print(f"ERCOT — {df.index.min().date()}  →  {df.index.max().date()}   ({len(df):,} hours)")
+    print(f"ERCOT - {df.index.min().date()}  ->  {df.index.max().date()}   ({len(df):,} hours)")
     print(bar)
 
     print("\n--- PRICES ($/MWh) ---")
@@ -97,21 +97,21 @@ def print_stats(df: pd.DataFrame) -> None:
     print(f"RTM > DAM by >$50 in {(df['price_spread'] > 50).sum()} hours "
           f"({(df['price_spread'] > 50).mean()*100:.1f}% of all hours)")
     print(f"RTM > DAM by >$200 in {(df['price_spread'] > 200).sum()} hours "
-          f"({(df['price_spread'] > 200).mean()*100:.2f}%) — scarcity events")
+          f"({(df['price_spread'] > 200).mean()*100:.2f}%) - scarcity events")
 
     print("\n--- DEMAND (GW) ---")
     print(f"Mean {df['demand_mw'].mean()/1000:.1f}   "
           f"Peak {df['demand_mw'].max()/1000:.1f}   "
           f"Min {df['demand_mw'].min()/1000:.1f}")
 
-    print("\n--- DAY-AHEAD FORECAST ERROR (actual − forecast, MW) ---")
+    print("\n--- DAY-AHEAD FORECAST ERROR (actual - forecast, MW) ---")
     err = df["forecast_err_mw"].dropna()
     print(f"Mean {err.mean():+.0f}   |err| mean {err.abs().mean():.0f}   "
           f"max under-forecast {err.max():+.0f}   max over-forecast {err.min():+.0f}")
     mape = (err.abs() / df["demand_mw"]).mean() * 100
     print(f"MAPE: {mape:.2f}%")
 
-    print("\n--- IMBALANCE COST = (D − DF) × (RTM − DAM) ---")
+    print("\n--- IMBALANCE COST = (D - DF) x (RTM - DAM) ---")
     imb = df["imbalance_dollars"].dropna()
     print(f"Total over the window:        ${imb.sum()/1e6:>+8,.2f} M")
     print(f"Positive part (forecast lost): ${imb.clip(lower=0).sum()/1e6:>+8,.2f} M")
@@ -140,7 +140,7 @@ def chart_overview(df: pd.DataFrame) -> None:
                      alpha=0.18, color=STRESS_RED, label="RTM > DAM (scarcity hours)")
     ax1.set_ylabel("LMP ($/MWh)")
     ax1.legend(loc="upper right", ncol=3)
-    ax1.set_title("ERCOT Houston Hub — day-ahead vs real-time, last 40 days",
+    ax1.set_title("ERCOT Houston Hub - day-ahead vs real-time, last 40 days",
                   loc="left")
 
     ax2.plot(df.index, df["demand_mw"]/1000, color=GRIDCAST_TEAL, lw=1.0)
@@ -169,7 +169,7 @@ def chart_price_patterns(df: pd.DataFrame) -> None:
     ax.plot(pct, rtm_sorted, color=STRESS_RED, lw=2, label="Real-time")
     ax.set_xlabel("% of hours (sorted by price, descending)")
     ax.set_ylabel("LMP ($/MWh)")
-    ax.set_title("Price duration curve — most hours are cheap, a few are very expensive",
+    ax.set_title("Price duration curve - most hours are cheap, a few are very expensive",
                   loc="left")
     ax.legend()
     ax.set_yscale("symlog", linthresh=50)
@@ -189,19 +189,19 @@ def chart_price_patterns(df: pd.DataFrame) -> None:
         rtm_p90=("rtm_usd", lambda x: x.quantile(0.90)),
     )
     ax.fill_between(by_hour.index, by_hour["rtm_p10"], by_hour["rtm_p90"],
-                    alpha=0.15, color=STRESS_RED, label="RTM P10–P90")
+                    alpha=0.15, color=STRESS_RED, label="RTM P10-P90")
     ax.plot(by_hour.index, by_hour["dam_mean"], color=GRIDCAST_TEAL_2,
             lw=2, marker="o", label="DAM mean")
     ax.plot(by_hour.index, by_hour["rtm_mean"], color=STRESS_RED,
             lw=2, marker="o", label="RTM mean")
     ax.set_xlabel("Hour of day (Texas local time)")
     ax.set_ylabel("LMP ($/MWh)")
-    ax.set_title("Hourly price rhythm — evening ramp burns through reserves",
+    ax.set_title("Hourly price rhythm - evening ramp burns through reserves",
                   loc="left")
     ax.set_xticks([0, 6, 12, 18, 23])
     ax.legend()
 
-    fig.suptitle("ERCOT pricing patterns — the shape of when scarcity hits",
+    fig.suptitle("ERCOT pricing patterns - the shape of when scarcity hits",
                  x=0.07, y=1.0, ha="left", fontsize=14, fontweight="bold")
 
     out = FIG / "tx_recent_02_price_patterns.png"
@@ -228,10 +228,10 @@ def chart_demand_vs_price(df: pd.DataFrame) -> None:
     spear = df_local[["demand_mw", "rtm_usd"]].corr(method="spearman").iloc[0,1]
 
     ax.set_title(
-        f"Demand drives price — but the relationship is non-linear and tail-heavy",
+        f"Demand drives price - but the relationship is non-linear and tail-heavy",
         loc="left", fontsize=14)
     ax.text(0.02, 0.97,
-            f"Pearson r = {corr:+.2f}\nSpearman ρ = {spear:+.2f}\nn = {len(df_local):,}",
+            f"Pearson r = {corr:+.2f}\nSpearman rho = {spear:+.2f}\nn = {len(df_local):,}",
             transform=ax.transAxes, va="top", ha="left",
             color=TEXT_SECONDARY, fontsize=10,
             bbox=dict(facecolor="white", edgecolor=GRID_COLOR, linewidth=0.7,
@@ -247,7 +247,7 @@ def chart_demand_vs_price(df: pd.DataFrame) -> None:
 
 
 def chart_forecast_error_vs_cost(df: pd.DataFrame) -> None:
-    """The GridCast pitch chart: forecast error → imbalance cost."""
+    """The GridCast pitch chart: forecast error -> imbalance cost."""
     d = df.dropna(subset=["forecast_err_mw", "imbalance_dollars"]).copy()
 
     fig, axes = plt.subplots(1, 2, figsize=(15, 5.5))
@@ -260,12 +260,12 @@ def chart_forecast_error_vs_cost(df: pd.DataFrame) -> None:
                     norm=mpl.colors.SymLogNorm(linthresh=10))
     ax.axvline(0, color=TEXT_TERTIARY, lw=0.7, ls=":")
     ax.axhline(0, color=TEXT_TERTIARY, lw=0.7, ls=":")
-    ax.set_xlabel("Day-ahead forecast error (GW)\n← over-forecast    under-forecast →")
+    ax.set_xlabel("Day-ahead forecast error (GW)\n<- over-forecast    under-forecast ->")
     ax.set_ylabel("Imbalance cost ($k per hour)")
     ax.set_title("Each dot = one hour", loc="left")
 
     cb = fig.colorbar(sc, ax=ax, pad=0.02, shrink=0.85)
-    cb.set_label("|RTM − DAM| spread ($/MWh)", color=TEXT_SECONDARY)
+    cb.set_label("|RTM - DAM| spread ($/MWh)", color=TEXT_SECONDARY)
 
     # Right: cumulative imbalance over time
     ax = axes[1]
@@ -283,7 +283,7 @@ def chart_forecast_error_vs_cost(df: pd.DataFrame) -> None:
     ax.xaxis.set_major_formatter(mdates.DateFormatter("%b %d"))
 
     fig.suptitle(
-        "Forecast errors leak money even in normal operations — and GridCast targets exactly this",
+        "Forecast errors leak money even in normal operations - and GridCast targets exactly this",
         x=0.07, y=1.0, ha="left", fontsize=14, fontweight="bold")
 
     out = FIG / "tx_recent_04_forecast_error_vs_cost.png"

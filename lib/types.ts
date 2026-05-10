@@ -46,6 +46,8 @@ export type NodesResponse = {
 };
 
 export type QuantileSeries = {
+  target: 'demand_mw';
+  unit: 'MW';
   timestamps: ISOTimeString[];
   p10: number[];
   p25: number[];
@@ -56,7 +58,7 @@ export type QuantileSeries = {
 
 export type HistorySeries = {
   timestamps: ISOTimeString[];
-  lmp_congestion_usd: number[];
+  demand_mw: number[];
 };
 
 export type Allocation = {
@@ -100,7 +102,7 @@ export type ForecastResponse = {
   horizon_hours: 240;
   encoder_hours: 168;
   quantile_levels: [0.1, 0.25, 0.5, 0.75, 0.9];
-  stress_threshold_lmp_usd: number;
+  stress_threshold_demand_mw: number;
   history: HistorySeries;
   forecast: QuantileSeries;
   allocation: Allocation;

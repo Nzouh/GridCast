@@ -29,9 +29,9 @@ NODES = {
         "ba_code": "PJM",
         "lat": 38.9,
         "lon": -77.0,
-        "threshold": 52.0,
-        "base": 30.0,
-        "amp": 7.5,
+        "threshold": 14500.0,
+        "base": 13200.0,
+        "amp": 2200.0,
         "temp": 24.0,
     },
     "caiso-sp15": {
@@ -41,9 +41,9 @@ NODES = {
         "ba_code": "CAISO",
         "lat": 34.05,
         "lon": -118.25,
-        "threshold": 50.0,
-        "base": 28.0,
-        "amp": 6.0,
+        "threshold": 23000.0,
+        "base": 18500.0,
+        "amp": 3400.0,
         "temp": 21.0,
     },
     "caiso-np15": {
@@ -53,9 +53,9 @@ NODES = {
         "ba_code": "CAISO",
         "lat": 37.77,
         "lon": -122.42,
-        "threshold": 42.0,
-        "base": 24.0,
-        "amp": 4.8,
+        "threshold": 14000.0,
+        "base": 11600.0,
+        "amp": 1700.0,
         "temp": 17.0,
     },
     "ercot-houston": {
@@ -65,9 +65,9 @@ NODES = {
         "ba_code": "ERCOT",
         "lat": 29.76,
         "lon": -95.37,
-        "threshold": 62.0,
-        "base": 33.0,
-        "amp": 9.5,
+        "threshold": 16000.0,
+        "base": 12600.0,
+        "amp": 2600.0,
         "temp": 30.0,
     },
     # Synthetic demo nodes (is_live=False). Real US grid hubs across ISOs
@@ -80,9 +80,9 @@ NODES = {
         "ba_code": "MISO",
         "lat": 39.77,
         "lon": -86.16,
-        "threshold": 48.0,
-        "base": 28.0,
-        "amp": 6.5,
+        "threshold": 17000.0,
+        "base": 13600.0,
+        "amp": 2200.0,
         "temp": 19.0,
     },
     "miso-illinois-hub": {
@@ -92,9 +92,9 @@ NODES = {
         "ba_code": "MISO",
         "lat": 41.88,
         "lon": -87.63,
-        "threshold": 50.0,
-        "base": 29.0,
-        "amp": 6.8,
+        "threshold": 23500.0,
+        "base": 18800.0,
+        "amp": 3000.0,
         "temp": 17.0,
     },
     "spp-north-hub": {
@@ -104,9 +104,9 @@ NODES = {
         "ba_code": "SPP",
         "lat": 39.10,
         "lon": -94.58,
-        "threshold": 46.0,
-        "base": 27.0,
-        "amp": 6.0,
+        "threshold": 14000.0,
+        "base": 11100.0,
+        "amp": 1800.0,
         "temp": 18.0,
     },
     "spp-south-hub": {
@@ -116,9 +116,9 @@ NODES = {
         "ba_code": "SPP",
         "lat": 35.47,
         "lon": -97.52,
-        "threshold": 52.0,
-        "base": 30.0,
-        "amp": 7.2,
+        "threshold": 21000.0,
+        "base": 16700.0,
+        "amp": 2700.0,
         "temp": 22.0,
     },
     "nyiso-zone-j": {
@@ -128,9 +128,9 @@ NODES = {
         "ba_code": "NYIS",
         "lat": 40.71,
         "lon": -74.01,
-        "threshold": 58.0,
-        "base": 34.0,
-        "amp": 7.5,
+        "threshold": 10800.0,
+        "base": 8500.0,
+        "amp": 1400.0,
         "temp": 15.0,
     },
     "nyiso-zone-a": {
@@ -140,9 +140,9 @@ NODES = {
         "ba_code": "NYIS",
         "lat": 42.89,
         "lon": -78.88,
-        "threshold": 44.0,
-        "base": 26.0,
-        "amp": 5.8,
+        "threshold": 5500.0,
+        "base": 4300.0,
+        "amp": 850.0,
         "temp": 12.0,
     },
     "iso-ne-mass-hub": {
@@ -152,9 +152,9 @@ NODES = {
         "ba_code": "ISNE",
         "lat": 42.36,
         "lon": -71.06,
-        "threshold": 54.0,
-        "base": 31.0,
-        "amp": 6.4,
+        "threshold": 13500.0,
+        "base": 10800.0,
+        "amp": 1800.0,
         "temp": 13.0,
     },
     "pjm-western-hub": {
@@ -164,9 +164,9 @@ NODES = {
         "ba_code": "PJM",
         "lat": 40.27,
         "lon": -76.88,
-        "threshold": 50.0,
-        "base": 29.0,
-        "amp": 6.6,
+        "threshold": 32000.0,
+        "base": 25800.0,
+        "amp": 4200.0,
         "temp": 17.0,
     },
     "pjm-aep-dayton": {
@@ -176,9 +176,9 @@ NODES = {
         "ba_code": "PJM",
         "lat": 39.76,
         "lon": -84.19,
-        "threshold": 49.0,
-        "base": 28.5,
-        "amp": 6.4,
+        "threshold": 16800.0,
+        "base": 13200.0,
+        "amp": 2300.0,
         "temp": 18.0,
     },
     "ercot-north": {
@@ -188,9 +188,9 @@ NODES = {
         "ba_code": "ERCO",
         "lat": 32.78,
         "lon": -96.80,
-        "threshold": 60.0,
-        "base": 32.0,
-        "amp": 8.8,
+        "threshold": 28500.0,
+        "base": 22800.0,
+        "amp": 3800.0,
         "temp": 26.0,
     },
     "ercot-west": {
@@ -200,9 +200,9 @@ NODES = {
         "ba_code": "ERCO",
         "lat": 31.85,
         "lon": -102.37,
-        "threshold": 58.0,
-        "base": 30.5,
-        "amp": 8.2,
+        "threshold": 16500.0,
+        "base": 12800.0,
+        "amp": 2400.0,
         "temp": 24.0,
     },
     "caiso-zp26": {
@@ -212,9 +212,9 @@ NODES = {
         "ba_code": "CISO",
         "lat": 35.37,
         "lon": -119.02,
-        "threshold": 49.0,
-        "base": 27.5,
-        "amp": 6.2,
+        "threshold": 8200.0,
+        "base": 6500.0,
+        "amp": 1100.0,
         "temp": 22.0,
     },
     "bpa-pnw": {
@@ -224,9 +224,9 @@ NODES = {
         "ba_code": "BPAT",
         "lat": 45.52,
         "lon": -122.68,
-        "threshold": 36.0,
-        "base": 22.0,
-        "amp": 4.6,
+        "threshold": 10000.0,
+        "base": 8000.0,
+        "amp": 1300.0,
         "temp": 12.0,
     },
     "duke-carolinas": {
@@ -236,9 +236,9 @@ NODES = {
         "ba_code": "DUK",
         "lat": 35.23,
         "lon": -80.84,
-        "threshold": 47.0,
-        "base": 27.0,
-        "amp": 6.0,
+        "threshold": 19000.0,
+        "base": 15100.0,
+        "amp": 2600.0,
         "temp": 21.0,
     },
     "tva-tennessee": {
@@ -248,9 +248,9 @@ NODES = {
         "ba_code": "TVA",
         "lat": 36.16,
         "lon": -86.78,
-        "threshold": 46.0,
-        "base": 26.5,
-        "amp": 5.8,
+        "threshold": 22500.0,
+        "base": 18000.0,
+        "amp": 3000.0,
         "temp": 20.0,
     },
     "fpl-florida": {
@@ -260,9 +260,9 @@ NODES = {
         "ba_code": "FPL",
         "lat": 25.76,
         "lon": -80.19,
-        "threshold": 53.0,
-        "base": 30.0,
-        "amp": 6.8,
+        "threshold": 28500.0,
+        "base": 22600.0,
+        "amp": 3600.0,
         "temp": 27.0,
     },
 }
@@ -406,17 +406,17 @@ def bump(h: int, center: float, width: float, height: float) -> float:
 
 def node_adjustment(node_id: str, h: int, hour: int) -> float:
     if node_id == "ercot-houston":
-        return bump(h, 128, 46, 18) + bump(h, 160, 24, 8)
+        return bump(h, 128, 46, 2600) + bump(h, 160, 24, 1200)
     if node_id == "caiso-sp15":
-        evening_ramp = bump(hour, 20, 3.2, 15)
-        midday_duck = -bump(hour, 13, 4.0, 8)
-        return evening_ramp + midday_duck + bump(h, 150, 34, 6)
+        evening_ramp = bump(hour, 20, 3.2, 2800)
+        midday_duck = -bump(hour, 13, 4.0, 1500)
+        return evening_ramp + midday_duck + bump(h, 150, 34, 900)
     if node_id == "dominion-hub":
-        return bump(h, 84, 30, 11) + bump(h, 112, 24, 7)
-    return bump(h, 138, 40, 3)
+        return bump(h, 84, 30, 1800) + bump(h, 112, 24, 1100)
+    return bump(h, 138, 40, 650)
 
 
-def lmp_value(node_id: str, h: int, start: datetime, history: bool = False) -> float:
+def demand_value(node_id: str, h: int, start: datetime, history: bool = False) -> float:
     cfg = NODES[node_id]
     ts = start + timedelta(hours=h)
     hour = ts.hour
@@ -424,10 +424,10 @@ def lmp_value(node_id: str, h: int, start: datetime, history: bool = False) -> f
     weekly = 3.0 * math.sin((h + (35 if history else 0)) / 168 * 2 * math.pi - 0.6)
     shoulder = 1.7 * math.sin(h / 18 * 2 * math.pi)
     trend = (h / max(HORIZON - 1, 1)) * (2.5 if node_id in {"ercot-houston", "caiso-sp15"} else 1.2)
-    value = cfg["base"] + diurnal + weekly + shoulder + trend + node_adjustment(node_id, h, hour)
+    value = cfg["base"] + diurnal + weekly * 120 + shoulder * 75 + trend * 80 + node_adjustment(node_id, h, hour)
     if history:
-        value += 2.2 * math.sin(h / 9 * 2 * math.pi)
-    return max(8.0, value)
+        value += 240 * math.sin(h / 9 * 2 * math.pi)
+    return max(0.0, value)
 
 
 def build_quantiles(node_id: str, start: datetime) -> dict[str, list[float] | list[str]]:
@@ -438,33 +438,73 @@ def build_quantiles(node_id: str, start: datetime) -> dict[str, list[float] | li
     p75: list[float] = []
     p90: list[float] = []
     for h in range(HORIZON):
-        median = lmp_value(node_id, h, start)
-        spread = 4.5 + 0.038 * h
+        median = demand_value(node_id, h, start)
+        spread = 420 + 4.2 * h
         if node_id == "ercot-houston":
-            spread += 1.8 + bump(h, 135, 50, 5)
+            spread += 240 + bump(h, 135, 50, 850)
         elif node_id == "caiso-sp15":
-            spread += bump((start + timedelta(hours=h)).hour, 20, 3.5, 3.5)
+            spread += bump((start + timedelta(hours=h)).hour, 20, 3.5, 550)
         elif node_id == "dominion-hub":
-            spread += bump(h, 95, 36, 2.8)
-        low = max(4.0, median - spread * 1.15)
+            spread += bump(h, 95, 36, 480)
+        low = max(0.0, median - spread * 1.15)
         p10.append(round1(low))
         p25.append(round1(max(low, median - spread * 0.55)))
         p50.append(round1(median))
         p75.append(round1(median + spread * 0.55))
         p90.append(round1(median + spread * 1.15))
-    return {"timestamps": timestamps, "p10": p10, "p25": p25, "p50": p50, "p75": p75, "p90": p90}
+    return {
+        "target": "demand_mw",
+        "unit": "MW",
+        "timestamps": timestamps,
+        "p10": p10,
+        "p25": p25,
+        "p50": p50,
+        "p75": p75,
+        "p90": p90,
+    }
 
 
 def build_history(node_id: str, end: datetime) -> dict[str, list[float] | list[str]]:
     start = end - timedelta(hours=HISTORY - 1)
     timestamps = hourly_timestamps(start, HISTORY)
-    values = [round1(lmp_value(node_id, h, start, history=True)) for h in range(HISTORY)]
-    return {"timestamps": timestamps, "lmp_congestion_usd": values}
+    values = [round1(demand_value(node_id, h, start, history=True)) for h in range(HISTORY)]
+    return {"timestamps": timestamps, "demand_mw": values}
 
 
-def stress_probability(p90: float, threshold: float, h: int) -> float:
-    clustered = 0.05 * math.sin(h / 18 * 2 * math.pi) + 0.03 * math.sin(h / 71 * 2 * math.pi)
-    return max(0.0, min(1.0, round(sigmoid((p90 - threshold - 5.4) / 4.5) + clustered, 3)))
+def stress_probability_from_quantiles(quantiles: dict[str, float], threshold: float) -> float:
+    points = [
+        ("p10", 0.10),
+        ("p25", 0.25),
+        ("p50", 0.50),
+        ("p75", 0.75),
+        ("p90", 0.90),
+    ]
+
+    if threshold <= quantiles["p10"]:
+        return 1.0
+
+    for i in range(len(points) - 1):
+        low_key, low_probability = points[i]
+        high_key, high_probability = points[i + 1]
+        low_value = quantiles[low_key]
+        high_value = quantiles[high_key]
+        if threshold <= high_value:
+            if high_value == low_value:
+                return round(1 - high_probability, 3)
+            fraction = (threshold - low_value) / (high_value - low_value)
+            cdf = low_probability + (high_probability - low_probability) * fraction
+            return round(max(0.0, min(1.0, 1 - cdf)), 3)
+
+    p75 = quantiles["p75"]
+    p90 = quantiles["p90"]
+    if p90 <= p75:
+        return 0.0
+
+    p99 = p90 + ((p90 - p75) / (0.90 - 0.75)) * (0.99 - 0.90)
+    if threshold >= p99:
+        return 0.0
+    cdf = 0.90 + ((0.99 - 0.90) * (threshold - p90)) / (p99 - p90)
+    return round(max(0.0, min(1.0, 1 - cdf)), 3)
 
 
 def allocation_from_forecast(forecast: dict[str, list[float] | list[str]], threshold: float) -> dict[str, float | int]:
@@ -484,11 +524,28 @@ def allocation_from_forecast(forecast: dict[str, list[float] | list[str]], thres
 
 
 def build_stress_timeline(forecast: dict[str, list[float] | list[str]], threshold: float) -> list[dict[str, float | int]]:
+    p10 = forecast["p10"]
+    p25 = forecast["p25"]
+    p50 = forecast["p50"]
+    p75 = forecast["p75"]
     p90 = forecast["p90"]
-    assert isinstance(p90, list)
+    assert isinstance(p10, list) and isinstance(p25, list) and isinstance(p50, list)
+    assert isinstance(p75, list) and isinstance(p90, list)
     return [
-        {"hour_offset": h, "stress_probability": stress_probability(float(value), threshold, h)}
-        for h, value in enumerate(p90)
+        {
+            "hour_offset": h,
+            "stress_probability": stress_probability_from_quantiles(
+                {
+                    "p10": float(p10[h]),
+                    "p25": float(p25[h]),
+                    "p50": float(p50[h]),
+                    "p75": float(p75[h]),
+                    "p90": float(p90[h]),
+                },
+                threshold,
+            ),
+        }
+        for h in range(HORIZON)
     ]
 
 
@@ -555,7 +612,7 @@ def build_forecast(node_id: str, issued_at: str, published_at: str, forecast_sta
         "horizon_hours": HORIZON,
         "encoder_hours": HISTORY,
         "quantile_levels": [0.1, 0.25, 0.5, 0.75, 0.9],
-        "stress_threshold_lmp_usd": cfg["threshold"],
+        "stress_threshold_demand_mw": cfg["threshold"],
         "history": build_history(node_id, start - timedelta(hours=1)),
         "forecast": forecast,
         "allocation": allocation,
@@ -669,11 +726,11 @@ def build_replay(event_id: str) -> dict[str, object]:
     for h, upper in enumerate(p90):
         base = float(upper)
         if event_id == "texas-2021":
-            spike = bump(h, 142, 16, 270) + bump(h, 156, 8, 190)
-            realized = base * 0.82 + 8 * math.sin(h / 8) + spike
+            spike = bump(h, 142, 16, 6200) + bump(h, 156, 8, 4200)
+            realized = base * 0.88 + 280 * math.sin(h / 8) + spike
         else:
-            spike = bump(h, 130, 28, 42) + bump(h, 166, 22, 28)
-            realized = base * 0.9 + 4 * math.sin(h / 10) + spike
+            spike = bump(h, 130, 28, 3200) + bump(h, 166, 22, 2200)
+            realized = base * 0.92 + 180 * math.sin(h / 10) + spike
         actuals.append(round1(max(0.0, realized)))
 
     payload.update(
@@ -684,7 +741,7 @@ def build_replay(event_id: str) -> dict[str, object]:
             "narrative": narrative,
             "actuals_overlay": {
                 "timestamps": timestamps,
-                "lmp_congestion_usd": actuals,
+                "demand_mw": actuals,
             },
         }
     )

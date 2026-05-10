@@ -95,12 +95,14 @@ only, off → all nodes).
   "horizon_hours": 240,
   "encoder_hours": 168,
   "quantile_levels": [0.10, 0.25, 0.50, 0.75, 0.90],
-  "stress_threshold_lmp_usd": 45.2,
+  "stress_threshold_demand_mw": 14500,
   "history": {
     "timestamps": ["2026-05-02T15:00:00Z"],
-    "lmp_congestion_usd": [12.4]
+    "demand_mw": [12400]
   },
   "forecast": {
+    "target": "demand_mw",
+    "unit": "MW",
     "timestamps": ["2026-05-09T15:00:00Z"],
     "p10": [],
     "p25": [],
@@ -138,6 +140,9 @@ only, off → all nodes).
 
 **Notes:**
 - `stress_timeline` has no `level` string — UI derives from `stress_probability`.
+- `stress_probability` is derived from the five demand quantiles by linearly
+  interpolating the inverse CDF at the per-node `stress_threshold_demand_mw`,
+  then returning `P(demand_mw > threshold)`.
 - `data_centers.committed_draw_mw` is pre-computed by the teammate:
   `p90 = capacity × pct/100`, `p50 = capacity × pct_p50/100`,
   `p10 = capacity × pct_p10/100`. UI reads and displays; no re-derivation.
@@ -177,7 +182,7 @@ Same shape as `/forecast`, plus:
   "narrative": "Forecast as it would have appeared on Feb 4, 2021 — 10 days before the storm peak.",
   "actuals_overlay": {
     "timestamps": ["2021-02-09T00:00:00Z"],
-    "lmp_congestion_usd": [62.1, 78.4]
+    "demand_mw": [16200, 17800]
   }
 }
 ```
@@ -326,7 +331,7 @@ fixtures/
 | Widget | Component | Role |
 |---|---|---|
 | Allocation gauge | `AllocationGauge` | Hero number — "the answer" |
-| Fan chart + LMP history | `FanChart` | Centrepiece — what + why |
+| Fan chart + demand history | `FanChart` | Centrepiece — what + why |
 | Stress timeline strip | `StressTimeline` | At-a-glance — when |
 | Ensemble spread | `EnsembleSpread` | Methodology — uncertainty source |
 | Data centre cards | `DataCenterList` + `DataCenterCard` | Application — what it means |
@@ -488,7 +493,7 @@ Visual reference: **sf.atmo.ai**. Adjacent: Linear, Mercury, Stripe.
 
 3. **Allocation gauge (hero).** Large "66%" in display weight (~80–100px). Subtitle: "Recommended allocation". Below: thin confidence band "p10–p90: 48% – 82%".
 
-4. **Fan chart.** ~280px tall. X-axis spans 17 days: 7 days of past LMP (solid line, left of "now" divider) + 10 days of forecast (5 stacked translucent teal bands, p50 darkest). Y-axis: LMP congestion $/MWh. Horizontal dashed line at stress threshold labelled "Stress threshold". Hover reveals hourly values. In replay mode: additional solid line of actual realised LMP over the bands.
+4. **Fan chart.** ~280px tall. X-axis spans 17 days: 7 days of past demand (solid line, left of "now" divider) + 10 days of forecast (5 stacked translucent teal bands, p50 darkest). Y-axis: node demand in MW. Horizontal dashed line at stress threshold labelled "Stress threshold". Hover reveals hourly values. In replay mode: additional solid line of actual realised demand over the bands.
 
 5. **Stress timeline strip.** ~24px tall, full panel width. 240 cells (one per forecast hour), coloured green/amber/red by stress probability. Day ticks above. Hover: hour + probability.
 
@@ -508,7 +513,7 @@ Visual reference: **sf.atmo.ai**. Adjacent: Linear, Mercury, Stripe.
 
 **Do NOT design:** mobile layouts, dark mode, login/signup, fuel mix donut, weather raster, refresh button, any widgets beyond the seven listed above.
 
-**Data realism:** p50 LMP ~$20–60/MWh, allocation 60–80% green / 20–40% red. Do not invent fields.
+**Data realism:** live-node p50 demand ranges roughly Dominion 12–18 GW, CAISO SP15 15–25 GW, CAISO NP15 10–15 GW, ERCOT Houston 10–17 GW; allocation 60–80% green / 20–40% red. Do not invent fields.
 
 ---
 
@@ -519,7 +524,7 @@ Visual reference: **sf.atmo.ai**. Adjacent: Linear, Mercury, Stripe.
 1. `pnpm install && pnpm dev` → Next.js on :3000.
 2. `/` → map renders, 4 markers, colour-coded.
 3. Click each marker → side panel, URL `?node=...`, all 7 widgets with data.
-4. Fan chart: 7-day past LMP line meets forecast bands at t=0.
+4. Fan chart: 7-day past demand line meets forecast bands at t=0.
 5. Stress timeline: 240 cells.
 6. Ensemble spread: 16 distinct lines.
 7. DC cards: committed-draw bar with p10–p90 range.
@@ -552,7 +557,7 @@ updated to conform to this spec. Full diff in `PLAN.md`. Key items:
 | # | Change required |
 |---|---|
 | 1 | IDs: snake_case → kebab-case (`dominion-hub`, etc.) |
-| 2 | Forecast target: `stress` → `lmp_congestion_usd` ($/MWh) |
+| 2 | Forecast target: `stress` → `demand_mw` (MW); stress is derived UI-side from quantiles vs threshold |
 | 3 | Forecast shape: `points[{stress:{p10…}}]` → parallel arrays |
 | 4 | History: move from `/live.last_7_days` to `/forecast.history` |
 | 5 | `/live` payload: remove fuel_mix + history; add weather block |

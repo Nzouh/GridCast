@@ -68,6 +68,8 @@ const sortedTimestamps = (length: number) =>
 
 const quantileSeriesSchema = z
   .object({
+    target: z.literal('demand_mw'),
+    unit: z.literal('MW'),
     timestamps: sortedTimestamps(HORIZON_HOURS),
     p10: z.array(finiteNumber).length(HORIZON_HOURS),
     p25: z.array(finiteNumber).length(HORIZON_HOURS),
@@ -89,7 +91,7 @@ const quantileSeriesSchema = z
 
 const historySeriesSchema = z.object({
   timestamps: sortedTimestamps(ENCODER_HOURS),
-  lmp_congestion_usd: z.array(finiteNumber).length(ENCODER_HOURS),
+  demand_mw: z.array(finiteNumber).length(ENCODER_HOURS),
 });
 
 const overlaySeriesSchema = z
@@ -97,9 +99,9 @@ const overlaySeriesSchema = z
     timestamps: z.array(isoTimestamp).max(HORIZON_HOURS).refine(timestampsAreSortedWithNoWideGaps, {
       message: 'actuals overlay timestamps must be sorted ascending with no gap greater than 2h',
     }),
-    lmp_congestion_usd: z.array(finiteNumber).max(HORIZON_HOURS),
+    demand_mw: z.array(finiteNumber).max(HORIZON_HOURS),
   })
-  .refine((series) => series.timestamps.length === series.lmp_congestion_usd.length, {
+  .refine((series) => series.timestamps.length === series.demand_mw.length, {
     message: 'actuals overlay timestamps and values must have equal length',
   });
 
@@ -179,7 +181,7 @@ const forecastBaseObjectSchema = z.object({
     z.literal(0.75),
     z.literal(0.9),
   ]),
-  stress_threshold_lmp_usd: finiteNumber,
+  stress_threshold_demand_mw: finiteNumber,
   history: historySeriesSchema,
   forecast: quantileSeriesSchema,
   allocation: allocationSchema,

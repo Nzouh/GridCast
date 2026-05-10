@@ -114,8 +114,9 @@ user before the final plan is written.
     fixtures so the demo never shows an error.
 - **Q3. RESOLVED → TFT from scratch (per design doc).** Output shape =
   5 quantiles (0.10, 0.25, 0.50, 0.75, 0.90) × 240 hourly steps per
-  node, target = LMP congestion ($/MWh). API contract follows design
-  doc Table 4 verbatim. "Finetuning" was loose wording.
+  node, target = demand (MW). Stress is derived from the demand
+  quantiles vs a per-node threshold; LMP is used for economics/EDA,
+  not as the primary model target. "Finetuning" was loose wording.
 - **Q4. RESOLVED → No DB.** Stateless web app. Reads fixtures (dev)
   or COS objects (prod). Next.js fetch cache is the only caching
   layer. Matches Option B cleanly.
@@ -187,7 +188,7 @@ user before the final plan is written.
 
 - **Q16. RESOLVED → Widget set: 7 components.**
   Locked: 10-day fan chart, allocation gauge, per-DC bars, US map,
-  LMP history (encoder window), stress timeline strip,
+  demand history (encoder window), stress timeline strip,
   ensemble spread mini-chart. Dropped: fuel mix donut, weather
   overlay on map.
 
@@ -277,12 +278,14 @@ length 240 (decoder horizon). History arrays are always length 168
   "horizon_hours": 240,
   "encoder_hours": 168,
   "quantile_levels": [0.10, 0.25, 0.50, 0.75, 0.90],
-  "stress_threshold_lmp_usd": 45.2,
+  "stress_threshold_demand_mw": 14500,
   "history": {
     "timestamps": ["2026-05-02T15:00:00Z", "..."],
-    "lmp_congestion_usd": [12.4, 13.1, "..."]
+    "demand_mw": [12400, 12600, "..."]
   },
   "forecast": {
+    "target": "demand_mw",
+    "unit": "MW",
     "timestamps": ["2026-05-09T15:00:00Z", "..."],
     "p10": [], "p25": [], "p50": [], "p75": [], "p90": []
   },
@@ -370,7 +373,7 @@ Same shape as `/forecast` plus:
   "narrative": "Forecast as it would have appeared on Feb 4, 2021 — 10 days before the storm peak.",
   "actuals_overlay": {
     "timestamps": ["2021-02-09T00:00:00Z", "..."],
-    "lmp_congestion_usd": [62.1, 78.4, "..."]
+    "demand_mw": [16200, 17800, "..."]
   }
 }
 ```
@@ -437,7 +440,7 @@ components/
     NodePanel.tsx             (server) panel layout; receives forecast as prop
     NodePanelHeader.tsx       (server) title, stress chip, "Issued at HH:MM UTC" badge
     AllocationGauge.tsx       (client, Visx) headline % + confidence band
-    FanChart.tsx              (client, Visx) 5-band quantile fan + LMP history left of t=0
+    FanChart.tsx              (client, Visx) 5-band quantile fan + demand history left of t=0
     StressTimeline.tsx        (client, Visx) 240h colour strip with hover tooltip
     EnsembleSpread.tsx        (client, Visx) 16-line spaghetti
     DataCenterList.tsx        (server) renders DC cards
@@ -629,14 +632,14 @@ from design doc §4.3.
 >    element after the node name.
 >
 > 4. **Fan chart (the centrepiece visual).** ~280px tall. X-axis
->    spans 17 days: 7 days of past on the left (LMP history line in
+>    spans 17 days: 7 days of past on the left (demand history line in
 >    a single solid stroke), then a vertical "now" divider, then 10
 >    days of forecast as 5 stacked translucent quantile bands
 >    (p10–p90 outermost, p25–p75 middle, p50 darkest line). Y-axis:
->    LMP congestion in $/MWh. A horizontal dashed line at the
->    stress threshold (e.g. $45/MWh) labelled "Stress threshold".
+>    node demand in MW. A horizontal dashed line at the
+>    stress threshold (e.g. 14,500 MW) labelled "Stress threshold".
 >    Hover reveals values at that hour. In replay mode, an additional
->    solid line draws the actual realised LMP over the forecast
+>    solid line draws the actual realised demand over the forecast
 >    bands, ideally finishing in the p90 region for stress events.
 >
 > 5. **Stress timeline strip.** Just below the fan chart, full panel
@@ -704,7 +707,7 @@ from design doc §4.3.
 >
 > **Data realism note:** The actual forecast values are produced by
 > a separate ML model. Use plausible placeholder values in mockups
-> (e.g. p50 LMP around $20–60/MWh, allocation 60–80% in green
+> (e.g. p50 demand around 10–25 GW depending on node, allocation 60–80% in green
 > states, 20–40% in red states). Do not invent additional data
 > fields beyond those listed.
 
@@ -718,7 +721,7 @@ End-to-end checks before declaring the web app done.
    colour-coded per `fixtures/nodes.json`.
 3. Clicking each marker opens the side panel; URL updates to
    `?node=...`. All seven widgets render with non-zero data.
-4. The fan chart shows 7 days of past LMP joining smoothly to the
+4. The fan chart shows 7 days of past demand joining smoothly to the
    forecast bands at t=0.
 5. The stress timeline strip has 240 cells.
 6. The ensemble spread shows 16 distinct lines.
@@ -796,9 +799,9 @@ list below is the diff `generate.py` needs to match this spec.
 | # | Field / behaviour | Teammate currently | Spec requires | Notes for teammate |
 |---|---|---|---|---|
 | 1 | Node IDs | `dominion_hub`, `caiso_sp15`, `caiso_np15`, `ercot_houston` (snake_case) | `dominion-hub`, `caiso-sp15`, `caiso-np15`, `ercot-houston` (kebab-case) | URL-friendly; matches Next.js dynamic route segments. Affects file names + `id` fields. |
-| 2 | Forecast target variable | `stress` ∈ [0,1] (primary) + `demand_mw` (secondary) | `lmp_congestion_usd` ($/MWh) per design doc Table 2 | Stress level is **derived UI-side** from p90 vs `stress_threshold_lmp_usd`. Model still trains on LMP per design doc. |
+| 2 | Forecast target variable | `stress` ∈ [0,1] (primary) + `demand_mw` (secondary) | `demand_mw` (MW) quantile arrays, with `forecast.target="demand_mw"` and `forecast.unit="MW"` | Stress level is **derived UI-side** from demand quantiles vs `stress_threshold_demand_mw`. LMP is economics/EDA context, not the model target. |
 | 3 | Forecast point structure | `points: [{timestamp, horizon_hours, stress: {p10, p25, p50, p75, p90}, demand_mw: {p10, p50, p90}}]` | Parallel arrays: `forecast.timestamps[]`, `forecast.p10[]`, `forecast.p25[]`, `forecast.p50[]`, `forecast.p75[]`, `forecast.p90[]` | More compact; faster to ingest in Visx. |
-| 4 | Encoder history location | `live_<id>.json.last_7_days` with `actual_demand_mw` / `forecast_demand_mw` | `forecast_<id>.json.history` with `timestamps[]` + `lmp_congestion_usd[]` (length 168) | Past LMP belongs with the forecast; `/live` is purely the current snapshot. |
+| 4 | Encoder history location | `live_<id>.json.last_7_days` with `actual_demand_mw` / `forecast_demand_mw` | `forecast_<id>.json.history` with `timestamps[]` + `demand_mw[]` (length 168) | Past demand belongs with the forecast; `/live` is purely the current snapshot. |
 | 5 | `/live` payload | demand_mw + lmp_usd_per_mwh + fuel_mix (7 keys) + current_stress + last_7_days | `eia: {demand_mw, demand_forecast_mw, demand_deviation_pct}` + `weather: {temperature_2m_c, wind_speed_10m_ms, ensemble_member_count}` | No fuel mix (widget dropped). No history (moved to `/forecast`). Add weather snapshot. |
 | 6 | Refresh endpoint | `POST /refresh` + `refresh_response.json` exists | **Removed.** No fixture, no route. | Replaced by `issued_at` field on `/forecast`. UI shows "Forecast issued at HH:MM UTC". |
 | 7 | Replay events count | 3 events including `pnw_heat_dome_2022` | 2 events: `texas-2021` (was `texas_winter_2021`), `pjm-2023` (was `pjm_summer_2023`). PNW dropped. | PNW has no matching node. |
@@ -809,7 +812,7 @@ list below is the diff `generate.py` needs to match this spec.
 | 12 | **MISSING — data_centers** | not present | Add `data_centers: [{id, name, operator, tier, capacity_mw, committed_draw_mw: {p10, p50, p90}}]` (3 entries) to each `forecast_<id>.json` | Per-node rosters listed in Q11 resolution above (AWS Ashburn, etc.). `committed_draw_mw.p50 = capacity_mw × allocation.pct / 100`; p10/p90 use the corresponding stress fraction at p10/p90. |
 | 13 | Fixture file layout | `backend/fixtures/out/<flat>` | `fixtures/nodes.json`, `fixtures/forecast/<id>.json`, `fixtures/live/<id>.json`, `fixtures/replay/<event_id>.json` | Symlink or move; move/symlink note in their README acknowledges this is Person B's call. |
 | 14 | `DESIGN_WALKTHROUGH.md` "dark-mode US map" | Walkthrough mentions dark mode | UI is **light fintech** (sf.atmo.ai) | Walkthrough is descriptive; fixtures don't enforce. Either update walkthrough or note as superseded. |
-| 15 | Fan chart axis | (implicit) stress 0–1 | LMP $/MWh, with horizontal dashed `stress_threshold_lmp_usd` line | Follows from #2. The threshold line is the visual "danger zone" cutoff. |
+| 15 | Fan chart axis | (implicit) stress 0–1 | Demand MW, with horizontal dashed `stress_threshold_demand_mw` line | Follows from #2. The threshold line is the visual "danger zone" cutoff. |
 | 16 | **COS publication must be atomic** | not specified | Publish to an immutable versioned prefix (e.g. `v/{timestamp}/`), then flip a single `active.json` manifest pointing to the prefix only after all objects pass a checksum check. Web app reads from `active.json` to resolve the prefix. | Prevents the UI from reading a mixed state (new `nodes.json` + old `forecast_*.json`). |
 | 17 | **Allocation quantile formulas (committed_draw_mw — single source of truth)** | `committed_draw_mw.p50 = capacity × alloc.percent/100` only | **Teammate pre-computes all three** committed_draw values in the fixture using: `pct_p10 = round((1 − p10_stress_fraction) × 100)`, `pct_p50 = round((1 − p50_stress_fraction) × 100)`, `pct = round((1 − p90_stress_fraction) × 100)`. Fixture includes `committed_draw_mw: {p10, p50, p90}` directly. UI reads and displays; no re-derivation in UI. `allocation.pct_p10` and `allocation.pct_p50` are also kept in the fixture for panel display. | Removes dual-derivation ambiguity; teammate owns the formula implementation once. |
 

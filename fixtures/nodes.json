@@ -12,8 +12,8 @@
       "ba_code": "PJM",
       "lat": 38.9,
       "lon": -77.0,
-      "stress_probability": 0.245,
-      "allocation_pct": 60,
+      "stress_probability": 0.661,
+      "allocation_pct": 3,
       "is_live": true
     },
     {
@@ -24,8 +24,8 @@
       "ba_code": "CAISO",
       "lat": 34.05,
       "lon": -118.25,
-      "stress_probability": 0.254,
-      "allocation_pct": 70,
+      "stress_probability": 0.218,
+      "allocation_pct": 68,
       "is_live": true
     },
     {
@@ -36,8 +36,8 @@
       "ba_code": "CAISO",
       "lat": 37.77,
       "lon": -122.42,
-      "stress_probability": 0.17,
-      "allocation_pct": 81,
+      "stress_probability": 0.111,
+      "allocation_pct": 57,
       "is_live": true
     },
     {
@@ -48,8 +48,8 @@
       "ba_code": "ERCOT",
       "lat": 29.76,
       "lon": -95.37,
-      "stress_probability": 0.355,
-      "allocation_pct": 50,
+      "stress_probability": 0.315,
+      "allocation_pct": 32,
       "is_live": true
     },
     {
@@ -60,8 +60,8 @@
       "ba_code": "MISO",
       "lat": 39.77,
       "lon": -86.16,
-      "stress_probability": 0.146,
-      "allocation_pct": 85,
+      "stress_probability": 0.037,
+      "allocation_pct": 82,
       "is_live": false
     },
     {
@@ -72,8 +72,8 @@
       "ba_code": "MISO",
       "lat": 41.88,
       "lon": -87.63,
-      "stress_probability": 0.128,
-      "allocation_pct": 89,
+      "stress_probability": 0.009,
+      "allocation_pct": 97,
       "is_live": false
     },
     {
@@ -84,8 +84,8 @@
       "ba_code": "SPP",
       "lat": 39.1,
       "lon": -94.58,
-      "stress_probability": 0.163,
-      "allocation_pct": 81,
+      "stress_probability": 0.051,
+      "allocation_pct": 75,
       "is_live": false
     },
     {
@@ -96,8 +96,8 @@
       "ba_code": "SPP",
       "lat": 35.47,
       "lon": -97.52,
-      "stress_probability": 0.114,
-      "allocation_pct": 90,
+      "stress_probability": 0.012,
+      "allocation_pct": 95,
       "is_live": false
     },
     {
@@ -108,8 +108,8 @@
       "ba_code": "NYIS",
       "lat": 40.71,
       "lon": -74.01,
-      "stress_probability": 0.085,
-      "allocation_pct": 93,
+      "stress_probability": 0.089,
+      "allocation_pct": 60,
       "is_live": false
     },
     {
@@ -120,8 +120,8 @@
       "ba_code": "NYIS",
       "lat": 42.89,
       "lon": -78.88,
-      "stress_probability": 0.187,
-      "allocation_pct": 73,
+      "stress_probability": 0.289,
+      "allocation_pct": 10,
       "is_live": false
     },
     {
@@ -132,8 +132,8 @@
       "ba_code": "ISNE",
       "lat": 42.36,
       "lon": -71.06,
-      "stress_probability": 0.088,
-      "allocation_pct": 92,
+      "stress_probability": 0.075,
+      "allocation_pct": 67,
       "is_live": false
     },
     {
@@ -144,8 +144,8 @@
       "ba_code": "PJM",
       "lat": 40.27,
       "lon": -76.88,
-      "stress_probability": 0.125,
-      "allocation_pct": 89,
+      "stress_probability": 0.003,
+      "allocation_pct": 99,
       "is_live": false
     },
     {
@@ -156,8 +156,8 @@
       "ba_code": "PJM",
       "lat": 39.76,
       "lon": -84.19,
-      "stress_probability": 0.133,
-      "allocation_pct": 88,
+      "stress_probability": 0.029,
+      "allocation_pct": 86,
       "is_live": false
     },
     {
@@ -168,8 +168,8 @@
       "ba_code": "ERCO",
       "lat": 32.78,
       "lon": -96.8,
-      "stress_probability": 0.053,
-      "allocation_pct": 98,
+      "stress_probability": 0.004,
+      "allocation_pct": 99,
       "is_live": false
     },
     {
@@ -180,8 +180,8 @@
       "ba_code": "ERCO",
       "lat": 31.85,
       "lon": -102.37,
-      "stress_probability": 0.053,
-      "allocation_pct": 98,
+      "stress_probability": 0.028,
+      "allocation_pct": 86,
       "is_live": false
     },
     {
@@ -192,8 +192,8 @@
       "ba_code": "CISO",
       "lat": 35.37,
       "lon": -119.02,
-      "stress_probability": 0.111,
-      "allocation_pct": 90,
+      "stress_probability": 0.175,
+      "allocation_pct": 34,
       "is_live": false
     },
     {
@@ -204,8 +204,8 @@
       "ba_code": "BPAT",
       "lat": 45.52,
       "lon": -122.68,
-      "stress_probability": 0.3,
-      "allocation_pct": 46,
+      "stress_probability": 0.133,
+      "allocation_pct": 47,
       "is_live": false
     },
     {
@@ -216,8 +216,8 @@
       "ba_code": "DUK",
       "lat": 35.23,
       "lon": -80.84,
-      "stress_probability": 0.139,
-      "allocation_pct": 86,
+      "stress_probability": 0.027,
+      "allocation_pct": 87,
       "is_live": false
     },
     {
@@ -228,8 +228,8 @@
       "ba_code": "TVA",
       "lat": 36.16,
       "lon": -86.78,
-      "stress_probability": 0.147,
-      "allocation_pct": 85,
+      "stress_probability": 0.015,
+      "allocation_pct": 94,
       "is_live": false
     },
     {
@@ -240,8 +240,8 @@
       "ba_code": "FPL",
       "lat": 25.76,
       "lon": -80.19,
-      "stress_probability": 0.092,
-      "allocation_pct": 92,
+      "stress_probability": 0.001,
+      "allocation_pct": 100,
       "is_live": false
     }
   ]
