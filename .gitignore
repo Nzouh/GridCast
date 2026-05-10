@@ -214,5 +214,12 @@ marimo/_static/
 marimo/_lsp/
 __marimo__/
 
+# Next.js / Node
+node_modules/
+.next/
+next-env.d.ts
+.vercel/
+.env*.local
+
 # Streamlit
 .streamlit/secrets.toml

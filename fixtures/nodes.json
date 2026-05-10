@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "issued_at": "2026-05-09T14:00:00Z",
+  "published_at": "2026-05-09T13:55:00Z",
+  "source": "fixtures",
+  "nodes": [
+    {
+      "id": "dominion-hub",
+      "name": "Dominion Hub",
+      "iso": "PJM",
+      "state": "VA",
+      "ba_code": "PJM",
+      "lat": 38.9,
+      "lon": -77.0,
+      "stress_probability": 0.245,
+      "allocation_pct": 60
+    },
+    {
+      "id": "caiso-sp15",
+      "name": "CAISO SP15",
+      "iso": "CAISO",
+      "state": "CA",
+      "ba_code": "CAISO",
+      "lat": 34.05,
+      "lon": -118.25,
+      "stress_probability": 0.254,
+      "allocation_pct": 70
+    },
+    {
+      "id": "caiso-np15",
+      "name": "CAISO NP15",
+      "iso": "CAISO",
+      "state": "CA",
+      "ba_code": "CAISO",
+      "lat": 37.77,
+      "lon": -122.42,
+      "stress_probability": 0.17,
+      "allocation_pct": 81
+    },
+    {
+      "id": "ercot-houston",
+      "name": "ERCOT Houston",
+      "iso": "ERCOT",
+      "state": "TX",
+      "ba_code": "ERCOT",
+      "lat": 29.76,
+      "lon": -95.37,
+      "stress_probability": 0.355,
+      "allocation_pct": 50
+    }
+  ]
+}

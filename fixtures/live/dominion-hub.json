@@ -1,0 +1,16 @@
+{
+  "node_id": "dominion-hub",
+  "schema_version": 1,
+  "fetched_at": "2026-05-09T14:00:00Z",
+  "source": "fixtures",
+  "eia": {
+    "demand_mw": 95000,
+    "demand_forecast_mw": 92000,
+    "demand_deviation_pct": 3.3
+  },
+  "weather": {
+    "temperature_2m_c": 22.5,
+    "wind_speed_10m_ms": 4.2,
+    "ensemble_member_count": 16
+  }
+}
