@@ -6,7 +6,7 @@ ENV PIP_NO_CACHE_DIR=1
 
 WORKDIR /app
 
-COPY backend/requirements.txt backend/requirements-inference.txt ./backend/
+COPY backend/requirements-base.txt backend/requirements-inference.txt ./backend/
 
 RUN python -m pip install --upgrade pip \
     && python -m pip install --index-url https://download.pytorch.org/whl/cpu torch torchvision torchaudio \

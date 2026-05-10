@@ -45,7 +45,7 @@ def cos_client() -> object:
     except ImportError as exc:
         raise SystemExit(
             "Missing IBM COS dependency. Install it with:\n"
-            "  .\\.venv\\Scripts\\python.exe -m pip install -r backend\\requirements.txt"
+            "  .\\.venv\\Scripts\\python.exe -m pip install -r backend\\requirements-base.txt"
         ) from exc
 
     return ibm_boto3.client(
