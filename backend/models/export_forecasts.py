@@ -201,6 +201,33 @@ def load_weather_forecast(path: Path) -> tuple[pd.DataFrame, list[list[float]], 
     return member_mean, members, fetched_at
 
 
+def regularize_history(node_df: pd.DataFrame, global_start: pd.Timestamp) -> pd.DataFrame:
+    """Return a continuous 168-hour history ending at the latest observed row.
+
+    EIA occasionally leaves short holes in recent hourly data. The frontend schema
+    intentionally requires contiguous history so charts do not break. We fill
+    missing hours here at the publication boundary rather than weakening the UI
+    contract.
+    """
+    latest = node_df["period"].max()
+    history_periods = pd.date_range(
+        latest - pd.Timedelta(hours=ENCODER_HOURS - 1),
+        periods=ENCODER_HOURS,
+        freq="h",
+        tz="UTC",
+    )
+    history = node_df.drop_duplicates("period").set_index("period").reindex(history_periods)
+    history.index.name = "period"
+    history["node_id"] = history["node_id"].ffill().bfill()
+    history["eia_demand_forecast_mw"] = history["eia_demand_forecast_mw"].ffill().bfill()
+    history["demand_mw"] = history["demand_mw"].interpolate(method="time").ffill().bfill()
+    for col in train_tft.KNOWN_REAL_FEATURES:
+        history[col] = history[col].interpolate(method="time").ffill().bfill()
+    history = add_calendar_features(history.reset_index())
+    history["time_idx"] = ((history["period"] - global_start).dt.total_seconds() // 3600).astype("int64")
+    return history
+
+
 def build_prediction_frame(processed: pd.DataFrame) -> tuple[pd.DataFrame, dict[str, Any]]:
     frames = []
     context: dict[str, Any] = {}
@@ -210,6 +237,7 @@ def build_prediction_frame(processed: pd.DataFrame) -> tuple[pd.DataFrame, dict[
         node_df = processed[processed["node_id"].eq(node_id)].sort_values("period").copy()
         if len(node_df) < ENCODER_HOURS:
             raise ValueError(f"{node_id} has fewer than {ENCODER_HOURS} historical rows")
+        history = regularize_history(node_df, global_start)
 
         weather_forecast, ensemble_members, fetched_at = load_weather_forecast(RAW_DIR / str(cfg["forecast_weather_path"]))
         forecast_start = node_df["period"].max() + pd.Timedelta(hours=1)
@@ -227,12 +255,12 @@ def build_prediction_frame(processed: pd.DataFrame) -> tuple[pd.DataFrame, dict[
         future = add_calendar_features(future)
         future["time_idx"] = ((future["period"] - global_start).dt.total_seconds() // 3600).astype("int64")
 
-        combined = pd.concat([node_df.tail(ENCODER_HOURS), future], ignore_index=True, sort=False)
+        combined = pd.concat([history, future], ignore_index=True, sort=False)
         frames.append(combined)
         context[node_id] = {
             "forecast_start": forecast_start,
             "forecast_periods": forecast_periods,
-            "history": node_df.tail(ENCODER_HOURS),
+            "history": history,
             "ensemble_members": ensemble_members,
             "weather_fetched_at": fetched_at,
             "last_live": node_df.iloc[-1],
@@ -405,7 +433,7 @@ def build_payloads(
         quantiles = apply_calibration(node_id, output[i], corrections)
         threshold = float(cfg["stress_threshold_demand_mw"])
         stress_probs = [stress_from_quantiles(quantiles[j], threshold) for j in range(HORIZON_HOURS)]
-        p90_stress_fraction = max(stress_probs)
+        p90_stress_fraction = float(np.quantile(stress_probs, 0.9))
         p50_stress_fraction = float(np.median(stress_probs))
         p10_stress_fraction = float(np.quantile(stress_probs, 0.1))
         allocation = {

@@ -65,7 +65,8 @@ export default async function Page({
     nodesSource = r.data.source;
     nodesPublishedAt = r.data.published_at;
     stale = r.stale;
-  } catch {
+  } catch (error) {
+    console.error('GridCast nodes load failed', error);
     nodesError = true;
   }
 
@@ -86,7 +87,8 @@ export default async function Page({
       replay = r.data;
       detailPublishedAt = r.data.published_at;
       stale = stale || r.stale;
-    } catch {
+    } catch (error) {
+      console.error(`GridCast replay load failed: ${replayId}`, error);
       // panel will render the unavailable state
     }
   } else if (selectedNodeId) {
@@ -95,7 +97,8 @@ export default async function Page({
       forecast = r.data;
       detailPublishedAt = r.data.published_at;
       stale = stale || r.stale;
-    } catch {
+    } catch (error) {
+      console.error(`GridCast forecast load failed: ${selectedNodeId}`, error);
       // ditto
     }
   }

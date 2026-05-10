@@ -2,6 +2,10 @@ import type { Node, ForecastResponse, ReplayResponse } from '@/lib/types';
 import { NodePanelHeader } from './NodePanelHeader';
 import { DataCenterList } from './DataCenterList';
 import { StaleBanner } from '../shell/StaleBanner';
+import { AllocationGauge } from './AllocationGauge';
+import { FanChart } from './FanChart';
+import { StressTimeline } from './StressTimeline';
+import { EnsembleSpread } from './EnsembleSpread';
 
 export function NodePanel({
   node,
@@ -18,9 +22,8 @@ export function NodePanel({
   stale: boolean;
   publishedAt: string | null;
 }) {
-  const issuedAt = replay?.issued_at ?? forecast?.issued_at ?? null;
-  const dataCenters = replay?.data_centers ?? forecast?.data_centers ?? [];
-  const loaded = forecast !== null || replay !== null;
+  const payload = replay ?? forecast;
+  const issuedAt = payload?.issued_at ?? null;
 
   return (
     <aside
@@ -30,10 +33,13 @@ export function NodePanel({
       {stale && publishedAt ? <StaleBanner publishedAt={publishedAt} /> : null}
       <NodePanelHeader node={node} issuedAt={issuedAt} closeHref={closeHref} />
       <div className="px-6 py-5 flex flex-col gap-6">
-        {loaded ? (
+        {payload ? (
           <>
-            <ChartsPlaceholder />
-            <DataCenterList items={dataCenters} />
+            <AllocationGauge allocation={payload.allocation} />
+            <FanChart payload={payload} />
+            <StressTimeline points={payload.stress_timeline} />
+            <EnsembleSpread spread={payload.ensemble_spread} />
+            <DataCenterList items={payload.data_centers} />
           </>
         ) : (
           <div className="rounded border border-stress-amber/30 bg-stress-amber/[0.06] p-3 text-[12px] text-text-primary">
@@ -45,26 +51,5 @@ export function NodePanel({
         Methodology
       </div>
     </aside>
-  );
-}
-
-function ChartsPlaceholder() {
-  const widgets = ['AllocationGauge', 'FanChart', 'StressTimeline', 'EnsembleSpread'];
-  return (
-    <div className="rounded-md border border-dashed border-black/10 bg-surface-panel p-4">
-      <div className="text-[11px] uppercase tracking-wider text-text-tertiary mb-2">
-        Charts — Pass B
-      </div>
-      <div className="flex flex-wrap gap-1.5">
-        {widgets.map((w) => (
-          <span
-            key={w}
-            className="text-[11px] px-2 py-0.5 rounded bg-white border border-black/10 text-text-secondary"
-          >
-            {w}
-          </span>
-        ))}
-      </div>
-    </div>
   );
 }
