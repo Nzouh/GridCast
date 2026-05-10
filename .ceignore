@@ -1,0 +1,69 @@
+# Code Engine source-build ignore. Same syntax as .dockerignore.
+# Goal: ship only what Dockerfile.inference COPYs (backend/) plus the Dockerfile itself.
+
+# Secrets and local env
+.env
+.env.*
+.envrc
+
+# VCS
+.git
+.gitignore
+.gitattributes
+
+# Frontend (Next.js) — never needed in the inference image
+app
+components
+lib
+public
+fixtures
+hooks
+.next
+.swc
+out
+node_modules
+package.json
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+next-env.d.ts
+next.config.js
+next.config.mjs
+next.config.ts
+postcss.config.js
+postcss.config.mjs
+tailwind.config.js
+tailwind.config.ts
+tsconfig.json
+.eslintrc.json
+eslint.config.js
+eslint.config.mjs
+
+# Python local venv
+.venv
+
+# Big backend artifacts (downloaded at job runtime from COS)
+backend/data/raw
+backend/data/processed
+backend/models/out
+notebooks
+notebooks/figures
+
+# Docs and design
+*.md
+*.tex
+gridcast_design.tex
+
+# Caches and editor
+*.pyc
+__pycache__
+.pytest_cache
+.ruff_cache
+.mypy_cache
+.vscode
+.idea
+.DS_Store
+
+# Logs
+*.log
+*.tmp

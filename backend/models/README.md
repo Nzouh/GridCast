@@ -81,6 +81,27 @@ Calibrate the TFT quantiles:
 .\.venv\Scripts\python.exe backend\models\calibrate_tft.py
 ```
 
+Export frontend-ready COS payloads:
+
+```powershell
+.\.venv\Scripts\python.exe backend\models\export_forecasts.py --source cos
+```
+
+Upload exported payloads to IBM COS:
+
+```powershell
+.\.venv\Scripts\python.exe backend\models\upload_cos.py --public-read
+```
+
+The uploader writes these bucket-root objects, matching the current Next.js
+`COS_BASE_URL` contract:
+
+- `nodes.json`
+- `forecast/{node_id}.json`
+- `live/{node_id}.json`
+
+For IBM Code Engine packaging, see `backend/models/CODE_ENGINE.md`.
+
 Outputs:
 
 - `backend/models/out/tft/checkpoints/`
@@ -93,6 +114,7 @@ Outputs:
 - `backend/models/out/tft_calibration.json`
 - `backend/models/out/tft_calibration_metrics.csv`
 - `backend/models/out/tft_calibrated_predictions.parquet`
+- `backend/models/out/cos_payload/`
 
 Current setup:
 

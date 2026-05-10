@@ -3,3 +3,4 @@ pyarrow>=15.0
 requests>=2.32
 python-dotenv>=1.0
 gridstatus>=0.30
+ibm-cos-sdk>=2.14
