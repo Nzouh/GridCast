@@ -1,15 +1,17 @@
 """GridCast synthetic fixture generator.
 
-Emits JSON files matching the 5-endpoint API contract from
-DESIGN_WALKTHROUGH.md. Used to unblock frontend work before the real
-ingestion + TFT inference pipeline is wired up. Pure stdlib, deterministic.
+NOTE: Partially superseded by PLAN.md. This generator currently emits the
+older 5-endpoint shape with `stress` as the primary forecast field. The
+target API contract (PLAN.md) is 4 endpoints with `demand_mw` quantiles
+as the primary forecast field, kebab-case node IDs, plus `ensemble_spread`
+and `data_centers` fields. Reconciliation table in PLAN.md tracks the
+full diff. This file will be rewritten once the real TFT outputs land.
 
 Outputs (under ./out/):
     nodes.json
     forecast_<node_id>.json     x4
     live_<node_id>.json         x4
     replay_<event_id>.json      x3
-    refresh_response.json       (example shape)
 """
 
 import json
@@ -414,20 +416,6 @@ def build_replay_payload(event: dict) -> dict:
 
 
 # ---------------------------------------------------------------------------
-# Misc
-# ---------------------------------------------------------------------------
-
-def build_refresh_response_example() -> dict:
-    return {
-        "status": "ok",
-        "node_id": "dominion_hub",
-        "refreshed_at": iso(NOW),
-        "source": "ibm_cos",
-        "next_available_refresh_at": iso(NOW + timedelta(minutes=5)),
-    }
-
-
-# ---------------------------------------------------------------------------
 # Entrypoint
 # ---------------------------------------------------------------------------
 
@@ -445,7 +433,6 @@ def main() -> None:
         write(f"live_{n['id']}.json", build_live_payload(n))
     for e in REPLAY_EVENTS:
         write(f"replay_{e['event_id']}.json", build_replay_payload(e))
-    write("refresh_response.json", build_refresh_response_example())
     print("done.")
 
 

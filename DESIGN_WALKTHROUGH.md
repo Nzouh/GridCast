@@ -1,5 +1,15 @@
 # GridCast — Design Walkthrough
 
+> **⚠️ SUPERSEDED in part by [PLAN.md](PLAN.md).** This walkthrough is preserved
+> for product narrative and high-level architecture context. Where it conflicts
+> with PLAN.md, **PLAN.md wins**. Specifically:
+> - TFT target = **demand (MW)**, not stress or LMP congestion
+> - **4 API endpoints** (no `POST /refresh`)
+> - **2 replay events** in UI (Texas 2021, PJM 2023). PNW 2022 dropped from UI but kept as an EDA case-study chart
+> - Stress thresholds: `green<0.20, amber 0.20–0.50, red≥0.50` (derived from demand quantiles)
+> - Light fintech theme (sf.atmo.ai), not dark-mode
+> - Frontend: Next.js App Router + RSC; backend: Next.js API routes reading IBM COS objects directly (FastAPI on Code Engine is the production upgrade path, not the demo path)
+
 This document walks through the GridCast product from two perspectives:
 1. **The user's perspective** — what a person sees, clicks, and learns
 2. **The developer's perspective** — what gets built, in what order, by whom

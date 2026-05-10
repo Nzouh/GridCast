@@ -1,8 +1,14 @@
 # GridCast fixtures
 
-Synthetic JSON fixtures matching the 5-endpoint API contract from
-[`DESIGN_WALKTHROUGH.md`](../../DESIGN_WALKTHROUGH.md). Used to unblock
-frontend work before the real ingestion + TFT inference pipeline lands.
+> **⚠️ Partially superseded** — these fixtures match the older 5-endpoint
+> contract with `stress` as the forecast target. The current spec
+> ([PLAN.md](../../PLAN.md)) is 4 endpoints with `demand_mw` as the
+> forecast target. Reconciliation table in PLAN.md tracks the full diff.
+> Fixtures will be regenerated when the real TFT outputs land.
+
+Synthetic JSON fixtures matching the (legacy) 5-endpoint API contract.
+Used to unblock frontend work before the real ingestion + TFT inference
+pipeline lands.
 
 ## Regenerating
 
