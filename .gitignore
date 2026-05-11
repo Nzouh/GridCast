@@ -228,3 +228,11 @@ backend/data/raw/
 backend/data/processed/
 backend/models/out/
 notebooks/figures/
+
+# Agent-generated design mockups / bundles
+.codex-logo-design/
+*.tar
+
+# Pitch decks and one-off binary briefs (keep in shared drive, not git)
+*.pptx
+Watsonx_Brief_*

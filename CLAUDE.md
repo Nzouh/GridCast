@@ -18,8 +18,6 @@ Integration happens through a stable JSON API contract (see `SPEC.md`).
   mock/live strategy, data-centre rosters, Claude-design prompt.
 - `PLAN.md` — full brainstorm + claudex adversarial review history.
   Read for *why* decisions were made.
-- `TEAM_SPLIT.md` — original team boundary (superseded: this repo now
-  owns both FE and BE, not just FE).
 
 ## Stack
 
