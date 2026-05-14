@@ -1,7 +1,7 @@
 'use client';
 
 import { Marker } from 'react-map-gl/mapbox';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { stressLevel } from '@/lib/formulas';
 import type { Node } from '@/lib/types';
 
@@ -27,6 +27,7 @@ export function NodeMarker({
   isDimmed: boolean;
 }) {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const level = stressLevel(node.stress_probability);
   const fill = COLOR[level];
   const opacity = isDimmed ? 0.4 : 1;
@@ -46,7 +47,9 @@ export function NodeMarker({
       anchor="center"
       onClick={(e) => {
         e.originalEvent.stopPropagation();
-        router.push(`/?node=${node.id}`);
+        const params = new URLSearchParams(searchParams.toString());
+        params.set('node', node.id);
+        router.push(`/?${params.toString()}`);
       }}
     >
       <button
