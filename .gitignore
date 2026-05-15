@@ -236,3 +236,24 @@ notebooks/figures/
 # Pitch decks and one-off binary briefs (keep in shared drive, not git)
 *.pptx
 Watsonx_Brief_*
+
+# LaTeX build artifacts
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.nav
+*.out
+*.snm
+*.synctex.gz
+*.toc
+*.bbl
+*.blg
+*.lof
+*.lot
+*.idx
+*.ilg
+*.ind
+
+# Generated PDFs (rebuild from .tex sources)
+*.pdf
