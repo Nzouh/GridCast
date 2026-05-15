@@ -16,7 +16,7 @@ export function AllocationGauge({
   const accent = ACCENT[level];
 
   return (
-    <section>
+    <section data-gc-tutorial="allocation">
       <div className="gc-label">
         Recommended allocation
       </div>

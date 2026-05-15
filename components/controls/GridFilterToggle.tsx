@@ -12,10 +12,10 @@ export function GridFilterToggle({ filter }: { filter: GridFilter }) {
 
   const setFilter = (next: GridFilter) => {
     const params = new URLSearchParams(searchParams.toString());
-    if (next === 'target') {
+    if (next === 'all') {
       params.delete('filter');
     } else {
-      params.set('filter', 'all');
+      params.set('filter', 'target');
     }
     const qs = params.toString();
     startTransition(() => {
@@ -38,6 +38,7 @@ export function GridFilterToggle({ filter }: { filter: GridFilter }) {
       >
         <button
           type="button"
+          data-gc-highlight
           aria-pressed={targetActive}
           disabled={isPending}
           onClick={() => setFilter('target')}

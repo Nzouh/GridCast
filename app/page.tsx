@@ -1,4 +1,5 @@
 import { redirect } from 'next/navigation';
+import { cookies } from 'next/headers';
 import {
   getNodes,
   getForecast,
@@ -14,6 +15,7 @@ import { ReplayBanner } from '@/components/shell/ReplayBanner';
 import { MapShell } from '@/components/map/MapShell';
 import { NodePanel } from '@/components/panel/NodePanel';
 import { LegendKey } from '@/components/controls/LegendKey';
+import { TutorialPanel } from '@/components/tutorial/TutorialPanel';
 import type { GridFilter } from '@/components/controls/GridFilterToggle';
 import type { ReplayId, NodeId } from '@/lib/dataSource';
 
@@ -35,7 +37,7 @@ function isNodeId(v: string | undefined): v is NodeId {
 }
 
 function parseFilter(v: string | undefined): GridFilter {
-  return v === 'all' ? 'all' : 'target';
+  return v === 'target' ? 'target' : 'all';
 }
 
 export default async function Page({
@@ -47,6 +49,9 @@ export default async function Page({
   const replayParam = params.replay;
   const nodeParam = params.node;
   const filter: GridFilter = parseFilter(params.filter);
+
+  const cookieStore = await cookies();
+  const isFirstVisit = !cookieStore.has('gc_onboarding_done');
 
   if (replayParam && nodeParam) {
     redirect(`/?replay=${replayParam}`);
@@ -138,6 +143,7 @@ export default async function Page({
                 panelOpen={selectedNode !== null}
               />
               <LegendKey />
+              <TutorialPanel defaultOpen={isFirstVisit} forecast={forecast} />
               {selectedNode ? (
                 <NodePanel
                   node={selectedNode}

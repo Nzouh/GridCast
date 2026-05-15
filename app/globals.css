@@ -70,6 +70,17 @@ body {
   font-variant-numeric: tabular-nums;
 }
 
+@keyframes gc-filter-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(15, 61, 86, 0); }
+  50% { box-shadow: 0 0 0 3px rgba(15, 61, 86, 0.45), 0 0 10px rgba(15, 61, 86, 0.2); }
+}
+
+.gc-tutorial-filter [data-gc-highlight] {
+  animation: gc-filter-glow 1.5s ease-in-out infinite;
+  position: relative;
+  z-index: 1;
+}
+
 aside::-webkit-scrollbar {
   width: 6px;
 }

@@ -50,7 +50,7 @@ export function FanChart({ payload }: { payload: Payload }) {
   ];
 
   return (
-    <section>
+    <section data-gc-tutorial="fanchart">
       <div className="gc-section-head">
         <span>Demand forecast</span>
         <span>

@@ -14,7 +14,7 @@ export function EnsembleSpread({ spread }: { spread: EnsembleSpreadType }) {
   const yTicks = [yDomain[0], Math.round((yDomain[0] + yDomain[1]) / 2), yDomain[1]];
 
   return (
-    <section>
+    <section data-gc-tutorial="ensemble">
       <div className="gc-section-head">
         <span>Weather ensemble</span>
         <span>{spread.members.length} GFS members</span>

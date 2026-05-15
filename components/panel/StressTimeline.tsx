@@ -13,7 +13,7 @@ export function StressTimeline({ points }: { points: StressTimelinePoint[] }) {
   const [hoverIndex, setHoverIndex] = useState<number | null>(null);
 
   return (
-    <section>
+    <section data-gc-tutorial="stress">
       <div className="gc-section-head">
         <span>Stress timeline</span>
         <span>hourly probability</span>

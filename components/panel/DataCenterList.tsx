@@ -3,7 +3,7 @@ import { DataCenterCard } from './DataCenterCard';
 
 export function DataCenterList({ items }: { items: DataCenter[] }) {
   return (
-    <section>
+    <section data-gc-tutorial="datacenters">
       <div className="gc-label mb-2">
         Co-located data centres
       </div>

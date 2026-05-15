@@ -42,6 +42,7 @@ export function NodePanel({
   return (
     <aside
       key={`${node.id}-${replay?.event_id ?? 'live'}`}
+      data-gc-panel="node"
       className="absolute top-0 right-0 h-full w-[420px] bg-white border-l border-border shadow-[0_0_40px_rgba(11,15,25,0.04)] overflow-y-auto overflow-x-hidden z-20"
       style={{ animation: 'gc-slide-in 280ms cubic-bezier(.2,.7,.3,1)' }}
     >
